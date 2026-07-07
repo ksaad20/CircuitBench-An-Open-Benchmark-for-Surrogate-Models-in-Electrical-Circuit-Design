@@ -5,26 +5,26 @@ The benchmark contains a diverse collection of analog, digital, power electronic
 
 CircuitBench enables researchers to compare machine learning models for a wide range of electrical engineering tasks, including:
 
-Circuit performance prediction
-Component parameter estimation
-Automatic circuit optimization
-Fault diagnosis
-Sensitivity analysis
-Surrogate modeling for accelerated simulation
-Explainable artificial intelligence in circuit design
+1. Circuit performance prediction
+2. Component parameter estimation
+3. Automatic circuit optimization
+4. Fault diagnosis
+5. Sensitivity analysis
+6. Surrogate modeling for accelerated simulation
+7. Explainable artificial intelligence in circuit design
 
 The framework supports both classical machine learning and modern deep learning approaches, allowing direct comparison between algorithms such as:
 
-Linear Regression
-Random Forest
-Gradient Boosting
-XGBoost
-CatBoost
-Support Vector Regression
-Artificial Neural Networks
-Graph Neural Networks
-Physics-Informed Neural Networks
-Gaussian Process Regression
+1. Linear Regression
+2. Random Forest
+3. Gradient Boosting
+4. XGBoost
+5. CatBoost
+6. Support Vector Regression
+7. Artificial Neural Networks
+8. Graph Neural Networks
+9. Physics-Informed Neural Networks
+10. Gaussian Process Regression
 
 Each algorithm is evaluated using standardized regression and classification metrics together with engineering-specific criteria, including prediction accuracy, computational efficiency, inference latency, robustness, calibration, uncertainty estimation, and interpretability.
 
@@ -34,49 +34,49 @@ The long-term goal of CircuitBench is to establish a community benchmark analogo
 
 Potential modules
 
-CircuitBench-Core
+1. CircuitBench-Core
 
 Passive circuits
 RLC networks
 Resonance
 Filters
 
-CircuitBench-Analog
+2. CircuitBench-Analog
 
 Operational amplifiers
 Oscillators
 Instrumentation amplifiers
 Active filters
 
-CircuitBench-Digital
+3. CircuitBench-Digital
 
 CMOS logic
 Timing analysis
 Noise margin
 Propagation delay
 
-CircuitBench-Power
+4. CircuitBench-Power
 
 DC–DC converters
 Inverters
 Battery management circuits
 Motor drives
 
-CircuitBench-RF
+5. CircuitBench-RF
 
 Matching networks
 Amplifiers
 Transmission lines
 Antennas
 
-CircuitBench-Fault
+6. CircuitBench-Fault
 
 Open circuits
 Short circuits
 Component degradation
 Sensor failures
 
-CircuitBench-XAI
+7. CircuitBench-XAI
 
 SHAP
 LIME
