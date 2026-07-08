@@ -533,3 +533,50 @@ def regression_pipeline(
         )
 
     }
+
+__all__ = [
+    "regression_report",
+    "classification_report",
+    "benchmark_report",
+    "summary_report",
+
+    "metrics_table",
+    "latex_table",
+    "markdown_table",
+    "html_table",
+    "csv_table",
+
+    "export_csv",
+    "export_json",
+    "export_excel",
+    "export_yaml",
+    "export_pickle",
+
+    "leaderboard",
+    "rank_models",
+    "best_model",
+    "worst_model",
+    "top_k_models",
+
+    "benchmark_summary",
+    "comparison_report",
+    "aggregate_report",
+    "statistical_report",
+
+    "scorecard",
+    "performance_dashboard_data",
+    "metric_heatmap_data",
+    "correlation_matrix_data",
+    "confusion_matrix_report",
+
+    "publication_table",
+    "supplementary_table",
+    "appendix_metrics",
+    "citation_summary",
+
+    "report_to_dataframe",
+    "report_to_dict",
+    "merge_reports",
+    "compare_reports",
+    "pretty_print_report",
+]
