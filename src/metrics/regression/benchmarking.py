@@ -255,5 +255,74 @@ def benchmark_summary(
 
     }
 
+__all__ = [
+    # Model Evaluation
+    "evaluate_model",
+    "evaluate_models",
+    "benchmark_model",
+    "benchmark_models",
+    "cross_validate_model",
 
+    # Benchmark Summary
+    "benchmark_summary",
+    "benchmark_report",
+    "benchmark_statistics",
+    "benchmark_overview",
+    "benchmark_dataframe",
+
+    # Rankings
+    "rank_models",
+    "leaderboard",
+    "best_model",
+    "worst_model",
+    "top_k_models",
+    "bottom_k_models",
+    "model_rank",
+
+    # Model Comparison
+    "compare_models",
+    "pairwise_comparison",
+    "relative_improvement",
+    "percentage_improvement",
+    "performance_difference",
+
+    # Aggregation
+    "aggregate_metrics",
+    "aggregate_scores",
+    "weighted_score",
+    "normalized_score",
+    "geometric_score",
+    "harmonic_score",
+
+    # Stability
+    "benchmark_stability",
+    "benchmark_consistency",
+    "performance_variance",
+    "performance_std",
+
+    # Efficiency
+    "benchmark_runtime",
+    "benchmark_memory",
+    "benchmark_energy",
+    "benchmark_latency",
+
+    # Robustness
+    "benchmark_noise",
+    "benchmark_outliers",
+    "benchmark_missing_values",
+    "benchmark_distribution_shift",
+
+    # Statistical Benchmarking
+    "confidence_ranking",
+    "bootstrap_benchmark",
+    "cross_dataset_benchmark",
+    "significance_ranking",
+
+    # Utilities
+    "save_benchmark",
+    "load_benchmark",
+    "export_benchmark",
+    "benchmark_to_dataframe",
+    "benchmark_to_dict",
+]
 
