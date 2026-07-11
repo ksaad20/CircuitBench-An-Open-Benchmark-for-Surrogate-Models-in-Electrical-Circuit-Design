@@ -1,3 +1,0 @@
-Benchmarking model...
-
-█████████████ 87%
