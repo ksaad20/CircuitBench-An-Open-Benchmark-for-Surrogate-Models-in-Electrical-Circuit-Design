@@ -1,0 +1,312 @@
+./benchmarks/passive/aging_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/aging_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/aging_prediction/evaluate.py:1:1: W391 blank line at end of file
+./benchmarks/passive/aging_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/aging_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/aging_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/aging_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/attenuation_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/attenuation_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/attenuation_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/attenuation_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/attenuation_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/attenuation_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/bandwidth_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/bandwidth_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/bandwidth_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/bandwidth_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/bandwidth_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/bandwidth_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/benchmark_registry.py:1:1: W391 blank line at end of file
+./benchmarks/passive/benchmark_utils.py:1:1: W391 blank line at end of file
+./benchmarks/passive/bode_plot_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/bode_plot_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/bode_plot_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/bode_plot_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/bode_plot_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/bode_plot_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/capacitance_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/capacitance_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/capacitance_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/capacitance_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/capacitance_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/capacitance_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/coupling_coefficient_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/coupling_coefficient_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/coupling_coefficient_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/coupling_coefficient_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/coupling_coefficient_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/coupling_coefficient_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/cutoff_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/cutoff_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/cutoff_prediction/evaluate.py:1:1: W391 blank line at end of file
+./benchmarks/passive/cutoff_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/cutoff_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/cutoff_prediction/metrics.py:1:1: W391 blank line at end of file
+./benchmarks/passive/cutoff_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/dielectric_constant_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/dielectric_constant_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/dielectric_constant_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/dielectric_constant_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/dielectric_constant_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/dielectric_constant_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/em_surrogate/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/em_surrogate/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/em_surrogate/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/em_surrogate/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/em_surrogate/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/esr_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/esr_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/esr_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/esr_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/esr_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/ferrite_core_loss_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/ferrite_core_loss_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/ferrite_core_loss_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/ferrite_core_loss_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/ferrite_core_loss_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/ferrite_core_loss_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/filter_response_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/filter_response_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/filter_response_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/filter_response_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/filter_response_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/filter_response_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/frequency_response_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/frequency_response_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/frequency_response_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/frequency_response_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/frequency_response_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/frequency_response_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/impedance_matching/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/impedance_matching/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/impedance_matching/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/impedance_matching/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/impedance_matching/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/impedance_matching/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/impedence_estimation/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/impedence_estimation/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/impedence_estimation/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/impedence_estimation/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/impedence_estimation/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/inductance_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/inductance_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/inductance_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/inductance_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/inductance_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/inductance_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/insertion_loss_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/insertion_loss_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/insertion_loss_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/insertion_loss_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/insertion_loss_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/insertion_loss_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/leaderboard.py:1:1: W391 blank line at end of file
+./benchmarks/passive/magnetic_flux_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/magnetic_flux_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/magnetic_flux_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/magnetic_flux_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/magnetic_flux_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/magnetic_flux_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/metrics.py:1:1: W391 blank line at end of file
+./benchmarks/passive/mutual_inductance_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/mutual_inductance_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/mutual_inductance_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/mutual_inductance_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/mutual_inductance_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/mutual_inductance_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/parasitic_parameter_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/parasitic_parameter_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/parasitic_parameter_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/parasitic_parameter_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/parasitic_parameter_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/parasitic_parameter_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/passive_component_classification/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/passive_component_classification/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/passive_component_classification/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/passive_component_classification/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/passive_component_classification/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/passive_component_classification/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/phase_response_predictuon/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/phase_response_predictuon/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/phase_response_predictuon/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/phase_response_predictuon/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/phase_response_predictuon/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/phase_response_predictuon/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/proximity_effect_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/proximity_effect_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/proximity_effect_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/proximity_effect_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/proximity_effect_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/proximity_effect_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/q_factor_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/q_factor_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/q_factor_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/q_factor_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/q_factor_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/q_factor_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/resistance_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/resistance_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/resistance_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/resistance_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/resistance_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/resistance_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/resonance_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/resonance_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/resonance_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/resonance_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/resonance_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/resonance_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/return_loss_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/return_loss_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/return_loss_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/return_loss_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/return_loss_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/return_loss_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/run_all.py:1:1: W391 blank line at end of file
+./benchmarks/passive/s_parameter_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/s_parameter_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/s_parameter_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/s_parameter_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/s_parameter_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/s_parameter_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/skin_effect_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/skin_effect_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/skin_effect_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/skin_effect_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/skin_effect_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/skin_effect_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/temperature_coefficient_prediciton/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/temperature_coefficient_prediciton/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/temperature_coefficient_prediciton/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/temperature_coefficient_prediciton/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/temperature_coefficient_prediciton/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/temperature_coefficient_prediciton/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/tolerance_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/tolerance_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/tolerance_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/tolerance_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/tolerance_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/tolerance_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transformer_efficiency/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transformer_efficiency/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transformer_efficiency/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transformer_efficiency/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transformer_efficiency/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transformer_efficiency/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transformer_leakage_inductance/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transformer_leakage_inductance/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transformer_leakage_inductance/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transformer_leakage_inductance/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transformer_leakage_inductance/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transformer_leakage_inductance/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transmission_line_parameter_prediction/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transmission_line_parameter_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transmission_line_parameter_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transmission_line_parameter_prediction/inference.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transmission_line_parameter_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/passive/transmission_line_parameter_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/passive/visualization.py:1:1: W391 blank line at end of file
+./benchmarks/power/battery_management/baseline.py:1:1: W391 blank line at end of file
+./benchmarks/power/battery_management/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/power/battery_management/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/power/battery_management/evaluate.py:1:1: W391 blank line at end of file
+./benchmarks/power/battery_management/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/power/battery_management/inference.py:1:1: W391 blank line at end of file
+./benchmarks/power/battery_management/metrics.py:1:1: W391 blank line at end of file
+./benchmarks/power/battery_management/plots.py:1:1: W391 blank line at end of file
+./benchmarks/power/battery_management/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/power/battery_management/tests/test_loader.py:1:1: W391 blank line at end of file
+./benchmarks/power/battery_management/tests/test_metrics.py:1:1: W391 blank line at end of file
+./benchmarks/power/battery_management/tests/test_preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/power/battery_management/tests/test_training.py:1:1: W391 blank line at end of file
+./benchmarks/power/battery_management/train.py:1:1: W391 blank line at end of file
+./benchmarks/power/benchmark_registry.py:1:1: W391 blank line at end of file
+./benchmarks/power/benchmark_utils.py:1:1: W391 blank line at end of file
+./benchmarks/power/converter_efficiency/baseline.py:1:1: W391 blank line at end of file
+./benchmarks/power/converter_efficiency/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/power/converter_efficiency/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/power/converter_efficiency/evaluate.py:1:1: W391 blank line at end of file
+./benchmarks/power/converter_efficiency/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/power/converter_efficiency/inference.py:1:1: W391 blank line at end of file
+./benchmarks/power/converter_efficiency/metrics.py:1:1: W391 blank line at end of file
+./benchmarks/power/converter_efficiency/plots.py:1:1: W391 blank line at end of file
+./benchmarks/power/converter_efficiency/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/power/converter_efficiency/tests/test_loader.py:1:1: W391 blank line at end of file
+./benchmarks/power/converter_efficiency/tests/test_metrics.py:1:1: W391 blank line at end of file
+./benchmarks/power/converter_efficiency/tests/test_preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/power/converter_efficiency/tests/test_training.py:1:1: W391 blank line at end of file
+./benchmarks/power/converter_efficiency/train.py:1:1: W391 blank line at end of file
+./benchmarks/power/metrics.py:1:1: W391 blank line at end of file
+./benchmarks/power/run_all.py:1:1: W391 blank line at end of file
+./benchmarks/power/switching_loss/baseline.py:1:1: W391 blank line at end of file
+./benchmarks/power/switching_loss/benchmark.py:1:1: W391 blank line at end of file
+./benchmarks/power/switching_loss/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/power/switching_loss/evaluate.py:1:1: W391 blank line at end of file
+./benchmarks/power/switching_loss/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/power/switching_loss/inference.py:1:1: W391 blank line at end of file
+./benchmarks/power/switching_loss/metrics.py:1:1: W391 blank line at end of file
+./benchmarks/power/switching_loss/plots.py:1:1: W391 blank line at end of file
+./benchmarks/power/switching_loss/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/power/switching_loss/tests/test_loader.py:1:1: W391 blank line at end of file
+./benchmarks/power/switching_loss/tests/test_metrics.py:1:1: W391 blank line at end of file
+./benchmarks/power/switching_loss/tests/test_preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/power/switching_loss/tests/test_training.py:1:1: W391 blank line at end of file
+./benchmarks/power/switching_loss/train.py:1:1: W391 blank line at end of file
+./benchmarks/power/thermal_prediction/dataset_loader.py:1:1: W391 blank line at end of file
+./benchmarks/power/thermal_prediction/evaluate.py:1:1: W391 blank line at end of file
+./benchmarks/power/thermal_prediction/feature_engineering.py:1:1: W391 blank line at end of file
+./benchmarks/power/thermal_prediction/metrics.py:1:1: W391 blank line at end of file
+./benchmarks/power/thermal_prediction/plots.py:1:1: W391 blank line at end of file
+./benchmarks/power/thermal_prediction/preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/power/thermal_prediction/tests/test_loader.py:1:1: W391 blank line at end of file
+./benchmarks/power/thermal_prediction/tests/test_metrics.py:1:1: W391 blank line at end of file
+./benchmarks/power/thermal_prediction/tests/test_preprocessing.py:1:1: W391 blank line at end of file
+./benchmarks/power/thermal_prediction/tests/test_training.py:1:1: W391 blank line at end of file
+./benchmarks/power/thermal_prediction/train.py:1:1: W391 blank line at end of file
+./benchmarks/power/visualization.py:1:1: W391 blank line at end of file
+./src/benchmark/statistical_analysis/bayesian_statistics.py:46:80: E501 line too long (83 > 79 characters)
+./src/benchmark/statistical_analysis/confidence_intervals.py:161:9: E741 ambiguous variable name 'l'
+./src/benchmark/statistical_analysis/confidence_intervals.py:168:9: E741 ambiguous variable name 'l'
+./src/benchmark/statistical_analysis/effect_sizes.py:36:80: E501 line too long (83 > 79 characters)
+./src/circuitbench/core/evaluator.py:36:80: E501 line too long (82 > 79 characters)
+./src/circuitbench/core/logger.py:23:80: E501 line too long (86 > 79 characters)
+./src/circuitbench/core/logger.py:25:80: E501 line too long (88 > 79 characters)
+./src/circuitbench/core/runner.py:9:80: E501 line too long (85 > 79 characters)
+./src/circuitbench/datasets/base/dataset.py:53:80: E501 line too long (80 > 79 characters)
+./src/metrics/calibration_metrics.py:53:80: E501 line too long (80 > 79 characters)
+./src/metrics/classification_metrics.py:406:5: E999 IndentationError: unexpected indent
+./src/metrics/regression_metrics.py:377:5: E999 IndentationError: unexpected indent
+./src/models/base.py:157:80: E501 line too long (88 > 79 characters)
+./src/models/baselines/constant_predictor.py:135:80: E501 line too long (80 > 79 characters)
+./src/models/baselines/median_predictor.py:105:80: E501 line too long (81 > 79 characters)
+./src/models/classical/lasso_regression.py:172:80: E501 line too long (86 > 79 characters)
+./src/models/classical/ridge_regression.py:148:80: E501 line too long (86 > 79 characters)
+./src/models/factory.py:127:80: E501 line too long (84 > 79 characters)
+./src/models/registry.py:145:80: E501 line too long (84 > 79 characters)
+./src/models/registry.py:209:80: E501 line too long (87 > 79 characters)
+./src/models/typing.py:146:1: F821 undefined name 'EOFcat'
+./src/models/typing.py:146:10: F821 undefined name 'src'
+./src/models/typing.py:146:16: F821 undefined name 'models'
+./src/models/typing.py:146:25: F821 undefined name 'utils'
+./src/models/typing.py:154:1: F404 from __future__ imports must occur at the beginning of the file
+./src/models/typing.py:154:1: E402 module level import not at top of file
+./src/models/typing.py:156:1: E402 module level import not at top of file
+./src/models/typing.py:157:1: E402 module level import not at top of file
+./src/models/typing.py:158:1: E402 module level import not at top of file
+./src/models/typing.py:159:1: E402 module level import not at top of file
+./src/models/typing.py:161:1: E402 module level import not at top of file
+./src/statistics/statistical_tests.py:106:39: E203 whitespace before ':'
+./src/visualization/regression_plots.py:156:5: E999 IndentationError: unexpected indent
+./tests/conftest.py:160:15: E999 SyntaxError: invalid syntax
+./tests/test_benchmark_runner.py:684:1: E402 module level import not at top of file
+./tests/test_benchmark_runner.py:685:1: E402 module level import not at top of file
+./tests/test_benchmark_runner.py:890:1: F811 redefinition of unused 'test_attach_leaderboard' from line 693
+./tests/test_benchmark_runner.py:901:1: F811 redefinition of unused 'test_attach_report' from line 704
+./tests/test_benchmark_runner.py:912:1: F811 redefinition of unused 'test_attach_experiment' from line 715
+./tests/test_benchmark_runner.py:931:1: F811 redefinition of unused 'test_update_leaderboard' from line 734
+./tests/test_benchmark_runner.py:958:1: F811 redefinition of unused 'test_generate_report' from line 761
+./tests/test_benchmark_runner.py:986:1: F811 redefinition of unused 'test_multiple_callbacks' from line 789
+./tests/test_benchmark_runner.py:1016:1: F811 redefinition of unused 'BrokenModel' from line 819
+./tests/test_benchmark_runner.py:1028:1: F811 redefinition of unused 'test_continue_on_error' from line 831
+./tests/test_benchmark_runner.py:1056:1: F811 redefinition of unused 'test_end_to_end' from line 859

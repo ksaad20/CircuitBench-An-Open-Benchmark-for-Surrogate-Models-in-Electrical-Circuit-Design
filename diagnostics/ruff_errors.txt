@@ -1,0 +1,542 @@
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> benchmarks/power/battery_management/notebooks/benchmark_demo.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> benchmarks/power/battery_management/notebooks/exploratory_analysis.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> benchmarks/power/converter_efficiency/notebooks/benchmark_demo.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> benchmarks/power/converter_efficiency/notebooks/exploratory_analysis.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> benchmarks/power/thermal_prediction/notebooks/benchmark_demo.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> benchmarks/power/thermal_prediction/notebooks/exploratory_analysis.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 1 column 0
+--> datasets/examples/example_usage.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> notebooks/10_Leaderboard_Analysis.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> notebooks/1_Getting_Started.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> notebooks/2_Loading_Datasets.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> notebooks/3_Running_SPICE_Simulations.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> notebooks/4_Training_Baseline_Models.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> notebooks/5_Evaluating_Models.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> notebooks/6_SHAP_Explainability.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> notebooks/7_Hyperparameter_Optimization.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> notebooks/8_Adding_a_New_Dataset.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> notebooks/9_Creating_a_New_Benchmark.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> notebooks/examples/Analog_Filter_Example.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> notebooks/examples/Buck_Converter_Example.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> notebooks/examples/CMOS_Inverter_Example.ipynb:1:1
+ |
+ |
+
+invalid-syntax: Expected a Jupyter Notebook, which must be internally stored as JSON, but this file isn't valid JSON: EOF while parsing a value at line 2 column 0
+--> notebooks/examples/Fault_Detection_Example.ipynb:1:1
+ |
+ |
+
+E741 Ambiguous variable name: `l`
+   --> src/benchmark/statistical_analysis/confidence_intervals.py:161:9
+    |
+159 |         k = int(np.floor((n / 2) - z * np.sqrt(n) / 2))
+160 |
+161 |         l = int(np.ceil((n / 2) + z * np.sqrt(n) / 2))
+    |         ^
+162 |
+163 |         k = max(
+    |
+
+E741 Ambiguous variable name: `l`
+   --> src/benchmark/statistical_analysis/confidence_intervals.py:168:9
+    |
+166 |         )
+167 |
+168 |         l = min(
+    |         ^
+169 |             n - 1,
+170 |             l,
+    |
+
+invalid-syntax: Unexpected indentation
+   --> src/metrics/classification_metrics.py:406:1
+    |
+406 |     @staticmethod
+    | ^^^^
+407 |     def per_class_report(
+408 |         y_true,
+    |
+
+invalid-syntax: Expected a statement
+   --> src/metrics/classification_metrics.py:497:1
+    |
+495 |         )
+496 |
+    | ^
+    |
+
+invalid-syntax: Unexpected indentation
+   --> src/metrics/regression_metrics.py:377:1
+    |
+377 |     @staticmethod
+    | ^^^^
+378 |     def smape(
+379 |         y_true,
+    |
+
+invalid-syntax: Expected a statement
+   --> src/metrics/regression_metrics.py:812:1
+    |
+812 | __all__ = [
+    | ^
+813 |     "RegressionMetrics",
+814 | ]
+    |
+
+F821 Undefined name `EOFcat`
+   --> src/models/typing.py:146:1
+    |
+144 |     "ShapValues",
+145 | ]
+146 | EOFcat > src / models / utils.py << "EOF"
+    | ^^^^^^
+147 | """
+148 | CircuitBench Model Utilities
+    |
+
+F821 Undefined name `src`
+   --> src/models/typing.py:146:10
+    |
+144 |     "ShapValues",
+145 | ]
+146 | EOFcat > src / models / utils.py << "EOF"
+    |          ^^^
+147 | """
+148 | CircuitBench Model Utilities
+    |
+
+F821 Undefined name `models`
+   --> src/models/typing.py:146:16
+    |
+144 |     "ShapValues",
+145 | ]
+146 | EOFcat > src / models / utils.py << "EOF"
+    |                ^^^^^^
+147 | """
+148 | CircuitBench Model Utilities
+    |
+
+F821 Undefined name `utils`
+   --> src/models/typing.py:146:25
+    |
+144 |     "ShapValues",
+145 | ]
+146 | EOFcat > src / models / utils.py << "EOF"
+    |                         ^^^^^
+147 | """
+148 | CircuitBench Model Utilities
+    |
+
+F404 `from __future__` imports must occur at the beginning of the file
+   --> src/models/typing.py:154:1
+    |
+152 | """
+153 |
+154 | from __future__ import annotations
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+155 |
+156 | import random
+    |
+
+E402 Module level import not at top of file
+   --> src/models/typing.py:154:1
+    |
+152 | """
+153 |
+154 | from __future__ import annotations
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+155 |
+156 | import random
+    |
+
+E402 Module level import not at top of file
+   --> src/models/typing.py:156:1
+    |
+154 | from __future__ import annotations
+155 |
+156 | import random
+    | ^^^^^^^^^^^^^
+157 | import time
+158 | from pathlib import Path
+    |
+
+E402 Module level import not at top of file
+   --> src/models/typing.py:157:1
+    |
+156 | import random
+157 | import time
+    | ^^^^^^^^^^^
+158 | from pathlib import Path
+159 | from typing import Any, Dict
+    |
+
+E402 Module level import not at top of file
+   --> src/models/typing.py:158:1
+    |
+156 | import random
+157 | import time
+158 | from pathlib import Path
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+159 | from typing import Any, Dict
+    |
+
+E402 Module level import not at top of file
+   --> src/models/typing.py:159:1
+    |
+157 | import time
+158 | from pathlib import Path
+159 | from typing import Any, Dict
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+160 |
+161 | import numpy as np
+    |
+
+E402 Module level import not at top of file
+   --> src/models/typing.py:161:1
+    |
+159 | from typing import Any, Dict
+160 |
+161 | import numpy as np
+    | ^^^^^^^^^^^^^^^^^^
+162 |
+163 | # ==========================================================
+    |
+
+invalid-syntax: Unexpected indentation
+   --> src/visualization/regression_plots.py:156:1
+    |
+156 |     @staticmethod
+    | ^^^^
+157 |     def plot_bland_altman(
+158 |         y_true,
+    |
+
+invalid-syntax: Expected a statement
+   --> src/visualization/regression_plots.py:302:1
+    |
+300 |         return ax
+301 |
+    | ^
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests/conftest.py:160:14
+    |
+158 |     return 42
+159 |
+160 | EOFpython -m py_compile tests/conftest.py
+    |              ^^^^^^^^^^
+161 | git add tests/conftest.py
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests/conftest.py:160:25
+    |
+158 |     return 42
+159 |
+160 | EOFpython -m py_compile tests/conftest.py
+    |                         ^^^^^
+161 | git add tests/conftest.py
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests/conftest.py:161:5
+    |
+160 | EOFpython -m py_compile tests/conftest.py
+161 | git add tests/conftest.py
+    |     ^^^
+162 |
+163 | git commit -m "Complete pytest fixtures"
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests/conftest.py:161:9
+    |
+160 | EOFpython -m py_compile tests/conftest.py
+161 | git add tests/conftest.py
+    |         ^^^^^
+162 |
+163 | git commit -m "Complete pytest fixtures"
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests/conftest.py:163:5
+    |
+161 | git add tests/conftest.py
+162 |
+163 | git commit -m "Complete pytest fixtures"
+    |     ^^^^^^
+164 |
+165 | git push
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests/conftest.py:163:15
+    |
+161 | git add tests/conftest.py
+162 |
+163 | git commit -m "Complete pytest fixtures"
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+164 |
+165 | git push
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests/conftest.py:165:5
+    |
+163 | git commit -m "Complete pytest fixtures"
+164 |
+165 | git push
+    |     ^^^^
+166 | cat >> tests/conftest.py << 'EOF'
+    |
+
+E402 Module level import not at top of file
+   --> tests/test_benchmark_runner.py:684:1
+    |
+682 | # ---------------------------------------------------------------------
+683 |
+684 | from src.benchmark.leaderboard import Leaderboard
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+685 | from src.benchmark.reporting import BenchmarkReport
+    |
+
+E402 Module level import not at top of file
+   --> tests/test_benchmark_runner.py:685:1
+    |
+684 | from src.benchmark.leaderboard import Leaderboard
+685 | from src.benchmark.reporting import BenchmarkReport
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+686 |
+687 | try:
+    |
+
+F811 Redefinition of unused `test_attach_leaderboard` from line 693
+   --> tests/test_benchmark_runner.py:890:5
+    |
+890 | def test_attach_leaderboard():
+    |     ^^^^^^^^^^^^^^^^^^^^^^^ `test_attach_leaderboard` redefined here
+891 |
+892 |     runner = BenchmarkRunner()
+    |
+   ::: tests/test_benchmark_runner.py:693:5
+    |
+693 | def test_attach_leaderboard():
+    |     ----------------------- previous definition of `test_attach_leaderboard` here
+694 |
+695 |     runner = BenchmarkRunner()
+    |
+help: Remove definition: `test_attach_leaderboard`
+
+F811 Redefinition of unused `test_attach_report` from line 704
+   --> tests/test_benchmark_runner.py:901:5
+    |
+901 | def test_attach_report():
+    |     ^^^^^^^^^^^^^^^^^^ `test_attach_report` redefined here
+902 |
+903 |     runner = BenchmarkRunner()
+    |
+   ::: tests/test_benchmark_runner.py:704:5
+    |
+704 | def test_attach_report():
+    |     ------------------ previous definition of `test_attach_report` here
+705 |
+706 |     runner = BenchmarkRunner()
+    |
+help: Remove definition: `test_attach_report`
+
+F811 Redefinition of unused `test_attach_experiment` from line 715
+   --> tests/test_benchmark_runner.py:912:5
+    |
+912 | def test_attach_experiment():
+    |     ^^^^^^^^^^^^^^^^^^^^^^ `test_attach_experiment` redefined here
+913 |
+914 |     if Experiment is None:
+    |
+   ::: tests/test_benchmark_runner.py:715:5
+    |
+715 | def test_attach_experiment():
+    |     ---------------------- previous definition of `test_attach_experiment` here
+716 |
+717 |     if Experiment is None:
+    |
+help: Remove definition: `test_attach_experiment`
+
+F811 Redefinition of unused `test_update_leaderboard` from line 734
+   --> tests/test_benchmark_runner.py:931:5
+    |
+931 | def test_update_leaderboard(dataset, model):
+    |     ^^^^^^^^^^^^^^^^^^^^^^^ `test_update_leaderboard` redefined here
+932 |
+933 |     runner = BenchmarkRunner()
+    |
+   ::: tests/test_benchmark_runner.py:734:5
+    |
+734 | def test_update_leaderboard(dataset, model):
+    |     ----------------------- previous definition of `test_update_leaderboard` here
+735 |
+736 |     runner = BenchmarkRunner()
+    |
+help: Remove definition: `test_update_leaderboard`
+
+F811 Redefinition of unused `test_generate_report` from line 761
+   --> tests/test_benchmark_runner.py:958:5
+    |
+958 | def test_generate_report(tmp_path, dataset, model):
+    |     ^^^^^^^^^^^^^^^^^^^^ `test_generate_report` redefined here
+959 |
+960 |     report = BenchmarkReport("Benchmark Test")
+    |
+   ::: tests/test_benchmark_runner.py:761:5
+    |
+761 | def test_generate_report(tmp_path, dataset, model):
+    |     -------------------- previous definition of `test_generate_report` here
+762 |
+763 |     report = BenchmarkReport("Benchmark Test")
+    |
+help: Remove definition: `test_generate_report`
+
+F811 Redefinition of unused `test_multiple_callbacks` from line 789
+   --> tests/test_benchmark_runner.py:986:5
+    |
+986 | def test_multiple_callbacks():
+    |     ^^^^^^^^^^^^^^^^^^^^^^^ `test_multiple_callbacks` redefined here
+987 |
+988 |     runner = BenchmarkRunner()
+    |
+   ::: tests/test_benchmark_runner.py:789:5
+    |
+789 | def test_multiple_callbacks():
+    |     ----------------------- previous definition of `test_multiple_callbacks` here
+790 |
+791 |     runner = BenchmarkRunner()
+    |
+help: Remove definition: `test_multiple_callbacks`
+
+F811 Redefinition of unused `BrokenModel` from line 819
+    --> tests/test_benchmark_runner.py:1016:7
+     |
+1016 | class BrokenModel:
+     |       ^^^^^^^^^^^ `BrokenModel` redefined here
+1017 |     name = "Broken Model"
+     |
+    ::: tests/test_benchmark_runner.py:819:7
+     |
+ 819 | class BrokenModel:
+     |       ----------- previous definition of `BrokenModel` here
+ 820 |     name = "Broken Model"
+     |
+help: Remove definition: `BrokenModel`
+
+F811 Redefinition of unused `test_continue_on_error` from line 831
+    --> tests/test_benchmark_runner.py:1028:5
+     |
+1028 | def test_continue_on_error(dataset):
+     |     ^^^^^^^^^^^^^^^^^^^^^^ `test_continue_on_error` redefined here
+1029 |
+1030 |     runner = BenchmarkRunner()
+     |
+    ::: tests/test_benchmark_runner.py:831:5
+     |
+ 831 | def test_continue_on_error(dataset):
+     |     ---------------------- previous definition of `test_continue_on_error` here
+ 832 |
+ 833 |     runner = BenchmarkRunner()
+     |
+help: Remove definition: `test_continue_on_error`
+
+F811 Redefinition of unused `test_end_to_end` from line 859
+    --> tests/test_benchmark_runner.py:1056:5
+     |
+1056 | def test_end_to_end(dataset, model):
+     |     ^^^^^^^^^^^^^^^ `test_end_to_end` redefined here
+1057 |
+1058 |     runner = BenchmarkRunner()
+     |
+    ::: tests/test_benchmark_runner.py:859:5
+     |
+ 859 | def test_end_to_end(dataset, model):
+     |     --------------- previous definition of `test_end_to_end` here
+ 860 |
+ 861 |     runner = BenchmarkRunner()
+     |
+help: Remove definition: `test_end_to_end`
+
+Found 58 errors.
