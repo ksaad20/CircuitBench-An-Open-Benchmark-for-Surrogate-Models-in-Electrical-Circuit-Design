@@ -73,8 +73,6 @@ def model():
 
     return model
 
-EOFcat >> tests/conftest.py << 'EOF'
-
 @pytest.fixture
 def predictions():
 
@@ -156,8 +154,7 @@ def classification_dataframe():
 def random_state():
 
     return 42
-
-EOFpython -m py_compile tests/conftest.py
+    
 git add tests/conftest.py
 
 git commit -m "Complete pytest fixtures"
