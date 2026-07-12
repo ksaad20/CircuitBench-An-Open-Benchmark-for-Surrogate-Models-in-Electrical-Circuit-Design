@@ -289,3 +289,128 @@ __all__ = [
             np.mean(scores)
         )
 
+
+    @staticmethod
+    def success_at_k(
+        y_true,
+        y_pred,
+        k=10,
+    ):
+        """
+        Success@K.
+        """
+
+        y_true = set(y_true)
+        y_pred = set(y_pred[:k])
+
+        return int(
+            len(
+                y_true.intersection(
+                    y_pred
+                )
+            ) > 0
+        )
+
+    @staticmethod
+    def cumulative_gain(
+        relevance,
+    ):
+        """
+        Cumulative Gain.
+        """
+
+        relevance = np.asarray(
+            relevance,
+            dtype=float,
+        )
+
+        return float(
+            np.sum(
+                relevance
+            )
+        )
+
+    @staticmethod
+    def r_precision(
+        y_true,
+        y_pred,
+    ):
+        """
+        R-Precision.
+        """
+
+        r = len(y_true)
+
+        if r == 0:
+            return 0.0
+
+        return RankingMetrics.precision_at_k(
+            y_true,
+            y_pred,
+            k=r,
+        )
+
+    @staticmethod
+    def f1_at_k(
+        y_true,
+        y_pred,
+        k=10,
+    ):
+
+        precision = RankingMetrics.precision_at_k(
+            y_true,
+            y_pred,
+            k,
+        )
+
+        recall = RankingMetrics.recall_at_k(
+            y_true,
+            y_pred,
+            k,
+        )
+
+        if precision + recall == 0:
+            return 0.0
+
+        return float(
+            2
+            * precision
+            * recall
+            /
+            (
+                precision
+                + recall
+            )
+        )
+
+    @staticmethod
+    def coverage_at_k(
+        truth_lists,
+        prediction_lists,
+        k=10,
+    ):
+
+        covered = set()
+        relevant = set()
+
+        for truth, pred in zip(
+            truth_lists,
+            prediction_lists,
+        ):
+
+            relevant.update(truth)
+            covered.update(pred[:k])
+
+        if len(relevant) == 0:
+            return 0.0
+
+        return float(
+            len(
+                relevant.intersection(
+                    covered
+                )
+            )
+            /
+            len(relevant)
+        )
+
