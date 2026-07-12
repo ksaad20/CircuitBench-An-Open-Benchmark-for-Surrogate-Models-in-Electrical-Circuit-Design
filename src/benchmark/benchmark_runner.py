@@ -932,3 +932,227 @@ class BenchmarkRunner:
 
         return summary
 
+
+    ####################################################################
+    # Resource Profiling
+    ####################################################################
+
+    def profile_system(self):
+
+        import platform
+        import psutil
+
+        return {
+
+            "cpu_count": psutil.cpu_count(),
+
+            "logical_cpu_count": psutil.cpu_count(logical=True),
+
+            "memory_gb": round(
+
+                psutil.virtual_memory().total
+
+                / 1024**3,
+
+                2,
+
+            ),
+
+            "python_version": platform.python_version(),
+
+            "platform": platform.platform(),
+
+        }
+
+    # ------------------------------------------------------------------
+
+    def memory_usage_mb(self):
+
+        import os
+        import psutil
+
+        process = psutil.Process(
+
+            os.getpid()
+
+        )
+
+        return (
+
+            process.memory_info().rss
+
+            / 1024**2
+
+        )
+
+    # ------------------------------------------------------------------
+
+    def model_size_mb(
+
+        self,
+
+        model,
+
+    ):
+
+        import pickle
+        import tempfile
+        import os
+
+        with tempfile.NamedTemporaryFile(
+
+            delete=False,
+
+        ) as f:
+
+            pickle.dump(
+
+                model,
+
+                f,
+
+            )
+
+            path = f.name
+
+        size = (
+
+            os.path.getsize(path)
+
+            / 1024**2
+
+        )
+
+        os.remove(path)
+
+        return size
+
+    ####################################################################
+    # Parallel Execution
+    ####################################################################
+
+    def run_parallel(
+
+        self,
+
+        n_jobs=-1,
+
+    ):
+
+        from joblib import Parallel
+        from joblib import delayed
+
+        jobs = []
+
+        for dataset in self.datasets:
+
+            for model in self.models:
+
+                jobs.append(
+
+                    delayed(
+
+                        self.run_single
+
+                    )(
+
+                        model,
+
+                        dataset,
+
+                    )
+
+                )
+
+        return Parallel(
+
+            n_jobs=n_jobs,
+
+            backend="loky",
+
+        )(jobs)
+
+    ####################################################################
+    # Timeout Wrapper
+    ####################################################################
+
+    def run_with_timeout(
+
+        self,
+
+        model,
+
+        dataset,
+
+        timeout=3600,
+
+    ):
+
+        import concurrent.futures
+
+        with concurrent.futures.ThreadPoolExecutor(
+
+            max_workers=1,
+
+        ) as executor:
+
+            future = executor.submit(
+
+                self.run_single,
+
+                model,
+
+                dataset,
+
+            )
+
+            return future.result(
+
+                timeout=timeout,
+
+            )
+
+    ####################################################################
+    # Progress
+    ####################################################################
+
+    def progress_iterator(
+
+        self,
+
+        iterable,
+
+    ):
+
+        try:
+
+            from tqdm import tqdm
+
+            return tqdm(iterable)
+
+        except ImportError:
+
+            return iterable
+
+    ####################################################################
+    # Benchmark Metadata
+    ####################################################################
+
+    def benchmark_metadata(self):
+
+        return {
+
+            "runner": self.name,
+
+            "random_seed": self.random_state,
+
+            "models": self.number_of_models,
+
+            "datasets": self.number_of_datasets,
+
+            "metrics": self.number_of_metrics,
+
+            "system": self.profile_system(),
+
+        }
+
