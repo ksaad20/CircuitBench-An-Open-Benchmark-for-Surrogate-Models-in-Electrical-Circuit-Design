@@ -396,3 +396,101 @@ class ClassificationMetrics:
 __all__ = [
     "ClassificationMetrics",
 ]
+
+from sklearn.metrics import (
+    classification_report,
+    multilabel_confusion_matrix,
+)
+
+
+    @staticmethod
+    def per_class_report(
+        y_true,
+        y_pred,
+        output_dict=True,
+    ):
+        """
+        Per-class precision, recall, F1-score and support.
+        """
+
+        return classification_report(
+            y_true,
+            y_pred,
+            output_dict=output_dict,
+            zero_division=0,
+        )
+
+    @staticmethod
+    def multilabel_confusion(
+        y_true,
+        y_pred,
+    ):
+        """
+        Multilabel confusion matrices.
+        """
+
+        return multilabel_confusion_matrix(
+            y_true,
+            y_pred,
+        )
+
+    @staticmethod
+    def macro_f1(
+        y_true,
+        y_pred,
+    ):
+
+        return ClassificationMetrics.f1(
+            y_true,
+            y_pred,
+            average="macro",
+        )
+
+    @staticmethod
+    def micro_f1(
+        y_true,
+        y_pred,
+    ):
+
+        return ClassificationMetrics.f1(
+            y_true,
+            y_pred,
+            average="micro",
+        )
+
+    @staticmethod
+    def weighted_f1(
+        y_true,
+        y_pred,
+    ):
+
+        return ClassificationMetrics.f1(
+            y_true,
+            y_pred,
+            average="weighted",
+        )
+
+    @staticmethod
+    def macro_precision(
+        y_true,
+        y_pred,
+    ):
+
+        return ClassificationMetrics.precision(
+            y_true,
+            y_pred,
+            average="macro",
+        )
+
+    @staticmethod
+    def macro_recall(
+        y_true,
+        y_pred,
+    ):
+
+        return ClassificationMetrics.recall(
+            y_true,
+            y_pred,
+            average="macro",
+        )
+
