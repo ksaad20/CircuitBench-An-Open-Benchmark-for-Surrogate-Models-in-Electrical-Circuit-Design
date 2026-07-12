@@ -68,10 +68,7 @@ class Bootstrap:
         )
 
         values = np.asarray(
-            [
-                statistic(sample)
-                for sample in samples
-            ],
+            [statistic(sample) for sample in samples],
             dtype=float,
         )
 
@@ -155,9 +152,7 @@ class Bootstrap:
             random_state,
         )
 
-        return float(
-            np.mean(values) - original
-        )
+        return float(np.mean(values) - original)
 
     # ---------------------------------------------------------
 
@@ -171,31 +166,23 @@ class Bootstrap:
     ) -> Dict:
 
         return {
-
             "estimate": float(statistic(x)),
-
-            "bootstrap_standard_error":
-                cls.standard_error(
-                    x,
-                    statistic,
-                    n_bootstrap,
-                ),
-
-            "bootstrap_bias":
-                cls.bias(
-                    x,
-                    statistic,
-                    n_bootstrap,
-                ),
-
-            "confidence_interval":
-                cls.confidence_interval(
-                    x,
-                    statistic,
-                    confidence,
-                    n_bootstrap,
-                ),
-
+            "bootstrap_standard_error": cls.standard_error(
+                x,
+                statistic,
+                n_bootstrap,
+            ),
+            "bootstrap_bias": cls.bias(
+                x,
+                statistic,
+                n_bootstrap,
+            ),
+            "confidence_interval": cls.confidence_interval(
+                x,
+                statistic,
+                confidence,
+                n_bootstrap,
+            ),
         }
 
 

@@ -24,7 +24,7 @@ class FigureGenerator:
         leaderboard,
         metric,
         output=None,
-        figsize=(8,5),
+        figsize=(8, 5),
     ):
 
         df = leaderboard.sort_values(
@@ -32,9 +32,7 @@ class FigureGenerator:
             ascending=False,
         )
 
-        fig, ax = plt.subplots(
-            figsize=figsize
-        )
+        fig, ax = plt.subplots(figsize=figsize)
 
         ax.bar(
             df["Model"],
@@ -45,9 +43,7 @@ class FigureGenerator:
 
         ax.set_xlabel("Model")
 
-        ax.set_title(
-            f"{metric} Comparison"
-        )
+        ax.set_title(f"{metric} Comparison")
 
         plt.xticks(
             rotation=45,
@@ -71,32 +67,22 @@ class FigureGenerator:
 
         return fig, ax
 
-
     @staticmethod
     def fit_time_plot(
         leaderboard,
         output=None,
     ):
 
-        fig, ax = plt.subplots(
-            figsize=(8,5)
-        )
+        fig, ax = plt.subplots(figsize=(8, 5))
 
         ax.bar(
-
             leaderboard["Model"],
-
             leaderboard["FitTime"],
-
         )
 
-        ax.set_ylabel(
-            "Seconds"
-        )
+        ax.set_ylabel("Seconds")
 
-        ax.set_title(
-            "Model Training Time"
-        )
+        ax.set_title("Model Training Time")
 
         plt.xticks(
             rotation=45,
@@ -108,17 +94,12 @@ class FigureGenerator:
         if output:
 
             plt.savefig(
-
                 output,
-
                 dpi=300,
-
                 bbox_inches="tight",
-
             )
 
         return fig, ax
-
 
     @staticmethod
     def prediction_time_plot(
@@ -126,25 +107,16 @@ class FigureGenerator:
         output=None,
     ):
 
-        fig, ax = plt.subplots(
-            figsize=(8,5)
-        )
+        fig, ax = plt.subplots(figsize=(8, 5))
 
         ax.bar(
-
             leaderboard["Model"],
-
             leaderboard["PredictTime"],
-
         )
 
-        ax.set_ylabel(
-            "Seconds"
-        )
+        ax.set_ylabel("Seconds")
 
-        ax.set_title(
-            "Prediction Time"
-        )
+        ax.set_title("Prediction Time")
 
         plt.xticks(
             rotation=45,
@@ -156,17 +128,12 @@ class FigureGenerator:
         if output:
 
             plt.savefig(
-
                 output,
-
                 dpi=300,
-
                 bbox_inches="tight",
-
             )
 
         return fig, ax
-
 
     @staticmethod
     def memory_plot(
@@ -178,25 +145,16 @@ class FigureGenerator:
 
             return None
 
-        fig, ax = plt.subplots(
-            figsize=(8,5)
-        )
+        fig, ax = plt.subplots(figsize=(8, 5))
 
         ax.bar(
-
             leaderboard["Model"],
-
             leaderboard["MemoryMB"],
-
         )
 
-        ax.set_ylabel(
-            "MB"
-        )
+        ax.set_ylabel("MB")
 
-        ax.set_title(
-            "Peak Memory Usage"
-        )
+        ax.set_title("Peak Memory Usage")
 
         plt.xticks(
             rotation=45,
@@ -208,15 +166,9 @@ class FigureGenerator:
         if output:
 
             plt.savefig(
-
                 output,
-
                 dpi=300,
-
                 bbox_inches="tight",
-
             )
 
         return fig, ax
-
-

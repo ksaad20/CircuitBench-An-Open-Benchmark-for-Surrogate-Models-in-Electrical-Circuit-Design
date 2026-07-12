@@ -55,19 +55,11 @@ class Experiment:
     def summary(self):
 
         return {
-
             "id": self.id,
-
             "name": self.name,
-
             "status": self.status,
-
             "created": str(self.created),
-
             "parameters": self.parameters,
-
             "metrics": self.metrics,
-
-            "tags": self.tags
-
+            "tags": self.tags,
         }

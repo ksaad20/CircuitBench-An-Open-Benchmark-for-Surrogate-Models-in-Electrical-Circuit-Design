@@ -131,35 +131,26 @@ class PowerAnalysis:
     ) -> Dict:
 
         return {
-
-            "paired_ttest_power":
-                cls.paired_ttest_power(
-                    effect_size,
-                    n_samples,
-                    alpha,
-                ),
-
-            "independent_ttest_power":
-                cls.independent_ttest_power(
-                    effect_size,
-                    n_samples,
-                    alpha,
-                ),
-
-            "required_sample_size_80_power":
-                cls.required_sample_size(
-                    effect_size,
-                    power=0.80,
-                    alpha=alpha,
-                ),
-
-            "required_sample_size_90_power":
-                cls.required_sample_size(
-                    effect_size,
-                    power=0.90,
-                    alpha=alpha,
-                ),
-
+            "paired_ttest_power": cls.paired_ttest_power(
+                effect_size,
+                n_samples,
+                alpha,
+            ),
+            "independent_ttest_power": cls.independent_ttest_power(
+                effect_size,
+                n_samples,
+                alpha,
+            ),
+            "required_sample_size_80_power": cls.required_sample_size(
+                effect_size,
+                power=0.80,
+                alpha=alpha,
+            ),
+            "required_sample_size_90_power": cls.required_sample_size(
+                effect_size,
+                power=0.90,
+                alpha=alpha,
+            ),
         }
 
 

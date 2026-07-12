@@ -53,9 +53,7 @@ class ICEPlots:
 
             X_temp.iloc[:, feature] = value
 
-            curves[:, i] = estimator.predict(
-                X_temp
-            )
+            curves[:, i] = estimator.predict(X_temp)
 
         return values, curves
 
@@ -67,27 +65,20 @@ class ICEPlots:
         grid_points=50,
         max_curves=100,
         alpha=0.2,
-        figsize=(6,4),
+        figsize=(6, 4),
     ):
         """
         Plot ICE curves.
         """
 
         values, curves = ICEPlots.compute(
-
             estimator,
-
             X,
-
             feature,
-
             grid_points,
-
         )
 
-        fig, ax = plt.subplots(
-            figsize=figsize
-        )
+        fig, ax = plt.subplots(figsize=figsize)
 
         n = min(
             max_curves,
@@ -97,34 +88,18 @@ class ICEPlots:
         for curve in curves[:n]:
 
             ax.plot(
-
                 values,
-
                 curve,
-
                 alpha=alpha,
-
                 linewidth=1,
-
             )
 
-        ax.set_xlabel(
-            str(
-                pd.DataFrame(X).columns[
-                    feature
-                ]
-            )
-        )
+        ax.set_xlabel(str(pd.DataFrame(X).columns[feature]))
 
-        ax.set_ylabel(
-            "Prediction"
-        )
+        ax.set_ylabel("Prediction")
 
-        ax.set_title(
-            "Individual Conditional Expectation"
-        )
+        ax.set_title("Individual Conditional Expectation")
 
         plt.tight_layout()
 
         return fig, ax
-

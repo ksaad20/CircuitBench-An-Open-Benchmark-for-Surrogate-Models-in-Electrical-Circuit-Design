@@ -71,23 +71,16 @@ class SupportVectorRegressionModel(SklearnModel):
 
         super().fit(X, y)
 
-        self.metadata.update({
-
-            "kernel": self.model.kernel,
-
-            "C": self.model.C,
-
-            "epsilon": self.model.epsilon,
-
-            "gamma": self.model.gamma,
-
-            "degree": self.model.degree,
-
-            "support_vectors": len(
-                self.model.support_
-            ),
-
-        })
+        self.metadata.update(
+            {
+                "kernel": self.model.kernel,
+                "C": self.model.C,
+                "epsilon": self.model.epsilon,
+                "gamma": self.model.gamma,
+                "degree": self.model.degree,
+                "support_vectors": len(self.model.support_),
+            }
+        )
 
         return self
 
@@ -138,21 +131,13 @@ class SupportVectorRegressionModel(SklearnModel):
     def __repr__(self):
 
         return (
-
             "SupportVectorRegressionModel("
-
             f"kernel='{self.model.kernel}', "
-
             f"C={self.model.C}, "
-
             f"fitted={self.is_fitted})"
-
         )
 
 
 __all__ = [
-
     "SupportVectorRegressionModel",
-
 ]
-

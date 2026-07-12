@@ -59,9 +59,7 @@ class RandomPredictor(BaselineRegressor):
         y = np.asarray(y, dtype=float)
 
         if y.ndim != 1:
-            raise ValueError(
-                "Target vector must be one-dimensional."
-            )
+            raise ValueError("Target vector must be one-dimensional.")
 
         self.minimum_ = float(np.min(y))
         self.maximum_ = float(np.max(y))
@@ -86,9 +84,7 @@ class RandomPredictor(BaselineRegressor):
     ):
 
         if not self.is_fitted:
-            raise RuntimeError(
-                "Model has not been fitted."
-            )
+            raise RuntimeError("Model has not been fitted.")
 
         return self._rng.uniform(
             self.minimum_,
@@ -121,7 +117,6 @@ class RandomPredictor(BaselineRegressor):
         self,
         seed: int,
     ):
-
         """
         Reset the random number generator.
         """
@@ -139,4 +134,3 @@ class RandomPredictor(BaselineRegressor):
             f"range=[{self.minimum_}, {self.maximum_}], "
             f"random_state={self.random_state})"
         )
-

@@ -49,7 +49,6 @@ class ModelRegistry:
         category: str = "general",
         **metadata,
     ) -> Callable:
-
         """
         Decorator used for registering models.
         """
@@ -60,9 +59,7 @@ class ModelRegistry:
 
             if model_name in self._models:
 
-                raise ModelRegistrationError(
-                    f"'{model_name}' already exists."
-                )
+                raise ModelRegistrationError(f"'{model_name}' already exists.")
 
             self._models[model_name] = cls
 
@@ -134,37 +131,26 @@ class ModelRegistry:
     # -----------------------------------------------------
 
     def models_in_category(self, category: str):
-
         """
         Return all registered models within a category.
         """
 
-        return sorted(
-            self._categories.get(category, [])
-        )
+        return sorted(self._categories.get(category, []))
 
     # -----------------------------------------------------
 
     def search(self, keyword: str):
-
         """
         Search registry by keyword.
         """
 
         keyword = keyword.lower()
 
-        return sorted(
-            [
-                model
-                for model in self._models
-                if keyword in model.lower()
-            ]
-        )
+        return sorted([model for model in self._models if keyword in model.lower()])
 
     # -----------------------------------------------------
 
     def count(self):
-
         """
         Number of registered models.
         """
@@ -174,7 +160,6 @@ class ModelRegistry:
     # -----------------------------------------------------
 
     def summary(self):
-
         """
         Print registry summary.
         """
@@ -201,7 +186,6 @@ class ModelRegistry:
     # -----------------------------------------------------
 
     def clear(self):
-
         """
         Remove every registered model.
         """
@@ -246,6 +230,7 @@ registry = ModelRegistry()
 # Convenience Decorator
 # ==========================================================
 
+
 def register_model(
     name: str | None = None,
     category: str = "general",
@@ -276,4 +261,3 @@ __all__ = [
     "registry",
     "register_model",
 ]
-

@@ -43,24 +43,10 @@ class BayesianStatistics:
             ddof=1,
         )
 
-        posterior_variance = 1.0 / (
-
-            (1.0 / prior_variance)
-
-            +
-
-            (n / sample_variance)
-
-        )
+        posterior_variance = 1.0 / ((1.0 / prior_variance) + (n / sample_variance))
 
         posterior_mean = posterior_variance * (
-
-            (prior_mean / prior_variance)
-
-            +
-
-            (n * sample_mean / sample_variance)
-
+            (prior_mean / prior_variance) + (n * sample_mean / sample_variance)
         )
 
         return float(posterior_mean)
@@ -82,15 +68,7 @@ class BayesianStatistics:
             ddof=1,
         )
 
-        posterior = 1.0 / (
-
-            (1.0 / prior_variance)
-
-            +
-
-            (n / sample_variance)
-
-        )
+        posterior = 1.0 / ((1.0 / prior_variance) + (n / sample_variance))
 
         return float(posterior)
 
@@ -102,24 +80,15 @@ class BayesianStatistics:
         confidence=0.95,
     ):
 
-        mean = BayesianStatistics.posterior_mean(
-            data
-        )
+        mean = BayesianStatistics.posterior_mean(data)
 
-        variance = BayesianStatistics.posterior_variance(
-            data
-        )
+        variance = BayesianStatistics.posterior_variance(data)
 
-        std = np.sqrt(
-            variance
-        )
+        std = np.sqrt(variance)
 
         z = t.ppf(
-
             (1 + confidence) / 2,
-
             len(data) - 1,
-
         )
 
         lower = mean - z * std
@@ -127,69 +96,37 @@ class BayesianStatistics:
         upper = mean + z * std
 
         return (
-
             float(lower),
-
             float(upper),
-
         )
 
     # -------------------------------------------------------------
 
     @staticmethod
     def bayes_factor_bic(
-
         bic_model_1,
-
         bic_model_2,
-
     ):
 
-        return float(
-
-            np.exp(
-
-                (bic_model_2 - bic_model_1)
-
-                / 2.0
-
-            )
-
-        )
+        return float(np.exp((bic_model_2 - bic_model_1) / 2.0))
 
     # -------------------------------------------------------------
 
     @staticmethod
     def posterior_probability(
-
         bayes_factor,
-
     ):
 
-        return float(
-
-            bayes_factor
-
-            /
-
-            (1.0 + bayes_factor)
-
-        )
+        return float(bayes_factor / (1.0 + bayes_factor))
 
     # -------------------------------------------------------------
 
     @staticmethod
     def evidence_strength(
-
         bayes_factor,
-
     ):
 
-        bf = abs(
-
-            bayes_factor
-
-        )
+        bf = abs(bayes_factor)
 
         if bf < 1:
 
@@ -219,78 +156,34 @@ class BayesianStatistics:
 
     @classmethod
     def summary(
-
         cls,
-
         data,
-
         bic_model_1=None,
-
         bic_model_2=None,
-
     ) -> Dict:
 
         results = {
-
-            "posterior_mean":
-
-                cls.posterior_mean(data),
-
-            "posterior_variance":
-
-                cls.posterior_variance(data),
-
-            "credible_interval":
-
-                cls.credible_interval(data),
-
+            "posterior_mean": cls.posterior_mean(data),
+            "posterior_variance": cls.posterior_variance(data),
+            "credible_interval": cls.credible_interval(data),
         }
 
-        if (
-
-            bic_model_1 is not None
-
-            and
-
-            bic_model_2 is not None
-
-        ):
+        if bic_model_1 is not None and bic_model_2 is not None:
 
             bf = cls.bayes_factor_bic(
-
                 bic_model_1,
-
                 bic_model_2,
-
             )
 
             results["bayes_factor"] = bf
 
-            results["posterior_probability"] = (
+            results["posterior_probability"] = cls.posterior_probability(bf)
 
-                cls.posterior_probability(
-
-                    bf
-
-                )
-
-            )
-
-            results["evidence"] = (
-
-                cls.evidence_strength(
-
-                    bf
-
-                )
-
-            )
+            results["evidence"] = cls.evidence_strength(bf)
 
         return results
 
 
 __all__ = [
-
     "BayesianStatistics",
-
 ]

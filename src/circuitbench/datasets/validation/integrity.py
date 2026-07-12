@@ -36,15 +36,9 @@ class DatasetIntegrity:
     def report(df: pd.DataFrame):
 
         return {
-
             "rows": df.shape[0],
-
             "columns": df.shape[1],
-
             "duplicates": DatasetIntegrity.duplicate_rows(df),
-
             "total_missing": DatasetIntegrity.total_missing(df),
-
-            "memory_bytes": DatasetIntegrity.memory_usage(df)
-
+            "memory_bytes": DatasetIntegrity.memory_usage(df),
         }

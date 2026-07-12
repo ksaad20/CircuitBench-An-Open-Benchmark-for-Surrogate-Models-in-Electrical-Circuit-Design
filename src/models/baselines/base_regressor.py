@@ -10,7 +10,6 @@ from .base_model import BaselineModel
 
 
 class BaselineRegressor(BaselineModel):
-
     """
     Parent class for all baseline regressors.
     """
@@ -32,13 +31,10 @@ class BaselineRegressor(BaselineModel):
 
         if not self.is_fitted:
 
-            raise RuntimeError(
-                "Model has not been fitted."
-            )
+            raise RuntimeError("Model has not been fitted.")
 
         return np.full(
             len(X),
             self.constant_,
             dtype=float,
         )
-

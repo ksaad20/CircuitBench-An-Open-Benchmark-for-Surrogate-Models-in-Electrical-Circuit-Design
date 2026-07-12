@@ -36,11 +36,8 @@ class Leaderboard:
     ):
 
         record = {
-
             "model": model,
-
             "dataset": dataset,
-
         }
 
         record.update(metrics)
@@ -84,19 +81,7 @@ class Leaderboard:
 
         df = self.dataframe()
 
-        return (
-
-            df.groupby("model")[metric]
-
-            .mean()
-
-            .sort_values(
-
-                ascending=False
-
-            )
-
-        )
+        return df.groupby("model")[metric].mean().sort_values(ascending=False)
 
     # ----------------------------------------------------------
 
@@ -107,29 +92,12 @@ class Leaderboard:
 
         df = self.dataframe()
 
-        df["rank"] = (
-
-            df.groupby("dataset")[metric]
-
-            .rank(
-
-                ascending=False,
-
-                method="average",
-
-            )
-
+        df["rank"] = df.groupby("dataset")[metric].rank(
+            ascending=False,
+            method="average",
         )
 
-        return (
-
-            df.groupby("model")["rank"]
-
-            .mean()
-
-            .sort_values()
-
-        )
+        return df.groupby("model")["rank"].mean().sort_values()
 
     # ----------------------------------------------------------
 
@@ -139,13 +107,7 @@ class Leaderboard:
         n: int = 10,
     ):
 
-        return (
-
-            self.average_metric(metric)
-
-            .head(n)
-
-        )
+        return self.average_metric(metric).head(n)
 
     # ----------------------------------------------------------
 
@@ -155,11 +117,8 @@ class Leaderboard:
     ):
 
         self.dataframe().to_csv(
-
             filename,
-
             index=False,
-
         )
 
     # ----------------------------------------------------------
@@ -170,32 +129,14 @@ class Leaderboard:
     ):
 
         with open(
-
             filename,
-
             "w",
-
             encoding="utf-8",
-
         ) as f:
 
-            f.write(
+            f.write("# CircuitBench Leaderboard\n\n")
 
-                "# CircuitBench Leaderboard\n\n"
-
-            )
-
-            f.write(
-
-                self.dataframe()
-
-                .to_markdown(
-
-                    index=False
-
-                )
-
-            )
+            f.write(self.dataframe().to_markdown(index=False))
 
     # ----------------------------------------------------------
 
@@ -204,21 +145,9 @@ class Leaderboard:
         df = self.dataframe()
 
         return {
-
             "results": len(df),
-
-            "datasets":
-
-                df.dataset.nunique()
-
-                if not df.empty else 0,
-
-            "models":
-
-                df.model.nunique()
-
-                if not df.empty else 0,
-
+            "datasets": df.dataset.nunique() if not df.empty else 0,
+            "models": df.model.nunique() if not df.empty else 0,
         }
 
     # ----------------------------------------------------------
@@ -229,8 +158,5 @@ class Leaderboard:
 
 
 __all__ = [
-
     "Leaderboard",
-
 ]
-

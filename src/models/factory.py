@@ -46,9 +46,7 @@ class ModelFactory:
 
         if not registry.exists(model_name):
 
-            raise InvalidModelError(
-                f"Unknown model '{model_name}'"
-            )
+            raise InvalidModelError(f"Unknown model '{model_name}'")
 
         model_cls = registry.get(model_name)
 
@@ -72,12 +70,10 @@ class ModelFactory:
         for name in model_names:
 
             models.append(
-
                 ModelFactory.create(
                     name,
                     **common_parameters,
                 )
-
             )
 
         return models
@@ -86,7 +82,6 @@ class ModelFactory:
 
     @staticmethod
     def available():
-
         """
         Return all registered models.
         """
@@ -97,7 +92,6 @@ class ModelFactory:
 
     @staticmethod
     def categories():
-
         """
         Return available categories.
         """
@@ -132,9 +126,7 @@ class ModelFactory:
         model_name = config.get("model")
 
         if model_name is None:
-            raise InvalidModelError(
-                "Configuration does not contain a 'model' key."
-            )
+            raise InvalidModelError("Configuration does not contain a 'model' key.")
 
         parameters = config.get("parameters", {})
 
@@ -171,7 +163,6 @@ class ModelFactory:
 
     @staticmethod
     def validate(model_name: str):
-
         """
         Validate whether a model exists.
         """
@@ -182,7 +173,6 @@ class ModelFactory:
 
     @staticmethod
     def describe(model_name: str):
-
         """
         Return model metadata.
         """
@@ -193,14 +183,11 @@ class ModelFactory:
 
     @staticmethod
     def benchmark_suite():
-
         """
         Return every registered model.
         """
 
-        return ModelFactory.create_many(
-            registry.models()
-        )
+        return ModelFactory.create_many(registry.models())
 
     # -----------------------------------------------------
 
@@ -209,7 +196,6 @@ class ModelFactory:
         category: str,
         **kwargs,
     ):
-
         """
         Instantiate all models within a category.
         """
@@ -223,7 +209,6 @@ class ModelFactory:
 
     @staticmethod
     def default_model():
-
         """
         Return the first registered model.
         """
@@ -231,9 +216,7 @@ class ModelFactory:
         models = registry.models()
 
         if not models:
-            raise InvalidModelError(
-                "No models have been registered."
-            )
+            raise InvalidModelError("No models have been registered.")
 
         return ModelFactory.create(models[0])
 
@@ -241,4 +224,3 @@ class ModelFactory:
 __all__ = [
     "ModelFactory",
 ]
-

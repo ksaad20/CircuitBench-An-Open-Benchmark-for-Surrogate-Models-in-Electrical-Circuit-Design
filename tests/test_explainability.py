@@ -31,10 +31,7 @@ def create_model():
 
     X = pd.DataFrame(
         X,
-        columns=[
-            f"Feature_{i}"
-            for i in range(6)
-        ],
+        columns=[f"Feature_{i}" for i in range(6)],
     )
 
     model = RandomForestRegressor(
@@ -65,9 +62,7 @@ def test_permutation_importance():
 
     assert result.importances_mean.shape[0] == X.shape[1]
 
-    df = PermutationImportance.to_dataframe(
-        result
-    )
+    df = PermutationImportance.to_dataframe(result)
 
     assert not df.empty
 
@@ -154,12 +149,8 @@ def test_importance_dataframe():
         n_repeats=3,
     )
 
-    df = PermutationImportance.to_dataframe(
-        result
-    )
+    df = PermutationImportance.to_dataframe(result)
 
     assert "feature" in df.columns
 
     assert "importance" in df.columns
-
-

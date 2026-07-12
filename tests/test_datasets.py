@@ -4,7 +4,6 @@ Dataset validation tests.
 
 from pathlib import Path
 
-
 DATASET_DIR = Path("datasets")
 
 

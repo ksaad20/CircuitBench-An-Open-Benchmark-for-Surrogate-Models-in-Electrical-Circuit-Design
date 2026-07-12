@@ -43,17 +43,11 @@ class ROCAUCStatistics:
         random_state=42,
     ):
 
-        rng = np.random.default_rng(
-            random_state
-        )
+        rng = np.random.default_rng(random_state)
 
-        y_true = np.asarray(
-            y_true
-        )
+        y_true = np.asarray(y_true)
 
-        y_score = np.asarray(
-            y_score
-        )
+        y_score = np.asarray(y_score)
 
         auc = roc_auc_score(
             y_true,
@@ -62,9 +56,7 @@ class ROCAUCStatistics:
 
         scores = []
 
-        n = len(
-            y_true
-        )
+        n = len(y_true)
 
         while len(scores) < n_bootstrap:
 
@@ -74,28 +66,17 @@ class ROCAUCStatistics:
                 size=n,
             )
 
-            if len(
-                np.unique(
-                    y_true[idx]
-                )
-            ) < 2:
+            if len(np.unique(y_true[idx])) < 2:
                 continue
 
             scores.append(
-
                 roc_auc_score(
-
                     y_true[idx],
-
                     y_score[idx],
-
                 )
-
             )
 
-        scores = np.asarray(
-            scores
-        )
+        scores = np.asarray(scores)
 
         alpha = 1.0 - confidence
 
@@ -110,27 +91,14 @@ class ROCAUCStatistics:
         )
 
         return AUCConfidenceInterval(
-
-            auc=float(
-                auc
-            ),
-
-            lower=float(
-                lower
-            ),
-
-            upper=float(
-                upper
-            ),
-
+            auc=float(auc),
+            lower=float(lower),
+            upper=float(upper),
             std=float(
                 np.std(
                     scores,
                     ddof=1,
                 )
             ),
-
             bootstrap_scores=scores,
-
         )
-

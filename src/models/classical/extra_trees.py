@@ -61,19 +61,15 @@ class ExtraTreesRegressionModel(SklearnModel):
 
         super().fit(X, y)
 
-        self.metadata.update({
-
-            "n_estimators": self.model.n_estimators,
-
-            "criterion": self.model.criterion,
-
-            "max_depth": self.model.max_depth,
-
-            "bootstrap": self.model.bootstrap,
-
-            "max_features": self.model.max_features,
-
-        })
+        self.metadata.update(
+            {
+                "n_estimators": self.model.n_estimators,
+                "criterion": self.model.criterion,
+                "max_depth": self.model.max_depth,
+                "bootstrap": self.model.bootstrap,
+                "max_features": self.model.max_features,
+            }
+        )
 
         return self
 
@@ -129,18 +125,12 @@ class ExtraTreesRegressionModel(SklearnModel):
     def __repr__(self):
 
         return (
-
             "ExtraTreesRegressionModel("
-
             f"trees={self.model.n_estimators}, "
-
             f"fitted={self.is_fitted})"
-
         )
 
 
 __all__ = [
-
     "ExtraTreesRegressionModel",
-
 ]

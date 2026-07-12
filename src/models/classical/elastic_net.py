@@ -86,13 +86,9 @@ class ElasticNetRegressionModel(SklearnModel):
 
     def selected_features(self):
 
-        coef = np.asarray(
-            self.model.coef_
-        )
+        coef = np.asarray(self.model.coef_)
 
-        return np.where(
-            coef != 0
-        )[0]
+        return np.where(coef != 0)[0]
 
     # -----------------------------------------------------
 
@@ -114,9 +110,7 @@ class ElasticNetRegressionModel(SklearnModel):
         for key, value in self.metadata.items():
             print(f"{key:20}: {value}")
 
-        print(
-            f"Selected Features : {len(self.selected_features())}"
-        )
+        print(f"Selected Features : {len(self.selected_features())}")
 
         print("=" * 70)
 

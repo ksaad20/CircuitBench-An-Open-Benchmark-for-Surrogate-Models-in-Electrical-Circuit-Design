@@ -151,27 +151,13 @@ class Assumptions:
     def report(cls, x, *groups) -> Dict:
 
         report = {
-
             "sample_size": len(x),
-
-            "shapiro":
-                cls.shapiro_test(x),
-
-            "dagostino":
-                cls.dagostino_test(x),
-
-            "jarque_bera":
-                cls.jarque_bera_test(x),
-
-            "anderson":
-                cls.anderson_test(x),
-
-            "skewness":
-                cls.skewness(x),
-
-            "kurtosis":
-                cls.kurtosis(x),
-
+            "shapiro": cls.shapiro_test(x),
+            "dagostino": cls.dagostino_test(x),
+            "jarque_bera": cls.jarque_bera_test(x),
+            "anderson": cls.anderson_test(x),
+            "skewness": cls.skewness(x),
+            "kurtosis": cls.kurtosis(x),
         }
 
         if len(groups) >= 2:

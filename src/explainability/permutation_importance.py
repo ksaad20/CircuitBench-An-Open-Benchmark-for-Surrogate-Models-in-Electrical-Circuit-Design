@@ -47,9 +47,7 @@ class PermutationImportance:
 
         scorer = get_scorer(scoring)
 
-        rng = np.random.default_rng(
-            random_state
-        )
+        rng = np.random.default_rng(random_state)
 
         baseline = scorer(
             model,
@@ -65,26 +63,18 @@ class PermutationImportance:
             dtype=float,
         )
 
-        for feature in range(
-            X.shape[1]
-        ):
+        for feature in range(X.shape[1]):
 
             column = X.iloc[
                 :,
                 feature,
             ].copy()
 
-            for repeat in range(
-                n_repeats
-            ):
+            for repeat in range(n_repeats):
 
                 shuffled = column.sample(
                     frac=1.0,
-                    random_state=int(
-                        rng.integers(
-                            1_000_000
-                        )
-                    ),
+                    random_state=int(rng.integers(1_000_000)),
                 ).to_numpy()
 
                 X.iloc[
@@ -101,7 +91,9 @@ class PermutationImportance:
                 raw[
                     feature,
                     repeat,
-                ] = baseline - score
+                ] = (
+                    baseline - score
+                )
 
             X.iloc[
                 :,
@@ -109,23 +101,16 @@ class PermutationImportance:
             ] = column
 
         return PermutationImportanceResult(
-
-            feature_names=list(
-                X.columns
-            ),
-
+            feature_names=list(X.columns),
             importances_mean=np.mean(
                 raw,
                 axis=1,
             ),
-
             importances_std=np.std(
                 raw,
                 axis=1,
             ),
-
             raw_importances=raw,
-
         )
 
     @staticmethod
@@ -137,37 +122,18 @@ class PermutationImportance:
         """
 
         return (
-
             pd.DataFrame(
-
                 {
-
-                    "feature":
-                        result.feature_names,
-
-                    "importance":
-                        result.importances_mean,
-
-                    "std":
-                        result.importances_std,
-
+                    "feature": result.feature_names,
+                    "importance": result.importances_mean,
+                    "std": result.importances_std,
                 }
-
             )
-
             .sort_values(
-
                 "importance",
-
                 ascending=False,
-
             )
-
             .reset_index(
-
                 drop=True,
-
             )
-
         )
-

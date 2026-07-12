@@ -149,5 +149,3 @@ class RidgeRegressionModel(BaseModel):
             f"alpha={self.model.alpha}, "
             f"fitted={self.is_fitted})"
         )
-
-

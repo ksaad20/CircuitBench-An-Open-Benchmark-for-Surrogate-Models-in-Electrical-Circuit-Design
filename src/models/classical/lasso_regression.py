@@ -73,9 +73,7 @@ class LassoRegressionModel(BaseModel):
     def predict(self, X):
 
         if not self.is_fitted:
-            raise RuntimeError(
-                "Model has not been fitted."
-            )
+            raise RuntimeError("Model has not been fitted.")
 
         return self.model.predict(X)
 
@@ -97,18 +95,14 @@ class LassoRegressionModel(BaseModel):
         prediction = self.predict(X)
 
         return {
-
             "R2": r2_score(y, prediction),
-
             "MAE": mean_absolute_error(y, prediction),
-
             "RMSE": np.sqrt(
                 mean_squared_error(
                     y,
                     prediction,
                 )
             ),
-
         }
 
     # --------------------------------------------------
@@ -127,21 +121,15 @@ class LassoRegressionModel(BaseModel):
 
     def selected_features(self):
 
-        coef = np.asarray(
-            self.model.coef_
-        )
+        coef = np.asarray(self.model.coef_)
 
-        return np.where(
-            coef != 0
-        )[0]
+        return np.where(coef != 0)[0]
 
     # --------------------------------------------------
 
     def feature_importance(self):
 
-        coef = np.abs(
-            self.model.coef_
-        )
+        coef = np.abs(self.model.coef_)
 
         if coef.sum() == 0:
 
@@ -175,10 +163,7 @@ class LassoRegressionModel(BaseModel):
 
             print(f"{k:15}: {v}")
 
-        print(
-            "Selected Features:",
-            len(self.selected_features())
-        )
+        print("Selected Features:", len(self.selected_features()))
 
         print("=" * 70)
 
@@ -191,4 +176,3 @@ class LassoRegressionModel(BaseModel):
             f"alpha={self.model.alpha}, "
             f"fitted={self.is_fitted})"
         )
-

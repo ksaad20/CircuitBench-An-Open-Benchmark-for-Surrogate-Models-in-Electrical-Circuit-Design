@@ -65,13 +65,9 @@ class LinearRegressionModel(BaseModel):
         self.is_fitted = True
 
         self.metadata = {
-
             "n_features": X.shape[1],
-
             "n_samples": X.shape[0],
-
             "fit_intercept": self.model.fit_intercept,
-
         }
 
         return self
@@ -85,9 +81,7 @@ class LinearRegressionModel(BaseModel):
 
         if not self.is_fitted:
 
-            raise RuntimeError(
-                "Model has not been fitted."
-            )
+            raise RuntimeError("Model has not been fitted.")
 
         return self.model.predict(X)
 
@@ -170,9 +164,4 @@ class LinearRegressionModel(BaseModel):
 
     def __repr__(self):
 
-        return (
-            "LinearRegressionModel("
-            f"fitted={self.is_fitted})"
-        )
-
-
+        return "LinearRegressionModel(" f"fitted={self.is_fitted})"

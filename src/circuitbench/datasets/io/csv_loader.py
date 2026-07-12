@@ -20,18 +20,11 @@ class CSVLoader:
 
             raise FileNotFoundError(filename)
 
-        return pd.read_csv(
-            filename,
-            encoding=self.encoding
-        )
+        return pd.read_csv(filename, encoding=self.encoding)
 
     def save(self, dataframe, filename):
 
-        dataframe.to_csv(
-            filename,
-            index=False,
-            encoding=self.encoding
-        )
+        dataframe.to_csv(filename, index=False, encoding=self.encoding)
 
     def preview(self, filename, rows=5):
 

@@ -44,43 +44,15 @@ class CalibrationMetrics:
 
         for i in range(n_bins):
 
-            mask = (
-
-                (y_prob >= bins[i])
-
-                &
-
-                (y_prob < bins[i + 1])
-
-            )
+            mask = (y_prob >= bins[i]) & (y_prob < bins[i + 1])
 
             if np.any(mask):
 
-                accuracy = np.mean(
-                    y_true[mask]
-                )
+                accuracy = np.mean(y_true[mask])
 
-                confidence = np.mean(
-                    y_prob[mask]
-                )
+                confidence = np.mean(y_prob[mask])
 
-                ece += (
-
-                    np.sum(mask)
-
-                    /
-
-                    len(y_true)
-
-                ) * abs(
-
-                    accuracy
-
-                    -
-
-                    confidence
-
-                )
+                ece += (np.sum(mask) / len(y_true)) * abs(accuracy - confidence)
 
         return float(ece)
 
@@ -95,15 +67,10 @@ class CalibrationMetrics:
         """
 
         return calibration_curve(
-
             y_true,
-
             y_prob,
-
             n_bins=n_bins,
-
         )
-
 
     @staticmethod
     def maximum_calibration_error(
@@ -128,25 +95,15 @@ class CalibrationMetrics:
 
         for i in range(n_bins):
 
-            mask = (
-                (y_prob >= bins[i])
-                &
-                (y_prob < bins[i + 1])
-            )
+            mask = (y_prob >= bins[i]) & (y_prob < bins[i + 1])
 
             if np.any(mask):
 
-                accuracy = np.mean(
-                    y_true[mask]
-                )
+                accuracy = np.mean(y_true[mask])
 
-                confidence = np.mean(
-                    y_prob[mask]
-                )
+                confidence = np.mean(y_prob[mask])
 
-                error = abs(
-                    accuracy - confidence
-                )
+                error = abs(accuracy - confidence)
 
                 max_error = max(
                     max_error,
@@ -170,26 +127,14 @@ class CalibrationMetrics:
 
         climatology = np.mean(y_true)
 
-        bs_model = np.mean(
-            (y_prob - y_true) ** 2
-        )
+        bs_model = np.mean((y_prob - y_true) ** 2)
 
-        bs_reference = np.mean(
-            (climatology - y_true) ** 2
-        )
+        bs_reference = np.mean((climatology - y_true) ** 2)
 
         if bs_reference == 0:
             return 0.0
 
-        return float(
-            1.0
-            -
-            (
-                bs_model
-                /
-                bs_reference
-            )
-        )
+        return float(1.0 - (bs_model / bs_reference))
 
     @staticmethod
     def calibration_error(
@@ -200,23 +145,7 @@ class CalibrationMetrics:
         Mean absolute calibration error.
         """
 
-        return float(
-
-            np.mean(
-
-                np.abs(
-
-                    np.asarray(y_true)
-
-                    -
-
-                    np.asarray(y_prob)
-
-                )
-
-            )
-
-        )
+        return float(np.mean(np.abs(np.asarray(y_true) - np.asarray(y_prob))))
 
     @classmethod
     def basic_report(
@@ -229,30 +158,20 @@ class CalibrationMetrics:
         """
 
         return {
-
-            "ECE":
-                cls.expected_calibration_error(
-                    y_true,
-                    y_prob,
-                ),
-
-            "MCE":
-                cls.maximum_calibration_error(
-                    y_true,
-                    y_prob,
-                ),
-
-            "CalibrationError":
-                cls.calibration_error(
-                    y_true,
-                    y_prob,
-                ),
-
-            "BrierSkillScore":
-                cls.brier_skill_score(
-                    y_true,
-                    y_prob,
-                ),
-
+            "ECE": cls.expected_calibration_error(
+                y_true,
+                y_prob,
+            ),
+            "MCE": cls.maximum_calibration_error(
+                y_true,
+                y_prob,
+            ),
+            "CalibrationError": cls.calibration_error(
+                y_true,
+                y_prob,
+            ),
+            "BrierSkillScore": cls.brier_skill_score(
+                y_true,
+                y_prob,
+            ),
         }
-

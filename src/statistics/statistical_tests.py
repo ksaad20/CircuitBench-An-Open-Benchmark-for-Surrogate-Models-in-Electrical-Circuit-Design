@@ -49,17 +49,10 @@ class StatisticalTests:
         )
 
         return TestResult(
-
             statistic=float(statistic),
-
             p_value=float(p),
-
-            significant=bool(
-                p < alpha
-            ),
-
+            significant=bool(p < alpha),
             alpha=alpha,
-
         )
 
     @staticmethod
@@ -70,25 +63,15 @@ class StatisticalTests:
     ):
 
         statistic, p = wilcoxon(
-
             scores_a,
-
             scores_b,
-
         )
 
         return TestResult(
-
             statistic=float(statistic),
-
             p_value=float(p),
-
-            significant=bool(
-                p < alpha
-            ),
-
+            significant=bool(p < alpha),
             alpha=alpha,
-
         )
 
     @staticmethod
@@ -100,53 +83,30 @@ class StatisticalTests:
         random_state=42,
     ):
 
-        rng = np.random.default_rng(
-            random_state
-        )
+        rng = np.random.default_rng(random_state)
 
-        scores_a = np.asarray(
-            scores_a
-        )
+        scores_a = np.asarray(scores_a)
 
-        scores_b = np.asarray(
-            scores_b
-        )
+        scores_b = np.asarray(scores_b)
 
-        observed = np.mean(
-            scores_a
-        ) - np.mean(
-            scores_b
-        )
+        observed = np.mean(scores_a) - np.mean(scores_b)
 
         combined = np.concatenate(
-
             [
-
                 scores_a,
-
                 scores_b,
-
             ]
-
         )
 
         count = 0
 
-        for _ in range(
-            n_permutations
-        ):
+        for _ in range(n_permutations):
 
-            rng.shuffle(
-                combined
-            )
+            rng.shuffle(combined)
 
-            a = combined[
-                :len(scores_a)
-            ]
+            a = combined[: len(scores_a)]
 
-            b = combined[
-                len(scores_a):
-            ]
+            b = combined[len(scores_a) :]
 
             diff = np.mean(a) - np.mean(b)
 
@@ -154,28 +114,13 @@ class StatisticalTests:
 
                 count += 1
 
-        p = (
-            count + 1
-        ) / (
-            n_permutations + 1
-        )
+        p = (count + 1) / (n_permutations + 1)
 
         return TestResult(
-
-            statistic=float(
-                observed
-            ),
-
-            p_value=float(
-                p
-            ),
-
-            significant=bool(
-                p < alpha
-            ),
-
+            statistic=float(observed),
+            p_value=float(p),
+            significant=bool(p < alpha),
             alpha=alpha,
-
         )
 
     @staticmethod
@@ -196,13 +141,9 @@ class StatisticalTests:
             pred_b,
         ):
 
-            a_correct = (
-                pa == yt
-            )
+            a_correct = pa == yt
 
-            b_correct = (
-                pb == yt
-            )
+            b_correct = pb == yt
 
             if a_correct and not b_correct:
 
@@ -218,15 +159,7 @@ class StatisticalTests:
 
         else:
 
-            statistic = (
-                (
-                    abs(
-                        b - c
-                    ) - 1
-                ) ** 2
-            ) / (
-                b + c
-            )
+            statistic = ((abs(b - c) - 1) ** 2) / (b + c)
 
         from scipy.stats import chi2
 
@@ -236,20 +169,8 @@ class StatisticalTests:
         )
 
         return TestResult(
-
-            statistic=float(
-                statistic
-            ),
-
-            p_value=float(
-                p
-            ),
-
-            significant=bool(
-                p < alpha
-            ),
-
+            statistic=float(statistic),
+            p_value=float(p),
+            significant=bool(p < alpha),
             alpha=alpha,
-
         )
-

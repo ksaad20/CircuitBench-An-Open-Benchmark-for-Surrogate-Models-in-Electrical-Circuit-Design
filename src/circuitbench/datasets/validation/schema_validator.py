@@ -26,15 +26,10 @@ class SchemaValidator:
                 missing.append(column)
 
         return {
-
             "valid": len(missing) == 0,
-
             "missing_columns": missing,
-
             "n_columns": len(dataframe.columns),
-
-            "columns": list(dataframe.columns)
-
+            "columns": list(dataframe.columns),
         }
 
     def validate_target(self, dataframe, target):

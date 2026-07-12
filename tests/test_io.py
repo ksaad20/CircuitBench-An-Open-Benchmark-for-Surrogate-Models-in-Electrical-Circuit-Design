@@ -8,10 +8,7 @@ from pathlib import Path
 
 def test_json_example():
 
-    sample = {
-        "circuit": "OpAmp",
-        "gain": 10
-    }
+    sample = {"circuit": "OpAmp", "gain": 10}
 
     text = json.dumps(sample)
 

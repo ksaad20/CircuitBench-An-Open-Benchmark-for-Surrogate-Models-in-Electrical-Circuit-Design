@@ -64,9 +64,7 @@ class SklearnModel(BaseModel, ABC):
     def predict(self, X):
 
         if not self.is_fitted:
-            raise RuntimeError(
-                "Model has not been fitted."
-            )
+            raise RuntimeError("Model has not been fitted.")
 
         return self.model.predict(X)
 
@@ -93,27 +91,20 @@ class SklearnModel(BaseModel, ABC):
         )
 
         return {
-
             "R2": float(
                 r2_score(
                     y,
                     prediction,
                 )
             ),
-
             "MAE": float(
                 mean_absolute_error(
                     y,
                     prediction,
                 )
             ),
-
             "MSE": float(mse),
-
-            "RMSE": float(
-                np.sqrt(mse)
-            ),
-
+            "RMSE": float(np.sqrt(mse)),
         }
 
     # -----------------------------------------------------
@@ -123,9 +114,7 @@ class SklearnModel(BaseModel, ABC):
         if hasattr(self.model, "coef_"):
             return self.model.coef_
 
-        raise AttributeError(
-            "Estimator has no coefficients."
-        )
+        raise AttributeError("Estimator has no coefficients.")
 
     # -----------------------------------------------------
 
@@ -134,9 +123,7 @@ class SklearnModel(BaseModel, ABC):
         if hasattr(self.model, "intercept_"):
             return self.model.intercept_
 
-        raise AttributeError(
-            "Estimator has no intercept."
-        )
+        raise AttributeError("Estimator has no intercept.")
 
     # -----------------------------------------------------
 
@@ -206,10 +193,7 @@ class SklearnModel(BaseModel, ABC):
 
     def __repr__(self):
 
-        return (
-            f"{self.__class__.__name__}"
-            f"(fitted={self.is_fitted})"
-        )
+        return f"{self.__class__.__name__}" f"(fitted={self.is_fitted})"
 
 
 __all__ = [

@@ -18,6 +18,7 @@ import pandas as pd
 
 try:
     import shap
+
     SHAP_AVAILABLE = True
 except ImportError:
     SHAP_AVAILABLE = False
@@ -49,17 +50,13 @@ class SHAPWrapper:
         """
 
         if not SHAP_AVAILABLE:
-            raise ImportError(
-                "Install shap with: pip install shap"
-            )
+            raise ImportError("Install shap with: pip install shap")
 
         X = pd.DataFrame(X)
 
         try:
 
-            explainer = shap.TreeExplainer(
-                model
-            )
+            explainer = shap.TreeExplainer(model)
 
         except Exception:
 
@@ -77,22 +74,12 @@ class SHAPWrapper:
                     X,
                 )
 
-        explanation = explainer(
-            X
-        )
+        explanation = explainer(X)
 
         return SHAPResult(
-
-            values=np.asarray(
-                explanation.values
-            ),
-
+            values=np.asarray(explanation.values),
             base_values=explanation.base_values,
-
-            feature_names=list(
-                X.columns
-            ),
-
+            feature_names=list(X.columns),
         )
 
     @staticmethod
@@ -103,49 +90,27 @@ class SHAPWrapper:
         Mean absolute SHAP importance.
         """
 
-        values = np.abs(
-            result.values
-        )
+        values = np.abs(result.values)
 
         if values.ndim == 3:
-            values = values.mean(
-                axis=2
-            )
+            values = values.mean(axis=2)
 
-        importance = values.mean(
-            axis=0
-        )
+        importance = values.mean(axis=0)
 
         return (
-
             pd.DataFrame(
-
                 {
-
-                    "feature":
-                        result.feature_names,
-
-                    "importance":
-                        importance,
-
+                    "feature": result.feature_names,
+                    "importance": importance,
                 }
-
             )
-
             .sort_values(
-
                 "importance",
-
                 ascending=False,
-
             )
-
             .reset_index(
-
                 drop=True,
-
             )
-
         )
 
     @staticmethod
@@ -159,20 +124,13 @@ class SHAPWrapper:
         """
 
         if not SHAP_AVAILABLE:
-            raise ImportError(
-                "Install shap first."
-            )
+            raise ImportError("Install shap first.")
 
         shap.summary_plot(
-
             result.values,
-
             X,
-
             feature_names=result.feature_names,
-
             show=show,
-
         )
 
     @staticmethod
@@ -186,21 +144,12 @@ class SHAPWrapper:
         """
 
         if not SHAP_AVAILABLE:
-            raise ImportError(
-                "Install shap first."
-            )
+            raise ImportError("Install shap first.")
 
         shap.summary_plot(
-
             result.values,
-
             X,
-
             feature_names=result.feature_names,
-
             plot_type="bar",
-
             show=show,
-
         )
-

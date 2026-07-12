@@ -47,7 +47,6 @@ class AdvancedBenchmarkRunner:
 
         self.metrics = metrics
 
-
     @staticmethod
     def detect_task(
         y,
@@ -63,7 +62,6 @@ class AdvancedBenchmarkRunner:
                 return "classification"
 
         return "regression"
-
 
     def evaluate(
         self,
@@ -91,15 +89,11 @@ class AdvancedBenchmarkRunner:
 
         start = perf_counter()
 
-        predictions = model.predict(
-            X_test
-        )
+        predictions = model.predict(X_test)
 
         predict_time = perf_counter() - start
 
-        task = self.detect_task(
-            y_train
-        )
+        task = self.detect_task(y_train)
 
         results = {}
 
@@ -117,60 +111,33 @@ class AdvancedBenchmarkRunner:
                 results[name] = np.nan
 
         return AdvancedBenchmarkResult(
-
             model_name=model.__class__.__name__,
-
             task=task,
-
             fit_time=float(fit_time),
-
             predict_time=float(predict_time),
-
-            memory_mb=float(
-                peak / 1024 / 1024
-            ),
-
+            memory_mb=float(peak / 1024 / 1024),
             metrics=results,
-
         )
-
 
     def cross_validate(
-
         self,
-
         model,
-
         X,
-
         y,
-
         cv=5,
-
         scoring=None,
-
     ):
 
-        estimator = clone(
-            model
-        )
+        estimator = clone(model)
 
         return cross_validate(
-
             estimator,
-
             X,
-
             y,
-
             cv=cv,
-
             scoring=scoring,
-
             return_train_score=True,
-
         )
-
 
     @staticmethod
     def results_dataframe(
@@ -182,33 +149,15 @@ class AdvancedBenchmarkRunner:
         for r in results:
 
             row = {
-
-                "Model":
-                    r.model_name,
-
-                "Task":
-                    r.task,
-
-                "FitTime":
-                    r.fit_time,
-
-                "PredictTime":
-                    r.predict_time,
-
-                "MemoryMB":
-                    r.memory_mb,
-
+                "Model": r.model_name,
+                "Task": r.task,
+                "FitTime": r.fit_time,
+                "PredictTime": r.predict_time,
+                "MemoryMB": r.memory_mb,
             }
 
-            row.update(
-                r.metrics
-            )
+            row.update(r.metrics)
 
-            rows.append(
-                row
-            )
+            rows.append(row)
 
-        return pd.DataFrame(
-            rows
-        )
-
+        return pd.DataFrame(rows)

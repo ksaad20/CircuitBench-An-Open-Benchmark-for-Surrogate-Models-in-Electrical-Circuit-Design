@@ -35,13 +35,7 @@ class Evaluator:
 
         for key in keys:
 
-            comparison[key] = {
-
-                "first": first.get(key),
-
-                "second": second.get(key)
-
-            }
+            comparison[key] = {"first": first.get(key), "second": second.get(key)}
 
         return comparison
 
@@ -54,10 +48,6 @@ class Evaluator:
 
         for key in metrics[0]:
 
-            output[key] = mean(
-                item[key]
-                for item in metrics
-                if key in item
-            )
+            output[key] = mean(item[key] for item in metrics if key in item)
 
         return output

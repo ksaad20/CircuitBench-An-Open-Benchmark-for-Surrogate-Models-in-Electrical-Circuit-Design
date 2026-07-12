@@ -117,10 +117,7 @@ class BaseModel(ABC):
 
         filename = Path(filename)
 
-        filename.parent.mkdir(
-            parents=True,
-            exist_ok=True
-        )
+        filename.parent.mkdir(parents=True, exist_ok=True)
 
         with open(filename, "wb") as file:
 

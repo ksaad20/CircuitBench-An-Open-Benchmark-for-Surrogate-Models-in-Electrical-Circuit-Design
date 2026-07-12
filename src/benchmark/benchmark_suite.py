@@ -49,35 +49,21 @@ class BenchmarkSuite:
         for model in models:
 
             results.append(
-
                 self.runner.evaluate(
-
                     model,
-
                     X_train,
-
                     y_train,
-
                     X_test,
-
                     y_test,
-
                 )
-
             )
 
-        leaderboard = self.runner.results_dataframe(
-            results
-        )
+        leaderboard = self.runner.results_dataframe(results)
 
         return BenchmarkSuiteResult(
-
             dataset_name=dataset_name,
-
             leaderboard=leaderboard,
-
             raw_results=results,
-
         )
 
     @staticmethod
@@ -87,24 +73,11 @@ class BenchmarkSuite:
         ascending=False,
     ):
 
-        return (
-
-            leaderboard
-
-            .sort_values(
-
-                metric,
-
-                ascending=ascending,
-
-            )
-
-            .reset_index(
-
-                drop=True,
-
-            )
-
+        return leaderboard.sort_values(
+            metric,
+            ascending=ascending,
+        ).reset_index(
+            drop=True,
         )
 
     @staticmethod
@@ -115,36 +88,18 @@ class BenchmarkSuite:
         df = suite_result.leaderboard
 
         summary = {
-
-            "Dataset":
-
-                suite_result.dataset_name,
-
-            "Models":
-
-                len(df),
-
-            "Columns":
-
-                list(df.columns),
-
+            "Dataset": suite_result.dataset_name,
+            "Models": len(df),
+            "Columns": list(df.columns),
         }
 
         if "FitTime" in df.columns:
 
-            summary["AverageFitTime"] = float(
-
-                df["FitTime"].mean()
-
-            )
+            summary["AverageFitTime"] = float(df["FitTime"].mean())
 
         if "PredictTime" in df.columns:
 
-            summary["AveragePredictTime"] = float(
-
-                df["PredictTime"].mean()
-
-            )
+            summary["AveragePredictTime"] = float(df["PredictTime"].mean())
 
         return summary
 
@@ -155,10 +110,6 @@ class BenchmarkSuite:
     ):
 
         suite_result.leaderboard.to_csv(
-
             output_csv,
-
             index=False,
-
         )
-

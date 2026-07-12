@@ -65,14 +65,16 @@ class GradientBoostingRegressionModel(SklearnModel):
 
         super().fit(X, y)
 
-        self.metadata.update({
-            "learning_rate": self.model.learning_rate,
-            "n_estimators": self.model.n_estimators,
-            "subsample": self.model.subsample,
-            "loss": self.model.loss,
-            "criterion": self.model.criterion,
-            "max_depth": self.model.max_depth,
-        })
+        self.metadata.update(
+            {
+                "learning_rate": self.model.learning_rate,
+                "n_estimators": self.model.n_estimators,
+                "subsample": self.model.subsample,
+                "loss": self.model.loss,
+                "criterion": self.model.criterion,
+                "max_depth": self.model.max_depth,
+            }
+        )
 
         return self
 

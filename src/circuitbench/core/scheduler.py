@@ -13,24 +13,14 @@ class Scheduler:
 
     def submit(self, function, *args, **kwargs):
 
-        with ThreadPoolExecutor(
-            max_workers=self.max_workers
-        ) as executor:
+        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
 
-            future = executor.submit(
-                function,
-                *args,
-                **kwargs
-            )
+            future = executor.submit(function, *args, **kwargs)
 
             return future.result()
 
     def map(self, function, iterable):
 
-        with ThreadPoolExecutor(
-            max_workers=self.max_workers
-        ) as executor:
+        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
 
-            return list(
-                executor.map(function, iterable)
-            )
+            return list(executor.map(function, iterable))

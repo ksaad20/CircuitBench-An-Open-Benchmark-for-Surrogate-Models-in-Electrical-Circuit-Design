@@ -42,17 +42,11 @@ class Bootstrap:
         random_state=42,
     ):
 
-        rng = np.random.default_rng(
-            random_state
-        )
+        rng = np.random.default_rng(random_state)
 
-        y_true = np.asarray(
-            y_true
-        )
+        y_true = np.asarray(y_true)
 
-        y_pred = np.asarray(
-            y_pred
-        )
+        y_pred = np.asarray(y_pred)
 
         estimate = metric_function(
             y_true,
@@ -66,9 +60,7 @@ class Bootstrap:
 
         n = len(y_true)
 
-        for i in range(
-            n_bootstrap
-        ):
+        for i in range(n_bootstrap):
 
             idx = rng.integers(
                 0,
@@ -77,11 +69,8 @@ class Bootstrap:
             )
 
             scores[i] = metric_function(
-
                 y_true[idx],
-
                 y_pred[idx],
-
             )
 
         alpha = 1.0 - confidence
@@ -97,27 +86,14 @@ class Bootstrap:
         )
 
         return BootstrapResult(
-
-            estimate=float(
-                estimate
-            ),
-
-            lower=float(
-                lower
-            ),
-
-            upper=float(
-                upper
-            ),
-
+            estimate=float(estimate),
+            lower=float(lower),
+            upper=float(upper),
             std=float(
                 np.std(
                     scores,
                     ddof=1,
                 )
             ),
-
             samples=scores,
-
         )
-

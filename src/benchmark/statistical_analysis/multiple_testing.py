@@ -141,25 +141,12 @@ class MultipleTesting:
     def compare_all(cls, p_values) -> Dict:
 
         return {
-
-            "bonferroni":
-                cls.bonferroni(p_values),
-
-            "holm":
-                cls.holm(p_values),
-
-            "holm_sidak":
-                cls.holm_sidak(p_values),
-
-            "benjamini_hochberg":
-                cls.benjamini_hochberg(p_values),
-
-            "benjamini_yekutieli":
-                cls.benjamini_yekutieli(p_values),
-
-            "sidak":
-                cls.sidak(p_values),
-
+            "bonferroni": cls.bonferroni(p_values),
+            "holm": cls.holm(p_values),
+            "holm_sidak": cls.holm_sidak(p_values),
+            "benjamini_hochberg": cls.benjamini_hochberg(p_values),
+            "benjamini_yekutieli": cls.benjamini_yekutieli(p_values),
+            "sidak": cls.sidak(p_values),
         }
 
 

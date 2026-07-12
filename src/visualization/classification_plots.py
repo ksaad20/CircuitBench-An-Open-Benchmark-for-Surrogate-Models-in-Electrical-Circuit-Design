@@ -51,9 +51,7 @@ class ClassificationPlots:
 
         if ax is None:
 
-            fig, ax = plt.subplots(
-                figsize=(6, 6)
-            )
+            fig, ax = plt.subplots(figsize=(6, 6))
 
         ax.plot(
             fpr,
@@ -68,17 +66,11 @@ class ClassificationPlots:
             linestyle="--",
         )
 
-        ax.set_xlabel(
-            "False Positive Rate"
-        )
+        ax.set_xlabel("False Positive Rate")
 
-        ax.set_ylabel(
-            "True Positive Rate"
-        )
+        ax.set_ylabel("True Positive Rate")
 
-        ax.set_title(
-            "ROC Curve"
-        )
+        ax.set_title("ROC Curve")
 
         ax.legend()
 
@@ -106,9 +98,7 @@ class ClassificationPlots:
 
         if ax is None:
 
-            fig, ax = plt.subplots(
-                figsize=(6, 6)
-            )
+            fig, ax = plt.subplots(figsize=(6, 6))
 
         ax.plot(
             recall,
@@ -117,17 +107,11 @@ class ClassificationPlots:
             label=f"AUC = {pr_auc:.4f}",
         )
 
-        ax.set_xlabel(
-            "Recall"
-        )
+        ax.set_xlabel("Recall")
 
-        ax.set_ylabel(
-            "Precision"
-        )
+        ax.set_ylabel("Precision")
 
-        ax.set_title(
-            "Precision-Recall Curve"
-        )
+        ax.set_title("Precision-Recall Curve")
 
         ax.legend()
 
@@ -153,9 +137,7 @@ class ClassificationPlots:
 
         if ax is None:
 
-            fig, ax = plt.subplots(
-                figsize=(6,6)
-            )
+            fig, ax = plt.subplots(figsize=(6, 6))
 
         disp = ConfusionMatrixDisplay(
             confusion_matrix=cm,
@@ -173,4 +155,3 @@ class ClassificationPlots:
 __all__ = [
     "ClassificationPlots",
 ]
-

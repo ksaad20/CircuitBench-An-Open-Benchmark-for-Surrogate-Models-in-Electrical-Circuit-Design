@@ -33,10 +33,7 @@ class EffectSizes:
         dof = nx + ny - 2
 
         pooled_std = np.sqrt(
-            (
-                ((nx - 1) * np.var(x, ddof=1))
-                + ((ny - 1) * np.var(y, ddof=1))
-            ) / dof
+            (((nx - 1) * np.var(x, ddof=1)) + ((ny - 1) * np.var(y, ddof=1))) / dof
         )
 
         return float((np.mean(x) - np.mean(y)) / pooled_std)
@@ -62,10 +59,7 @@ class EffectSizes:
         x = np.asarray(x, dtype=float)
         y = np.asarray(y, dtype=float)
 
-        return float(
-            (np.mean(x) - np.mean(y))
-            / np.std(y, ddof=1)
-        )
+        return float((np.mean(x) - np.mean(y)) / np.std(y, ddof=1))
 
     # -----------------------------------------------------
 
@@ -82,9 +76,7 @@ class EffectSizes:
             greater += np.sum(xi > y)
             lower += np.sum(xi < y)
 
-        delta = (
-            greater - lower
-        ) / (len(x) * len(y))
+        delta = (greater - lower) / (len(x) * len(y))
 
         return float(delta)
 
@@ -103,10 +95,7 @@ class EffectSizes:
             greater += np.sum(xi > y)
             lower += np.sum(xi < y)
 
-        return float(
-            (greater - lower)
-            / (greater + lower)
-        )
+        return float((greater - lower) / (greater + lower))
 
     # -----------------------------------------------------
 
@@ -121,9 +110,7 @@ class EffectSizes:
         for xi in x:
             wins += np.sum(xi > y)
 
-        return float(
-            wins / (len(x) * len(y))
-        )
+        return float(wins / (len(x) * len(y)))
 
     # -----------------------------------------------------
 
@@ -151,21 +138,13 @@ class EffectSizes:
         d = cls.cohens_d(x, y)
 
         return {
-
             "cohens_d": d,
-
             "hedges_g": cls.hedges_g(x, y),
-
             "glass_delta": cls.glass_delta(x, y),
-
             "cliffs_delta": cls.cliffs_delta(x, y),
-
             "rank_biserial": cls.rank_biserial(x, y),
-
             "common_language": cls.common_language_effect_size(x, y),
-
             "interpretation": cls.interpret_cohens_d(d),
-
         }
 
 

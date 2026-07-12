@@ -77,9 +77,7 @@ class ConstantPredictor(BaselineRegressor):
 
         if not self.is_fitted:
 
-            raise RuntimeError(
-                "Model has not been fitted."
-            )
+            raise RuntimeError("Model has not been fitted.")
 
         return np.full(
             len(X),
@@ -110,7 +108,6 @@ class ConstantPredictor(BaselineRegressor):
     # ---------------------------------------------------------
 
     def get_constant(self):
-
         """
         Return configured constant.
         """
@@ -123,7 +120,6 @@ class ConstantPredictor(BaselineRegressor):
         self,
         value: float,
     ):
-
         """
         Update prediction constant.
         """
@@ -138,8 +134,4 @@ class ConstantPredictor(BaselineRegressor):
 
     def __repr__(self):
 
-        return (
-            f"ConstantPredictor("
-            f"value={self.value}, "
-            f"fitted={self.is_fitted})"
-        )
+        return f"ConstantPredictor(" f"value={self.value}, " f"fitted={self.is_fitted})"

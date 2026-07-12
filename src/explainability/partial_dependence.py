@@ -37,17 +37,11 @@ class PartialDependence:
         X = pd.DataFrame(X)
 
         return partial_dependence(
-
             estimator=estimator,
-
             X=X,
-
             features=features,
-
             kind=kind,
-
             grid_resolution=grid_resolution,
-
         )
 
     @staticmethod
@@ -65,24 +59,15 @@ class PartialDependence:
 
         X = pd.DataFrame(X)
 
-        fig, ax = plt.subplots(
-            figsize=figsize
-        )
+        fig, ax = plt.subplots(figsize=figsize)
 
         PartialDependenceDisplay.from_estimator(
-
             estimator,
-
             X,
-
             features=features,
-
             kind=kind,
-
             grid_resolution=grid_resolution,
-
             ax=ax,
-
         )
 
         plt.tight_layout()
@@ -103,25 +88,16 @@ class PartialDependence:
 
         X = pd.DataFrame(X)
 
-        fig, ax = plt.subplots(
-            figsize=figsize
-        )
+        fig, ax = plt.subplots(figsize=figsize)
 
         PartialDependenceDisplay.from_estimator(
-
             estimator,
-
             X,
-
             [feature_pair],
-
             grid_resolution=grid_resolution,
-
             ax=ax,
-
         )
 
         plt.tight_layout()
 
         return fig, ax
-

@@ -30,9 +30,7 @@ class ReportGenerator:
 
         report.append("")
 
-        report.append(
-            f"Generated: {datetime.now().isoformat()}"
-        )
+        report.append(f"Generated: {datetime.now().isoformat()}")
 
         report.append("")
 
@@ -40,14 +38,9 @@ class ReportGenerator:
 
         report.append("")
 
-        report.append(
-            leaderboard.to_markdown(
-                index=False
-            )
-        )
+        report.append(leaderboard.to_markdown(index=False))
 
         return "\n".join(report)
-
 
     @staticmethod
     def html(
@@ -105,7 +98,6 @@ background:#eeeeee;
 
         return html
 
-
     @staticmethod
     def latex(
         leaderboard,
@@ -114,17 +106,11 @@ background:#eeeeee;
     ):
 
         return leaderboard.to_latex(
-
             index=False,
-
             caption=caption,
-
             label=label,
-
             escape=False,
-
         )
-
 
     @staticmethod
     def save_markdown(
@@ -140,17 +126,11 @@ background:#eeeeee;
         ) as f:
 
             f.write(
-
                 ReportGenerator.markdown(
-
                     leaderboard,
-
                     title,
-
                 )
-
             )
-
 
     @staticmethod
     def save_html(
@@ -166,17 +146,11 @@ background:#eeeeee;
         ) as f:
 
             f.write(
-
                 ReportGenerator.html(
-
                     leaderboard,
-
                     title,
-
                 )
-
             )
-
 
     @staticmethod
     def save_latex(
@@ -191,12 +165,7 @@ background:#eeeeee;
         ) as f:
 
             f.write(
-
                 ReportGenerator.latex(
-
                     leaderboard,
-
                 )
-
             )
-

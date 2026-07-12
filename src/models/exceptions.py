@@ -20,6 +20,7 @@ class CircuitBenchError(Exception):
     """
     Base exception for the entire CircuitBench framework.
     """
+
     pass
 
 
@@ -27,10 +28,12 @@ class CircuitBenchError(Exception):
 # Model Errors
 # ============================================================
 
+
 class ModelError(CircuitBenchError):
     """
     Base class for model-related exceptions.
     """
+
     pass
 
 
@@ -38,6 +41,7 @@ class ModelNotFittedError(ModelError):
     """
     Raised when predict() is called before fit().
     """
+
     pass
 
 
@@ -45,6 +49,7 @@ class InvalidModelError(ModelError):
     """
     Raised when an unsupported model is requested.
     """
+
     pass
 
 
@@ -52,6 +57,7 @@ class UnsupportedModelError(ModelError):
     """
     Raised when the selected model is unavailable.
     """
+
     pass
 
 
@@ -59,6 +65,7 @@ class ModelRegistrationError(ModelError):
     """
     Raised when duplicate model registration occurs.
     """
+
     pass
 
 
@@ -66,10 +73,12 @@ class ModelRegistrationError(ModelError):
 # Dataset Errors
 # ============================================================
 
+
 class DatasetError(CircuitBenchError):
     """
     Base dataset exception.
     """
+
     pass
 
 
@@ -77,6 +86,7 @@ class DatasetNotFoundError(DatasetError):
     """
     Dataset cannot be located.
     """
+
     pass
 
 
@@ -84,6 +94,7 @@ class InvalidDatasetError(DatasetError):
     """
     Dataset format is invalid.
     """
+
     pass
 
 
@@ -91,6 +102,7 @@ class DatasetValidationError(DatasetError):
     """
     Dataset failed validation.
     """
+
     pass
 
 
@@ -98,10 +110,12 @@ class DatasetValidationError(DatasetError):
 # Training Errors
 # ============================================================
 
+
 class TrainingError(CircuitBenchError):
     """
     Generic training failure.
     """
+
     pass
 
 
@@ -109,6 +123,7 @@ class ConvergenceError(TrainingError):
     """
     Optimization failed to converge.
     """
+
     pass
 
 
@@ -116,6 +131,7 @@ class EarlyStoppingTriggered(TrainingError):
     """
     Early stopping was activated.
     """
+
     pass
 
 
@@ -123,10 +139,12 @@ class EarlyStoppingTriggered(TrainingError):
 # Evaluation Errors
 # ============================================================
 
+
 class EvaluationError(CircuitBenchError):
     """
     Base evaluation exception.
     """
+
     pass
 
 
@@ -134,6 +152,7 @@ class MetricError(EvaluationError):
     """
     Invalid evaluation metric.
     """
+
     pass
 
 
@@ -141,10 +160,12 @@ class MetricError(EvaluationError):
 # Hyperparameter Optimization
 # ============================================================
 
+
 class HyperparameterError(CircuitBenchError):
     """
     Base optimization exception.
     """
+
     pass
 
 
@@ -152,6 +173,7 @@ class InvalidSearchSpaceError(HyperparameterError):
     """
     Search space definition is invalid.
     """
+
     pass
 
 
@@ -159,6 +181,7 @@ class TrialFailedError(HyperparameterError):
     """
     Optimization trial failed.
     """
+
     pass
 
 
@@ -166,10 +189,12 @@ class TrialFailedError(HyperparameterError):
 # Physics-Informed Models
 # ============================================================
 
+
 class PhysicsError(CircuitBenchError):
     """
     Base physics exception.
     """
+
     pass
 
 
@@ -177,6 +202,7 @@ class ConstraintViolationError(PhysicsError):
     """
     Physical constraints were violated.
     """
+
     pass
 
 
@@ -184,6 +210,7 @@ class SpiceSimulationError(PhysicsError):
     """
     SPICE simulation failed.
     """
+
     pass
 
 
@@ -191,10 +218,12 @@ class SpiceSimulationError(PhysicsError):
 # Graph Models
 # ============================================================
 
+
 class GraphError(CircuitBenchError):
     """
     Base graph learning exception.
     """
+
     pass
 
 
@@ -202,6 +231,7 @@ class InvalidGraphError(GraphError):
     """
     Invalid graph supplied.
     """
+
     pass
 
 
@@ -209,6 +239,7 @@ class GraphConstructionError(GraphError):
     """
     Graph construction failed.
     """
+
     pass
 
 
@@ -216,10 +247,12 @@ class GraphConstructionError(GraphError):
 # I/O Errors
 # ============================================================
 
+
 class ConfigurationError(CircuitBenchError):
     """
     Invalid configuration.
     """
+
     pass
 
 
@@ -227,6 +260,7 @@ class SerializationError(CircuitBenchError):
     """
     Failed to serialize object.
     """
+
     pass
 
 
@@ -234,6 +268,7 @@ class CheckpointError(CircuitBenchError):
     """
     Checkpoint loading/saving failed.
     """
+
     pass
 
 

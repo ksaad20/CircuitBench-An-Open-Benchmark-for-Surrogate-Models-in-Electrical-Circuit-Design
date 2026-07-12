@@ -10,10 +10,10 @@ import pytest
 
 from src.benchmark.benchmark_runner import BenchmarkRunner
 
-
 # ---------------------------------------------------------------------
 # Construction
 # ---------------------------------------------------------------------
+
 
 def test_runner_initialization():
 
@@ -35,6 +35,7 @@ def test_random_seed():
 # ---------------------------------------------------------------------
 # Registration
 # ---------------------------------------------------------------------
+
 
 def test_add_dataset(dataset):
 
@@ -69,6 +70,7 @@ def test_add_metric():
 # ---------------------------------------------------------------------
 # Validation
 # ---------------------------------------------------------------------
+
 
 def test_validation_requires_dataset(model):
 
@@ -119,6 +121,7 @@ def test_validation_requires_metric(dataset, model):
 # Inspection
 # ---------------------------------------------------------------------
 
+
 def test_dataset_inspection(dataset):
 
     runner = BenchmarkRunner()
@@ -144,6 +147,7 @@ def test_model_inspection(model):
 # ---------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------
+
 
 def test_registration_summary(dataset, model):
 
@@ -171,6 +175,7 @@ def test_registration_summary(dataset, model):
 # Timing
 # ---------------------------------------------------------------------
 
+
 def test_timer():
 
     runner = BenchmarkRunner()
@@ -185,6 +190,7 @@ def test_timer():
 # ---------------------------------------------------------------------
 # History
 # ---------------------------------------------------------------------
+
 
 def test_history_logging():
 
@@ -204,6 +210,7 @@ def test_history_logging():
 # ---------------------------------------------------------------------
 # Result Recording
 # ---------------------------------------------------------------------
+
 
 def test_add_result(model, dataset):
 
@@ -231,6 +238,7 @@ def test_add_result(model, dataset):
 # Results DataFrame
 # ---------------------------------------------------------------------
 
+
 def test_results_dataframe(model, dataset):
 
     runner = BenchmarkRunner()
@@ -255,6 +263,7 @@ def test_results_dataframe(model, dataset):
 # ---------------------------------------------------------------------
 # Clear Results
 # ---------------------------------------------------------------------
+
 
 def test_clear_results(model, dataset):
 
@@ -281,6 +290,7 @@ def test_clear_results(model, dataset):
 # Callback
 # ---------------------------------------------------------------------
 
+
 def test_callback_execution():
 
     runner = BenchmarkRunner()
@@ -302,6 +312,7 @@ def test_callback_execution():
 # Benchmark Summary
 # ---------------------------------------------------------------------
 
+
 def test_summary_dictionary():
 
     runner = BenchmarkRunner()
@@ -316,6 +327,7 @@ def test_summary_dictionary():
 # ---------------------------------------------------------------------
 # Metadata
 # ---------------------------------------------------------------------
+
 
 def test_metadata():
 
@@ -333,6 +345,7 @@ def test_metadata():
 # ---------------------------------------------------------------------
 # Metric Evaluation
 # ---------------------------------------------------------------------
+
 
 def test_evaluate_metrics():
 
@@ -381,6 +394,7 @@ def test_metric_failure_returns_nan():
 # Model Fit / Predict
 # ---------------------------------------------------------------------
 
+
 def test_fit_model(model, dataset):
 
     runner = BenchmarkRunner()
@@ -417,6 +431,7 @@ def test_predict(model, dataset):
 # Single Benchmark
 # ---------------------------------------------------------------------
 
+
 def test_run_single(dataset, model):
 
     runner = BenchmarkRunner()
@@ -439,6 +454,7 @@ def test_run_single(dataset, model):
 # ---------------------------------------------------------------------
 # Complete Benchmark
 # ---------------------------------------------------------------------
+
 
 def test_complete_run(dataset, model):
 
@@ -464,6 +480,7 @@ def test_complete_run(dataset, model):
 # Cross Validation Configuration
 # ---------------------------------------------------------------------
 
+
 def test_cv_configuration():
 
     runner = BenchmarkRunner()
@@ -482,15 +499,14 @@ def test_cv_configuration():
 # Checkpoint
 # ---------------------------------------------------------------------
 
+
 def test_checkpoint_cycle(tmp_path):
 
     runner = BenchmarkRunner(
         output_directory=str(tmp_path),
     )
 
-    runner.history.append(
-        {"epoch": 1}
-    )
+    runner.history.append({"epoch": 1})
 
     runner.save_checkpoint()
 
@@ -504,6 +520,7 @@ def test_checkpoint_cycle(tmp_path):
 # ---------------------------------------------------------------------
 # Resource Profiling
 # ---------------------------------------------------------------------
+
 
 def test_profile_system():
 
@@ -546,6 +563,7 @@ def test_model_size(model):
 # Export Results
 # ---------------------------------------------------------------------
 
+
 def test_export_results(tmp_path, model, dataset):
 
     runner = BenchmarkRunner(
@@ -562,9 +580,7 @@ def test_export_results(tmp_path, model, dataset):
 
     runner.export_results()
 
-    assert (
-        tmp_path / "results.csv"
-    ).exists()
+    assert (tmp_path / "results.csv").exists()
 
 
 def test_save_configuration(tmp_path):
@@ -575,9 +591,7 @@ def test_save_configuration(tmp_path):
 
     runner.save_configuration()
 
-    assert (
-        tmp_path / "configuration.json"
-    ).exists()
+    assert (tmp_path / "configuration.json").exists()
 
 
 def test_export_all(tmp_path):
@@ -588,22 +602,17 @@ def test_export_all(tmp_path):
 
     runner.export_all()
 
-    assert (
-        tmp_path / "results.csv"
-    ).exists()
+    assert (tmp_path / "results.csv").exists()
 
-    assert (
-        tmp_path / "configuration.json"
-    ).exists()
+    assert (tmp_path / "configuration.json").exists()
 
-    assert (
-        tmp_path / "checkpoint.json"
-    ).exists()
+    assert (tmp_path / "checkpoint.json").exists()
 
 
 # ---------------------------------------------------------------------
 # Summary
 # ---------------------------------------------------------------------
+
 
 def test_runner_summary():
 
@@ -621,31 +630,21 @@ def test_benchmark_summary_fields():
     summary = runner.benchmark_summary()
 
     required = {
-
         "benchmark",
-
         "models",
-
         "datasets",
-
         "metrics",
-
         "runs",
-
         "output_directory",
-
     }
 
-    assert required.issubset(
-
-        summary.keys()
-
-    )
+    assert required.issubset(summary.keys())
 
 
 # ---------------------------------------------------------------------
 # Utility Properties
 # ---------------------------------------------------------------------
+
 
 def test_property_counts(dataset, model):
 
@@ -656,11 +655,8 @@ def test_property_counts(dataset, model):
     runner.add_model(model)
 
     runner.add_metric(
-
         "MAE",
-
         lambda y, p: 0,
-
     )
 
     assert runner.number_of_datasets == 1
@@ -674,6 +670,7 @@ def test_property_counts(dataset, model):
 # Empty Results
 # ---------------------------------------------------------------------
 
+
 def test_empty_dataframe():
 
     runner = BenchmarkRunner()
@@ -683,7 +680,6 @@ def test_empty_dataframe():
     assert df.empty
 
 
-
 # ---------------------------------------------------------------------
 # Framework Integration
 # ---------------------------------------------------------------------
@@ -738,6 +734,7 @@ def test_attach_experiment():
 # Leaderboard Integration
 # ---------------------------------------------------------------------
 
+
 def test_update_leaderboard(dataset, model):
 
     runner = BenchmarkRunner()
@@ -747,19 +744,12 @@ def test_update_leaderboard(dataset, model):
     runner.attach_leaderboard(leaderboard)
 
     runner.add_result(
-
         model,
-
         dataset,
-
         {
-
-            "MAE":0.2,
-
-            "RMSE":0.3,
-
+            "MAE": 0.2,
+            "RMSE": 0.3,
         },
-
     )
 
     ranking = runner.update_leaderboard("MAE")
@@ -771,46 +761,34 @@ def test_update_leaderboard(dataset, model):
 # Report Integration
 # ---------------------------------------------------------------------
 
+
 def test_generate_report(tmp_path, dataset, model):
 
     report = BenchmarkReport("Benchmark Test")
 
     runner = BenchmarkRunner(
-
         output_directory=str(tmp_path),
-
     )
 
     runner.attach_report(report)
 
     runner.add_result(
-
         model,
-
         dataset,
-
         {
-
-            "RMSE":0.25,
-
+            "RMSE": 0.25,
         },
-
     )
 
     runner.generate_report()
 
-    assert (
-
-        tmp_path /
-
-        "benchmark_report.json"
-
-    ).exists()
+    assert (tmp_path / "benchmark_report.json").exists()
 
 
 # ---------------------------------------------------------------------
 # Callback Lifecycle
 # ---------------------------------------------------------------------
+
 
 def test_multiple_callbacks():
 
@@ -820,29 +798,17 @@ def test_multiple_callbacks():
 
     def callback_a(event, **kwargs):
 
-        calls.append(
-
-            ("A", event)
-
-        )
+        calls.append(("A", event))
 
     def callback_b(event, **kwargs):
 
-        calls.append(
-
-            ("B", event)
-
-        )
+        calls.append(("B", event))
 
     runner.add_callback(callback_a)
 
     runner.add_callback(callback_b)
 
-    runner._execute_callbacks(
-
-        "benchmark_start"
-
-    )
+    runner._execute_callbacks("benchmark_start")
 
     assert len(calls) == 2
 
@@ -853,25 +819,18 @@ def test_multiple_callbacks():
 # Error Recovery
 # ---------------------------------------------------------------------
 
+
 class BrokenModel:
 
     name = "Broken Model"
 
     def fit(self, X, y):
 
-        raise RuntimeError(
-
-            "Intentional failure"
-
-        )
+        raise RuntimeError("Intentional failure")
 
     def predict(self, X):
 
-        return np.zeros(
-
-            len(X)
-
-        )
+        return np.zeros(len(X))
 
 
 def test_continue_on_error(dataset):
@@ -883,31 +842,24 @@ def test_continue_on_error(dataset):
     runner.add_model(BrokenModel())
 
     runner.add_metric(
-
         "MAE",
-
-        lambda y, p:0,
-
+        lambda y, p: 0,
     )
 
     df = runner.run(
-
         continue_on_error=True,
-
     )
 
     assert isinstance(
-
         df,
-
         pd.DataFrame,
-
     )
 
 
 # ---------------------------------------------------------------------
 # Smoke Test
 # ---------------------------------------------------------------------
+
 
 def test_end_to_end(dataset, model):
 
@@ -918,21 +870,8 @@ def test_end_to_end(dataset, model):
     runner.add_model(model)
 
     runner.add_metric(
-
         "MAE",
-
-        lambda y,p:
-
-        np.mean(
-
-            np.abs(
-
-                y-p
-
-            )
-
-        ),
-
+        lambda y, p: np.mean(np.abs(y - p)),
     )
 
     results = runner.run()
@@ -996,6 +935,7 @@ def test_attach_experiment():
 # Leaderboard Integration
 # ---------------------------------------------------------------------
 
+
 def test_update_leaderboard(dataset, model):
 
     runner = BenchmarkRunner()
@@ -1005,19 +945,12 @@ def test_update_leaderboard(dataset, model):
     runner.attach_leaderboard(leaderboard)
 
     runner.add_result(
-
         model,
-
         dataset,
-
         {
-
-            "MAE":0.2,
-
-            "RMSE":0.3,
-
+            "MAE": 0.2,
+            "RMSE": 0.3,
         },
-
     )
 
     ranking = runner.update_leaderboard("MAE")
@@ -1029,46 +962,34 @@ def test_update_leaderboard(dataset, model):
 # Report Integration
 # ---------------------------------------------------------------------
 
+
 def test_generate_report(tmp_path, dataset, model):
 
     report = BenchmarkReport("Benchmark Test")
 
     runner = BenchmarkRunner(
-
         output_directory=str(tmp_path),
-
     )
 
     runner.attach_report(report)
 
     runner.add_result(
-
         model,
-
         dataset,
-
         {
-
-            "RMSE":0.25,
-
+            "RMSE": 0.25,
         },
-
     )
 
     runner.generate_report()
 
-    assert (
-
-        tmp_path /
-
-        "benchmark_report.json"
-
-    ).exists()
+    assert (tmp_path / "benchmark_report.json").exists()
 
 
 # ---------------------------------------------------------------------
 # Callback Lifecycle
 # ---------------------------------------------------------------------
+
 
 def test_multiple_callbacks():
 
@@ -1078,29 +999,17 @@ def test_multiple_callbacks():
 
     def callback_a(event, **kwargs):
 
-        calls.append(
-
-            ("A", event)
-
-        )
+        calls.append(("A", event))
 
     def callback_b(event, **kwargs):
 
-        calls.append(
-
-            ("B", event)
-
-        )
+        calls.append(("B", event))
 
     runner.add_callback(callback_a)
 
     runner.add_callback(callback_b)
 
-    runner._execute_callbacks(
-
-        "benchmark_start"
-
-    )
+    runner._execute_callbacks("benchmark_start")
 
     assert len(calls) == 2
 
@@ -1111,25 +1020,18 @@ def test_multiple_callbacks():
 # Error Recovery
 # ---------------------------------------------------------------------
 
+
 class BrokenModel:
 
     name = "Broken Model"
 
     def fit(self, X, y):
 
-        raise RuntimeError(
-
-            "Intentional failure"
-
-        )
+        raise RuntimeError("Intentional failure")
 
     def predict(self, X):
 
-        return np.zeros(
-
-            len(X)
-
-        )
+        return np.zeros(len(X))
 
 
 def test_continue_on_error(dataset):
@@ -1141,31 +1043,24 @@ def test_continue_on_error(dataset):
     runner.add_model(BrokenModel())
 
     runner.add_metric(
-
         "MAE",
-
-        lambda y, p:0,
-
+        lambda y, p: 0,
     )
 
     df = runner.run(
-
         continue_on_error=True,
-
     )
 
     assert isinstance(
-
         df,
-
         pd.DataFrame,
-
     )
 
 
 # ---------------------------------------------------------------------
 # Smoke Test
 # ---------------------------------------------------------------------
+
 
 def test_end_to_end(dataset, model):
 
@@ -1176,21 +1071,8 @@ def test_end_to_end(dataset, model):
     runner.add_model(model)
 
     runner.add_metric(
-
         "MAE",
-
-        lambda y,p:
-
-        np.mean(
-
-            np.abs(
-
-                y-p
-
-            )
-
-        ),
-
+        lambda y, p: np.mean(np.abs(y - p)),
     )
 
     results = runner.run()
@@ -1198,4 +1080,3 @@ def test_end_to_end(dataset, model):
     assert len(results) == 1
 
     assert "MAE" in results.columns
-

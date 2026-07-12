@@ -62,9 +62,7 @@ class ModePredictor(BaselineClassifier):
 
         if not self.is_fitted:
 
-            raise RuntimeError(
-                "Model has not been fitted."
-            )
+            raise RuntimeError("Model has not been fitted.")
 
         return np.repeat(
             self.mode_,
@@ -81,16 +79,10 @@ class ModePredictor(BaselineClassifier):
 
         prediction = self.predict(X)
 
-        return np.mean(
-            prediction == y
-        )
+        return np.mean(prediction == y)
 
     # -----------------------------------------------------
 
     def __repr__(self):
 
-        return (
-            f"ModePredictor("
-            f"mode={self.mode_}, "
-            f"fitted={self.is_fitted})"
-        )
+        return f"ModePredictor(" f"mode={self.mode_}, " f"fitted={self.is_fitted})"

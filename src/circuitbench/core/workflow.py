@@ -34,11 +34,8 @@ class Workflow:
         with ThreadPoolExecutor(max_workers=workers) as executor:
 
             futures = [
-
                 executor.submit(func, *args, **kwargs)
-
                 for func, args, kwargs in self.tasks
-
             ]
 
             for future in futures:

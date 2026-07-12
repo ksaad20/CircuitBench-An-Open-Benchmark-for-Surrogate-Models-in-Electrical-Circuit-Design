@@ -51,11 +51,7 @@ class Dataset(ABC):
         if self.target is None:
             return list(self.data.columns)
 
-        return [
-            column
-            for column in self.data.columns
-            if column != self.target
-        ]
+        return [column for column in self.data.columns if column != self.target]
 
     def target_column(self):
 
@@ -108,8 +104,4 @@ class Dataset(ABC):
 
     def __repr__(self):
 
-        return (
-            f"<Dataset "
-            f"name={self.name} "
-            f"samples={len(self)}>"
-        )
+        return f"<Dataset " f"name={self.name} " f"samples={len(self)}>"

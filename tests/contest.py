@@ -9,17 +9,21 @@ import numpy as np
 @pytest.fixture
 def sample_dataset():
 
-    X = np.array([
-        [1, 2],
-        [2, 3],
-        [3, 4],
-    ])
+    X = np.array(
+        [
+            [1, 2],
+            [2, 3],
+            [3, 4],
+        ]
+    )
 
-    y = np.array([
-        3,
-        5,
-        7,
-    ])
+    y = np.array(
+        [
+            3,
+            5,
+            7,
+        ]
+    )
 
     return X, y
 

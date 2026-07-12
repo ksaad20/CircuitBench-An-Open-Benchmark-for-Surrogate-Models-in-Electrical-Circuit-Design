@@ -41,7 +41,6 @@ class CrossValidator:
         X,
         y,
     ) -> Dict:
-
         """
         Perform K-Fold evaluation.
         """
@@ -77,19 +76,12 @@ class CrossValidator:
         scores = np.asarray(fold_scores)
 
         return {
-
             "scores": scores,
-
             "mean_score": float(scores.mean()),
-
             "std_score": float(scores.std()),
-
             "min_score": float(scores.min()),
-
             "max_score": float(scores.max()),
-
             "n_folds": self.n_splits,
-
         }
 
     # --------------------------------------------------------

@@ -20,9 +20,7 @@ class PreprocessingPipeline:
 
         self.imputer = SimpleImputer(strategy="mean")
 
-        dataframe[:] = self.imputer.fit_transform(
-            dataframe
-        )
+        dataframe[:] = self.imputer.fit_transform(dataframe)
 
         return dataframe
 
@@ -30,9 +28,7 @@ class PreprocessingPipeline:
 
         self.imputer = SimpleImputer(strategy="median")
 
-        dataframe[:] = self.imputer.fit_transform(
-            dataframe
-        )
+        dataframe[:] = self.imputer.fit_transform(dataframe)
 
         return dataframe
 
@@ -40,9 +36,7 @@ class PreprocessingPipeline:
 
         self.scaler = StandardScaler()
 
-        dataframe[:] = self.scaler.fit_transform(
-            dataframe
-        )
+        dataframe[:] = self.scaler.fit_transform(dataframe)
 
         return dataframe
 
@@ -50,9 +44,7 @@ class PreprocessingPipeline:
 
         self.scaler = MinMaxScaler()
 
-        dataframe[:] = self.scaler.fit_transform(
-            dataframe
-        )
+        dataframe[:] = self.scaler.fit_transform(dataframe)
 
         return dataframe
 
@@ -64,12 +56,7 @@ class PreprocessingPipeline:
 
         return dataframe.dropna()
 
-    def pipeline(
-        self,
-        dataframe,
-        impute=True,
-        scale=True
-    ):
+    def pipeline(self, dataframe, impute=True, scale=True):
 
         df = dataframe.copy()
 

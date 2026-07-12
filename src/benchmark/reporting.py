@@ -50,13 +50,12 @@ class BenchmarkReport:
         content: str,
     ):
 
-        self.sections.append({
-
-            "title": title,
-
-            "content": content,
-
-        })
+        self.sections.append(
+            {
+                "title": title,
+                "content": content,
+            }
+        )
 
     # -----------------------------------------------------
 
@@ -106,19 +105,12 @@ class BenchmarkReport:
     def summary(self):
 
         return {
-
             "title": self.title,
-
             "created": self.created,
-
             "sections": len(self.sections),
-
             "tables": len(self.tables),
-
             "figures": len(self.figures),
-
             "statistics": len(self.statistics),
-
         }
 
     # -----------------------------------------------------
@@ -129,177 +121,98 @@ class BenchmarkReport:
     ):
 
         output = {
-
             "title": self.title,
-
             "created": self.created,
-
             "metadata": self.metadata,
-
             "sections": self.sections,
-
             "statistics": self.statistics,
-
-            "tables": {
-
-                k: v.to_dict()
-
-                for k, v in self.tables.items()
-
-            },
-
+            "tables": {k: v.to_dict() for k, v in self.tables.items()},
             "figures": self.figures,
-
         }
 
         with open(
-
             filename,
-
             "w",
-
             encoding="utf-8",
-
         ) as f:
 
             json.dump(
-
                 output,
-
                 f,
-
                 indent=4,
-
             )
 
     # -----------------------------------------------------
 
     def export_markdown(
-
         self,
-
         filename="benchmark_report.md",
-
     ):
 
         with open(
-
             filename,
-
             "w",
-
             encoding="utf-8",
-
         ) as f:
 
-            f.write(
+            f.write(f"# {self.title}\n\n")
 
-                f"# {self.title}\n\n"
-
-            )
-
-            f.write(
-
-                f"Generated: {self.created}\n\n"
-
-            )
+            f.write(f"Generated: {self.created}\n\n")
 
             for section in self.sections:
 
-                f.write(
+                f.write(f"## {section['title']}\n\n")
 
-                    f"## {section['title']}\n\n"
-
-                )
-
-                f.write(
-
-                    section["content"]
-
-                )
+                f.write(section["content"])
 
                 f.write("\n\n")
 
             if self.statistics:
 
-                f.write(
-
-                    "# Statistical Results\n\n"
-
-                )
+                f.write("# Statistical Results\n\n")
 
                 for name, value in self.statistics.items():
 
-                    f.write(
-
-                        f"## {name}\n"
-
-                    )
+                    f.write(f"## {name}\n")
 
                     f.write("```json\n")
 
                     f.write(
-
                         json.dumps(
-
                             value,
-
                             indent=4,
-
                         )
-
                     )
 
                     f.write("\n```\n\n")
 
             for name, table in self.tables.items():
 
-                f.write(
+                f.write(f"## {name}\n\n")
 
-                    f"## {name}\n\n"
-
-                )
-
-                f.write(
-
-                    table.to_markdown(
-
-                        index=False
-
-                    )
-
-                )
+                f.write(table.to_markdown(index=False))
 
                 f.write("\n\n")
 
     # -----------------------------------------------------
 
     def export_csv(
-
         self,
-
         directory="tables",
-
     ):
 
         directory = Path(directory)
 
         directory.mkdir(
-
             parents=True,
-
             exist_ok=True,
-
         )
 
         for name, table in self.tables.items():
 
             table.to_csv(
-
                 directory / f"{name}.csv",
-
                 index=False,
-
             )
 
     # -----------------------------------------------------
@@ -320,8 +233,5 @@ class BenchmarkReport:
 
 
 __all__ = [
-
     "BenchmarkReport",
-
 ]
-

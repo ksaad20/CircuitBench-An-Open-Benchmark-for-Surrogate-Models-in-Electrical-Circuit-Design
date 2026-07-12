@@ -56,7 +56,4 @@ class DatasetRegistry:
 
     def __repr__(self):
 
-        return (
-            f"DatasetRegistry("
-            f"{self.count()} datasets)"
-        )
+        return f"DatasetRegistry(" f"{self.count()} datasets)"

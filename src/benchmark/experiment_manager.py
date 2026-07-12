@@ -23,13 +23,9 @@ class Experiment:
 
     name: str
 
-    created: str = field(
-        default_factory=lambda: datetime.now().isoformat()
-    )
+    created: str = field(default_factory=lambda: datetime.now().isoformat())
 
-    results: list = field(
-        default_factory=list
-    )
+    results: list = field(default_factory=list)
 
 
 class ExperimentManager:
@@ -38,22 +34,16 @@ class ExperimentManager:
 
         self.experiments = []
 
-
     def create_experiment(
         self,
         name,
     ):
 
-        experiment = Experiment(
-            name=name
-        )
+        experiment = Experiment(name=name)
 
-        self.experiments.append(
-            experiment
-        )
+        self.experiments.append(experiment)
 
         return experiment
-
 
     @staticmethod
     def add_result(
@@ -61,10 +51,7 @@ class ExperimentManager:
         result,
     ):
 
-        experiment.results.append(
-            result
-        )
-
+        experiment.results.append(result)
 
     @staticmethod
     def leaderboard(
@@ -78,16 +65,9 @@ class ExperimentManager:
         for result in experiment.results:
 
             row = {
-
-                "Model":
-                    result.model_name,
-
-                "FitTime":
-                    result.fit_time,
-
-                "PredictTime":
-                    result.predict_time,
-
+                "Model": result.model_name,
+                "FitTime": result.fit_time,
+                "PredictTime": result.predict_time,
             }
 
             if hasattr(
@@ -97,34 +77,22 @@ class ExperimentManager:
 
                 row["MemoryMB"] = result.memory_mb
 
-            row.update(
-                result.metrics
-            )
+            row.update(result.metrics)
 
-            rows.append(
-                row
-            )
+            rows.append(row)
 
-        df = pd.DataFrame(
-            rows
-        )
+        df = pd.DataFrame(rows)
 
         if metric in df.columns:
 
             df = df.sort_values(
-
                 metric,
-
                 ascending=ascending,
-
             ).reset_index(
-
                 drop=True,
-
             )
 
         return df
-
 
     @staticmethod
     def export_csv(
@@ -133,13 +101,9 @@ class ExperimentManager:
     ):
 
         leaderboard.to_csv(
-
             filename,
-
             index=False,
-
         )
-
 
     @staticmethod
     def export_json(
@@ -148,15 +112,10 @@ class ExperimentManager:
     ):
 
         leaderboard.to_json(
-
             filename,
-
             orient="records",
-
             indent=4,
-
         )
-
 
     @staticmethod
     def metadata(
@@ -164,20 +123,10 @@ class ExperimentManager:
     ):
 
         return {
-
-            "name":
-                experiment.name,
-
-            "created":
-                experiment.created,
-
-            "models":
-                len(
-                    experiment.results
-                ),
-
+            "name": experiment.name,
+            "created": experiment.created,
+            "models": len(experiment.results),
         }
-
 
     @staticmethod
     def save_metadata(
@@ -191,14 +140,7 @@ class ExperimentManager:
         ) as f:
 
             json.dump(
-
-                ExperimentManager.metadata(
-                    experiment
-                ),
-
+                ExperimentManager.metadata(experiment),
                 f,
-
                 indent=4,
-
             )
-

@@ -48,9 +48,7 @@ class ModelComparison:
         random_state=42,
     ):
 
-        rng = np.random.default_rng(
-            random_state
-        )
+        rng = np.random.default_rng(random_state)
 
         y_true = np.asarray(y_true)
 
@@ -75,9 +73,7 @@ class ModelComparison:
             dtype=float,
         )
 
-        for i in range(
-            n_bootstrap
-        ):
+        for i in range(n_bootstrap):
 
             idx = rng.integers(
                 0,
@@ -110,28 +106,16 @@ class ModelComparison:
         )
 
         p = 2 * min(
-
             np.mean(diffs <= 0),
-
             np.mean(diffs >= 0),
-
         )
 
         return ComparisonResult(
-
             model_a_score=float(score_a),
-
             model_b_score=float(score_b),
-
             difference=float(score_a - score_b),
-
             ci_lower=float(lower),
-
             ci_upper=float(upper),
-
             p_value=float(p),
-
             bootstrap_differences=diffs,
-
         )
-

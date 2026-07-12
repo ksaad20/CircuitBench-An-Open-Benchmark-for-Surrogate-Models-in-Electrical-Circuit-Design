@@ -49,9 +49,7 @@ class MedianPredictor(BaselineRegressor):
         y = np.asarray(y, dtype=float)
 
         if y.ndim != 1:
-            raise ValueError(
-                "Target must be one-dimensional."
-            )
+            raise ValueError("Target must be one-dimensional.")
 
         self.median_ = float(np.median(y))
 
@@ -73,9 +71,7 @@ class MedianPredictor(BaselineRegressor):
     def predict(self, X):
 
         if not self.is_fitted:
-            raise RuntimeError(
-                "Model has not been fitted."
-            )
+            raise RuntimeError("Model has not been fitted.")
 
         return np.full(
             len(X),
@@ -107,7 +103,5 @@ class MedianPredictor(BaselineRegressor):
     def __repr__(self):
 
         return (
-            f"MedianPredictor("
-            f"median={self.median_}, "
-            f"fitted={self.is_fitted})"
+            f"MedianPredictor(" f"median={self.median_}, " f"fitted={self.is_fitted})"
         )

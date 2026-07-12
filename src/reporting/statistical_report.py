@@ -25,12 +25,9 @@ class StatisticalReport:
         Summary statistics.
         """
 
-        numeric = leaderboard.select_dtypes(
-            include=np.number
-        )
+        numeric = leaderboard.select_dtypes(include=np.number)
 
         return numeric.describe().T
-
 
     @staticmethod
     def ranking(
@@ -58,7 +55,6 @@ class StatisticalReport:
 
         return df
 
-
     @staticmethod
     def top_models(
         leaderboard,
@@ -71,20 +67,13 @@ class StatisticalReport:
         """
 
         return (
-
-            leaderboard
-
-            .sort_values(
+            leaderboard.sort_values(
                 metric,
                 ascending=ascending,
             )
-
             .head(top_n)
-
             .reset_index(drop=True)
-
         )
-
 
     @staticmethod
     def metric_summary(
@@ -94,36 +83,23 @@ class StatisticalReport:
         Mean, std, min and max for all metrics.
         """
 
-        numeric = leaderboard.select_dtypes(
-            include=np.number
-        )
+        numeric = leaderboard.select_dtypes(include=np.number)
 
         rows = []
 
         for column in numeric.columns:
 
             rows.append(
-
                 {
-
                     "Metric": column,
-
                     "Mean": numeric[column].mean(),
-
                     "Std": numeric[column].std(),
-
                     "Minimum": numeric[column].min(),
-
                     "Maximum": numeric[column].max(),
-
                 }
-
             )
 
-        return pd.DataFrame(
-            rows
-        )
-
+        return pd.DataFrame(rows)
 
     @staticmethod
     def save_summary(
@@ -131,15 +107,7 @@ class StatisticalReport:
         filename,
     ):
 
-        StatisticalReport.summary(
-
-            leaderboard
-
-        ).to_csv(
-
+        StatisticalReport.summary(leaderboard).to_csv(
             filename,
-
             index=True,
-
         )
-

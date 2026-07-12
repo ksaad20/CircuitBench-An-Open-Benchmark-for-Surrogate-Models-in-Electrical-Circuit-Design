@@ -52,19 +52,12 @@ class DatasetMetadata:
     def summary(self):
 
         return {
-
             "name": self.name,
-
             "version": self.version,
-
             "task": self.task,
-
             "samples": self.num_samples,
-
             "features": self.num_features,
-
             "target": self.target,
-
         }
 
     def to_dict(self):

@@ -36,14 +36,9 @@ class RankingMetrics:
         if k == 0:
             return 0.0
 
-        hits = sum(
-            item in y_true
-            for item in retrieved
-        )
+        hits = sum(item in y_true for item in retrieved)
 
-        return float(
-            hits / k
-        )
+        return float(hits / k)
 
     @staticmethod
     def recall_at_k(
@@ -62,16 +57,9 @@ class RankingMetrics:
 
         retrieved = y_pred[:k]
 
-        hits = sum(
-            item in y_true
-            for item in retrieved
-        )
+        hits = sum(item in y_true for item in retrieved)
 
-        return float(
-            hits
-            /
-            len(y_true)
-        )
+        return float(hits / len(y_true))
 
     @staticmethod
     def hit_rate(
@@ -85,17 +73,7 @@ class RankingMetrics:
 
         y_true = set(y_true)
 
-        return float(
-
-            any(
-
-                item in y_true
-
-                for item in y_pred[:k]
-
-            )
-
-        )
+        return float(any(item in y_true for item in y_pred[:k]))
 
     @staticmethod
     def reciprocal_rank(
@@ -115,9 +93,7 @@ class RankingMetrics:
 
             if item in y_true:
 
-                return float(
-                    1.0 / rank
-                )
+                return float(1.0 / rank)
 
         return 0.0
 
@@ -150,12 +126,7 @@ class RankingMetrics:
 
                 score += hits / rank
 
-        return float(
-            score
-            /
-            len(y_true)
-        )
-
+        return float(score / len(y_true))
 
     @staticmethod
     def mean_average_precision(
@@ -167,25 +138,20 @@ class RankingMetrics:
         """
 
         scores = [
-
             RankingMetrics.average_precision(
                 truth,
                 pred,
             )
-
             for truth, pred in zip(
                 truth_lists,
                 prediction_lists,
             )
-
         ]
 
         if len(scores) == 0:
             return 0.0
 
-        return float(
-            np.mean(scores)
-        )
+        return float(np.mean(scores))
 
     @staticmethod
     def mean_reciprocal_rank(
@@ -197,25 +163,20 @@ class RankingMetrics:
         """
 
         scores = [
-
             RankingMetrics.reciprocal_rank(
                 truth,
                 pred,
             )
-
             for truth, pred in zip(
                 truth_lists,
                 prediction_lists,
             )
-
         ]
 
         if len(scores) == 0:
             return 0.0
 
-        return float(
-            np.mean(scores)
-        )
+        return float(np.mean(scores))
 
     @staticmethod
     def cumulative_gain(
@@ -230,11 +191,7 @@ class RankingMetrics:
             dtype=float,
         )
 
-        return float(
-            np.sum(
-                relevance
-            )
-        )
+        return float(np.sum(relevance))
 
     @staticmethod
     def discounted_cumulative_gain(
@@ -254,26 +211,13 @@ class RankingMetrics:
             return 0.0
 
         discounts = np.log2(
-
             np.arange(
-
                 2,
-
                 len(relevance) + 2,
-
             )
-
         )
 
-        return float(
-
-            np.sum(
-
-                relevance / discounts
-
-            )
-
-        )
+        return float(np.sum(relevance / discounts))
 
     @staticmethod
     def normalized_discounted_cumulative_gain(
@@ -288,9 +232,7 @@ class RankingMetrics:
             dtype=float,
         )
 
-        ideal = np.sort(
-            relevance
-        )[::-1]
+        ideal = np.sort(relevance)[::-1]
 
         ideal_score = RankingMetrics.discounted_cumulative_gain(
             ideal,
@@ -301,19 +243,11 @@ class RankingMetrics:
             return 0.0
 
         return float(
-
             RankingMetrics.discounted_cumulative_gain(
-
                 relevance,
-
             )
-
-            /
-
-            ideal_score
-
+            / ideal_score
         )
-
 
     @staticmethod
     def success_at_k(
@@ -326,17 +260,11 @@ class RankingMetrics:
         """
 
         return float(
-
             RankingMetrics.hit_rate(
-
                 y_true,
-
                 y_pred,
-
                 k,
-
             )
-
         )
 
     @staticmethod
@@ -355,13 +283,9 @@ class RankingMetrics:
             return 0.0
 
         return RankingMetrics.precision_at_k(
-
             y_true,
-
             y_pred,
-
             k=r,
-
         )
 
     @staticmethod
@@ -375,48 +299,22 @@ class RankingMetrics:
         """
 
         precision = RankingMetrics.precision_at_k(
-
             y_true,
-
             y_pred,
-
             k,
-
         )
 
         recall = RankingMetrics.recall_at_k(
-
             y_true,
-
             y_pred,
-
             k,
-
         )
 
         if precision + recall == 0:
 
             return 0.0
 
-        return float(
-
-            2.0
-
-            * precision
-
-            * recall
-
-            /
-
-            (
-
-                precision
-
-                + recall
-
-            )
-
-        )
+        return float(2.0 * precision * recall / (precision + recall))
 
     @staticmethod
     def coverage_at_k(
@@ -433,42 +331,19 @@ class RankingMetrics:
         retrieved = set()
 
         for truth, prediction in zip(
-
             truth_lists,
-
             prediction_lists,
-
         ):
 
             relevant.update(truth)
 
-            retrieved.update(
-
-                prediction[:k]
-
-            )
+            retrieved.update(prediction[:k])
 
         if len(relevant) == 0:
 
             return 0.0
 
-        return float(
-
-            len(
-
-                relevant.intersection(
-
-                    retrieved
-
-                )
-
-            )
-
-            /
-
-            len(relevant)
-
-        )
+        return float(len(relevant.intersection(retrieved)) / len(relevant))
 
     @classmethod
     def basic_report(
@@ -482,103 +357,46 @@ class RankingMetrics:
         """
 
         return {
-
-            "Precision@K":
-
-                cls.precision_at_k(
-
-                    y_true,
-
-                    y_pred,
-
-                    k,
-
-                ),
-
-            "Recall@K":
-
-                cls.recall_at_k(
-
-                    y_true,
-
-                    y_pred,
-
-                    k,
-
-                ),
-
-            "HitRate":
-
-                cls.hit_rate(
-
-                    y_true,
-
-                    y_pred,
-
-                    k,
-
-                ),
-
-            "ReciprocalRank":
-
-                cls.reciprocal_rank(
-
-                    y_true,
-
-                    y_pred,
-
-                ),
-
-            "AveragePrecision":
-
-                cls.average_precision(
-
-                    y_true,
-
-                    y_pred,
-
-                ),
-
-            "RPrecision":
-
-                cls.r_precision(
-
-                    y_true,
-
-                    y_pred,
-
-                ),
-
-            "F1@K":
-
-                cls.f1_at_k(
-
-                    y_true,
-
-                    y_pred,
-
-                    k,
-
-                ),
-
-            "Success@K":
-
-                cls.success_at_k(
-
-                    y_true,
-
-                    y_pred,
-
-                    k,
-
-                ),
-
+            "Precision@K": cls.precision_at_k(
+                y_true,
+                y_pred,
+                k,
+            ),
+            "Recall@K": cls.recall_at_k(
+                y_true,
+                y_pred,
+                k,
+            ),
+            "HitRate": cls.hit_rate(
+                y_true,
+                y_pred,
+                k,
+            ),
+            "ReciprocalRank": cls.reciprocal_rank(
+                y_true,
+                y_pred,
+            ),
+            "AveragePrecision": cls.average_precision(
+                y_true,
+                y_pred,
+            ),
+            "RPrecision": cls.r_precision(
+                y_true,
+                y_pred,
+            ),
+            "F1@K": cls.f1_at_k(
+                y_true,
+                y_pred,
+                k,
+            ),
+            "Success@K": cls.success_at_k(
+                y_true,
+                y_pred,
+                k,
+            ),
         }
 
 
 __all__ = [
-
     "RankingMetrics",
-
 ]
-

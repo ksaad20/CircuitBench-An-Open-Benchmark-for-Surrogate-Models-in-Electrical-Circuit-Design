@@ -149,7 +149,7 @@ __all__ = [
     "FeatureImportance",
     "ShapValues",
 ]
-EOFcat > src/models/utils.py << 'EOF'
+EOFcat > src / models / utils.py << "EOF"
 """
 CircuitBench Model Utilities
 ============================
@@ -166,10 +166,10 @@ from typing import Any, Dict
 
 import numpy as np
 
-
 # ==========================================================
 # Randomness
 # ==========================================================
+
 
 def set_random_seed(seed: int = 42) -> None:
     """
@@ -193,8 +193,8 @@ def set_random_seed(seed: int = 42) -> None:
 # Timing
 # ==========================================================
 
-class Timer:
 
+class Timer:
     """
     Simple execution timer.
     """
@@ -218,6 +218,7 @@ class Timer:
 # Filesystem
 # ==========================================================
 
+
 def ensure_directory(path: str | Path):
 
     path = Path(path)
@@ -233,6 +234,7 @@ def ensure_directory(path: str | Path):
 # ==========================================================
 # Dictionaries
 # ==========================================================
+
 
 def merge_parameters(
     default: Dict[str, Any],
@@ -250,6 +252,7 @@ def merge_parameters(
 # Validation
 # ==========================================================
 
+
 def is_fitted(model) -> bool:
 
     return getattr(model, "is_fitted", False)
@@ -258,6 +261,7 @@ def is_fitted(model) -> bool:
 # ==========================================================
 # Pretty Printing
 # ==========================================================
+
 
 def print_header(title: str):
 

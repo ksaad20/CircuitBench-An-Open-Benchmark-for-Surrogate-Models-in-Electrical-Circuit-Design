@@ -10,7 +10,6 @@ from .base_model import BaselineModel
 
 
 class BaselineClassifier(BaselineModel):
-
     """
     Parent class for baseline classifiers.
     """
@@ -32,12 +31,9 @@ class BaselineClassifier(BaselineModel):
 
         if not self.is_fitted:
 
-            raise RuntimeError(
-                "Model has not been fitted."
-            )
+            raise RuntimeError("Model has not been fitted.")
 
         return np.full(
             len(X),
             self.label_,
         )
-

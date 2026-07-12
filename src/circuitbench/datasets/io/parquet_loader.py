@@ -20,7 +20,4 @@ class ParquetLoader:
 
     def save(self, dataframe, filename):
 
-        dataframe.to_parquet(
-            filename,
-            index=False
-        )
+        dataframe.to_parquet(filename, index=False)

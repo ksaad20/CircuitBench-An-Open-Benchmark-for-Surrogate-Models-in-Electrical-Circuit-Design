@@ -71,9 +71,7 @@ class ConfidenceIntervals:
             n - 1,
         )
 
-        margin = t * std * np.sqrt(
-            1 + 1 / n
-        )
+        margin = t * std * np.sqrt(1 + 1 / n)
 
         return (
             float(mean - margin),
@@ -91,13 +89,9 @@ class ConfidenceIntervals:
 
         p = successes / trials
 
-        z = stats.norm.ppf(
-            (1 + confidence) / 2
-        )
+        z = stats.norm.ppf((1 + confidence) / 2)
 
-        margin = z * np.sqrt(
-            p * (1 - p) / trials
-        )
+        margin = z * np.sqrt(p * (1 - p) / trials)
 
         return (
             max(0.0, p - margin),
@@ -154,35 +148,17 @@ class ConfidenceIntervals:
         confidence: float = 0.95,
     ):
 
-        x = np.sort(
-            np.asarray(x)
-        )
+        x = np.sort(np.asarray(x))
 
         n = len(x)
 
         alpha = 1 - confidence
 
-        z = stats.norm.ppf(
-            1 - alpha / 2
-        )
+        z = stats.norm.ppf(1 - alpha / 2)
 
-        k = int(
-            np.floor(
-                (n / 2)
-                - z
-                * np.sqrt(n)
-                / 2
-            )
-        )
+        k = int(np.floor((n / 2) - z * np.sqrt(n) / 2))
 
-        l = int(
-            np.ceil(
-                (n / 2)
-                + z
-                * np.sqrt(n)
-                / 2
-            )
-        )
+        l = int(np.ceil((n / 2) + z * np.sqrt(n) / 2))
 
         k = max(
             0,
@@ -209,31 +185,22 @@ class ConfidenceIntervals:
     ) -> Dict:
 
         return {
-
-            "mean_ci":
-                cls.mean_confidence_interval(
-                    x,
-                    confidence,
-                ),
-
-            "prediction_interval":
-                cls.prediction_interval(
-                    x,
-                    confidence,
-                ),
-
-            "variance_ci":
-                cls.variance_confidence_interval(
-                    x,
-                    confidence,
-                ),
-
-            "median_ci":
-                cls.median_confidence_interval(
-                    x,
-                    confidence,
-                ),
-
+            "mean_ci": cls.mean_confidence_interval(
+                x,
+                confidence,
+            ),
+            "prediction_interval": cls.prediction_interval(
+                x,
+                confidence,
+            ),
+            "variance_ci": cls.variance_confidence_interval(
+                x,
+                confidence,
+            ),
+            "median_ci": cls.median_confidence_interval(
+                x,
+                confidence,
+            ),
         }
 
 

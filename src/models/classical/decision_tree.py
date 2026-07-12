@@ -54,21 +54,16 @@ class DecisionTreeRegressionModel(SklearnModel):
 
         super().fit(X, y)
 
-        self.metadata.update({
-
-            "criterion": self.model.criterion,
-
-            "splitter": self.model.splitter,
-
-            "max_depth": self.model.max_depth,
-
-            "max_features": self.model.max_features,
-
-            "node_count": self.model.tree_.node_count,
-
-            "max_leaf_nodes": self.model.get_n_leaves(),
-
-        })
+        self.metadata.update(
+            {
+                "criterion": self.model.criterion,
+                "splitter": self.model.splitter,
+                "max_depth": self.model.max_depth,
+                "max_features": self.model.max_features,
+                "node_count": self.model.tree_.node_count,
+                "max_leaf_nodes": self.model.get_n_leaves(),
+            }
+        )
 
         return self
 

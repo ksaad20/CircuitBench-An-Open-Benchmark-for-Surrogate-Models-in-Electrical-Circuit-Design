@@ -31,7 +31,6 @@ class PublicationReport:
 
         return leaderboard.iloc[0]
 
-
     @staticmethod
     def executive_summary(
         leaderboard,
@@ -49,24 +48,15 @@ class PublicationReport:
 
         lines.append("# Executive Summary")
         lines.append("")
-        lines.append(
-            f"Generated: {datetime.now().isoformat()}"
-        )
+        lines.append(f"Generated: {datetime.now().isoformat()}")
         lines.append("")
-        lines.append(
-            f"Models evaluated: {len(leaderboard)}"
-        )
+        lines.append(f"Models evaluated: {len(leaderboard)}")
         lines.append("")
-        lines.append(
-            f"Best model: {best['Model']}"
-        )
+        lines.append(f"Best model: {best['Model']}")
         lines.append("")
-        lines.append(
-            f"{metric}: {best[metric]:.6f}"
-        )
+        lines.append(f"{metric}: {best[metric]:.6f}")
 
         return "\n".join(lines)
-
 
     @staticmethod
     def methods():
@@ -89,16 +79,12 @@ All models were evaluated using identical
 datasets and preprocessing.
 """
 
-
     @staticmethod
     def results_table(
         leaderboard,
     ):
 
-        return leaderboard.to_markdown(
-            index=False
-        )
-
+        return leaderboard.to_markdown(index=False)
 
     @staticmethod
     def discussion():
@@ -115,7 +101,6 @@ alongside confidence intervals and statistical
 tests.
 """
 
-
     @staticmethod
     def generate(
         leaderboard,
@@ -124,27 +109,20 @@ tests.
     ):
 
         sections = [
-
             PublicationReport.executive_summary(
                 leaderboard,
                 metric,
                 ascending,
             ),
-
             PublicationReport.methods(),
-
             "# Results",
-
             PublicationReport.results_table(
                 leaderboard,
             ),
-
             PublicationReport.discussion(),
-
         ]
 
         return "\n\n".join(sections)
-
 
     @staticmethod
     def save(
@@ -155,13 +133,9 @@ tests.
     ):
 
         report = PublicationReport.generate(
-
             leaderboard,
-
             metric,
-
             ascending,
-
         )
 
         with open(
@@ -171,4 +145,3 @@ tests.
         ) as f:
 
             f.write(report)
-

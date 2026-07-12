@@ -64,27 +64,23 @@ class BayesianRidgeRegressionModel(SklearnModel):
 
         super().fit(X, y)
 
-        self.metadata.update({
-
-            "alpha": self.model.alpha_,
-
-            "lambda": self.model.lambda_,
-
-            "iterations": self.model.n_iter_,
-
-            "scores_available": hasattr(
-                self.model,
-                "scores_",
-            ),
-
-        })
+        self.metadata.update(
+            {
+                "alpha": self.model.alpha_,
+                "lambda": self.model.lambda_,
+                "iterations": self.model.n_iter_,
+                "scores_available": hasattr(
+                    self.model,
+                    "scores_",
+                ),
+            }
+        )
 
         return self
 
     # --------------------------------------------------
 
     def predict_with_uncertainty(self, X):
-
         """
         Returns
         -------
@@ -103,9 +99,7 @@ class BayesianRidgeRegressionModel(SklearnModel):
 
     def feature_importance(self):
 
-        coef = np.abs(
-            self.model.coef_
-        )
+        coef = np.abs(self.model.coef_)
 
         total = coef.sum()
 
@@ -141,18 +135,12 @@ class BayesianRidgeRegressionModel(SklearnModel):
     def __repr__(self):
 
         return (
-
             "BayesianRidgeRegressionModel("
-
             f"iterations={self.metadata.get('iterations',0)}, "
-
             f"fitted={self.is_fitted})"
-
         )
 
 
 __all__ = [
-
     "BayesianRidgeRegressionModel",
-
 ]
