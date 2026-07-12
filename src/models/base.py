@@ -5,7 +5,7 @@ CircuitBench Base Model Interface
 Abstract base class implemented by every predictive model in CircuitBench.
 
 Author: CircuitBench Development Team
-License: MIT
+License: Apache 2.0
 """
 
 from __future__ import annotations
