@@ -1,0 +1,103 @@
+[build-system]
+requires = [
+    "setuptools>=68",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "circuitbench"
+version = "1.0.0"
+description = "A comprehensive benchmarking framework for machine learning and computational intelligence."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+
+authors = [
+    {name = "Asif Kazi"}
+]
+
+keywords = [
+    "machine-learning",
+    "benchmark",
+    "artificial-intelligence",
+    "statistics",
+    "evaluation",
+    "classification",
+    "regression",
+    "calibration",
+    "benchmarking",
+    "research"
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.11",
+    "scikit-learn>=1.4",
+    "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+
+explainability = [
+    "shap>=0.45"
+]
+
+development = [
+    "pytest",
+    "pytest-cov",
+    "black",
+    "ruff",
+    "flake8",
+]
+
+docs = [
+    "sphinx",
+    "furo",
+]
+
+[tool.black]
+
+line-length = 88
+
+target-version = [
+    "py310",
+    "py311",
+    "py312",
+]
+
+[tool.ruff]
+
+line-length = 88
+
+target-version = "py310"
+
+[tool.pytest.ini_options]
+
+testpaths = [
+    "tests",
+]
+
+python_files = [
+    "test_*.py",
+]
+
+[tool.setuptools.packages.find]
+
+include = [
+    "src*",
+]
