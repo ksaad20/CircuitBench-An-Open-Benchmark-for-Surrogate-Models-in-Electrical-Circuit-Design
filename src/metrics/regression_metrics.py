@@ -269,6 +269,9 @@ class RegressionMetrics:
         n_features=1,
 
     ):
+        __all__ = [
+    "RegressionMetrics",
+        ]
 
         return {
 
@@ -365,14 +368,6 @@ class RegressionMetrics:
                 ),
 
         }
-
-
-__all__ = [
-
-    "RegressionMetrics",
-
-]
-
 
     @staticmethod
     def smape(
@@ -809,7 +804,5 @@ __all__ = [
         return report
 
 
-__all__ = [
-    "RegressionMetrics",
-]
+
 
