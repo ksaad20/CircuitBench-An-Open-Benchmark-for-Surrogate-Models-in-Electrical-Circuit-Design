@@ -3,7 +3,6 @@ from .registry import BenchmarkRegistry
 
 
 class BenchmarkRunner:
-
     def __init__(self):
         self.registry = BenchmarkRegistry()
 

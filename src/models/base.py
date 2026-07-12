@@ -120,7 +120,6 @@ class BaseModel(ABC):
         filename.parent.mkdir(parents=True, exist_ok=True)
 
         with open(filename, "wb") as file:
-
             pickle.dump(self, file)
 
     @classmethod
@@ -129,7 +128,6 @@ class BaseModel(ABC):
         filename = Path(filename)
 
         with open(filename, "rb") as file:
-
             return pickle.load(file)
 
     # --------------------------------------------------
@@ -156,8 +154,4 @@ class BaseModel(ABC):
 
     def __repr__(self):
 
-        return (
-            f"{self.__class__.__name__}"
-            f"(name='{self.name}', "
-            f"fitted={self.is_fitted})"
-        )
+        return f"{self.__class__.__name__}(name='{self.name}', fitted={self.is_fitted})"

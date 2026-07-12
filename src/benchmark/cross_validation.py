@@ -54,7 +54,6 @@ class CrossValidator:
         fold_scores: List[float] = []
 
         for train_idx, test_idx in kfold.split(X):
-
             X_train = X[train_idx]
             X_test = X[test_idx]
 

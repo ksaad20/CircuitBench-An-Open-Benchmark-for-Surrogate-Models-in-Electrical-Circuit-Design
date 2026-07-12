@@ -129,27 +129,21 @@ class BayesianStatistics:
         bf = abs(bayes_factor)
 
         if bf < 1:
-
             return "Evidence favors null"
 
         elif bf < 3:
-
             return "Anecdotal"
 
         elif bf < 10:
-
             return "Moderate"
 
         elif bf < 30:
-
             return "Strong"
 
         elif bf < 100:
-
             return "Very Strong"
 
         else:
-
             return "Extreme"
 
     # -------------------------------------------------------------
@@ -169,7 +163,6 @@ class BayesianStatistics:
         }
 
         if bic_model_1 is not None and bic_model_2 is not None:
-
             bf = cls.bayes_factor_bic(
                 bic_model_1,
                 bic_model_2,

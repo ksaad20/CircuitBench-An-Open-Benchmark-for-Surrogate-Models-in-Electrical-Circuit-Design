@@ -11,7 +11,6 @@ CircuitBench Development Team
 
 from __future__ import annotations
 
-import numpy as np
 
 from sklearn.svm import SVR
 
@@ -121,7 +120,6 @@ class SupportVectorRegressionModel(SklearnModel):
         print("=" * 70)
 
         for k, v in self.metadata.items():
-
             print(f"{k:20}: {v}")
 
         print("=" * 70)

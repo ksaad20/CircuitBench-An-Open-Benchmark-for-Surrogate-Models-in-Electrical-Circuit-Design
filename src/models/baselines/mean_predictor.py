@@ -65,7 +65,6 @@ class MeanPredictor(BaselineRegressor):
         y = np.asarray(y, dtype=float)
 
         if y.ndim != 1:
-
             raise ValueError("Target vector must be one-dimensional.")
 
         self.mean_ = float(np.mean(y))
@@ -88,7 +87,6 @@ class MeanPredictor(BaselineRegressor):
     ) -> np.ndarray:
 
         if not self.is_fitted:
-
             raise RuntimeError("MeanPredictor has not been fitted.")
 
         n = len(X)
@@ -114,7 +112,6 @@ class MeanPredictor(BaselineRegressor):
         ss_tot = np.sum((y - np.mean(y)) ** 2)
 
         if ss_tot == 0:
-
             return 0.0
 
         return 1.0 - (ss_res / ss_tot)
@@ -123,4 +120,4 @@ class MeanPredictor(BaselineRegressor):
 
     def __repr__(self):
 
-        return "MeanPredictor(" f"mean={self.mean_}, " f"fitted={self.is_fitted})"
+        return f"MeanPredictor(mean={self.mean_}, fitted={self.is_fitted})"

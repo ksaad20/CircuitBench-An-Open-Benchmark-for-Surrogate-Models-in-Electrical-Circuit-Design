@@ -145,7 +145,5 @@ class RidgeRegressionModel(BaseModel):
     def __repr__(self):
 
         return (
-            f"RidgeRegressionModel("
-            f"alpha={self.model.alpha}, "
-            f"fitted={self.is_fitted})"
+            f"RidgeRegressionModel(alpha={self.model.alpha}, fitted={self.is_fitted})"
         )

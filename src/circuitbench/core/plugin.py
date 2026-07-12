@@ -30,7 +30,6 @@ class Plugin(ABC):
 
 
 class PluginManager:
-
     def __init__(self):
         self.plugins = {}
 

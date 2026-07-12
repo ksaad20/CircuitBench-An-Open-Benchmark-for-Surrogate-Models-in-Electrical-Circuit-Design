@@ -2,15 +2,12 @@
 Dataset Preprocessing Pipeline
 """
 
-import pandas as pd
-
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import MinMaxScaler
 
 
 class PreprocessingPipeline:
-
     def __init__(self):
 
         self.imputer = None
@@ -61,11 +58,9 @@ class PreprocessingPipeline:
         df = dataframe.copy()
 
         if impute:
-
             df = self.impute_mean(df)
 
         if scale:
-
             df = self.standardize(df)
 
         return df

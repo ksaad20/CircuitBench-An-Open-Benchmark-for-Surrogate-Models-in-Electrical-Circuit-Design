@@ -43,11 +43,9 @@ class CalibrationMetrics:
         ece = 0.0
 
         for i in range(n_bins):
-
             mask = (y_prob >= bins[i]) & (y_prob < bins[i + 1])
 
             if np.any(mask):
-
                 accuracy = np.mean(y_true[mask])
 
                 confidence = np.mean(y_prob[mask])
@@ -94,11 +92,9 @@ class CalibrationMetrics:
         max_error = 0.0
 
         for i in range(n_bins):
-
             mask = (y_prob >= bins[i]) & (y_prob < bins[i + 1])
 
             if np.any(mask):
-
                 accuracy = np.mean(y_true[mask])
 
                 confidence = np.mean(y_prob[mask])

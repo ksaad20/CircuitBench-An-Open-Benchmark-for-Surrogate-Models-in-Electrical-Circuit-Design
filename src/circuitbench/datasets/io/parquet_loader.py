@@ -7,13 +7,11 @@ import pandas as pd
 
 
 class ParquetLoader:
-
     def load(self, filename):
 
         filename = Path(filename)
 
         if not filename.exists():
-
             raise FileNotFoundError(filename)
 
         return pd.read_parquet(filename)

@@ -12,13 +12,9 @@ from typing import (
     Any,
     Callable,
     Dict,
-    Iterable,
     List,
-    Mapping,
     MutableMapping,
-    Optional,
     Sequence,
-    Tuple,
     Type,
     Union,
 )
@@ -56,7 +52,6 @@ ArrayLike = Union[
 ]
 
 if pd is not None:
-
     DataFrameLike = Union[
         np.ndarray,
         pd.DataFrame,
@@ -64,7 +59,6 @@ if pd is not None:
     ]
 
 else:
-
     DataFrameLike = np.ndarray
 
 FeatureMatrix = DataFrameLike

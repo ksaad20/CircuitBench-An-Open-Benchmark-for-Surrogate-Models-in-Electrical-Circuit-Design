@@ -6,7 +6,6 @@ import pandas as pd
 
 
 class DatasetIntegrity:
-
     @staticmethod
     def duplicate_rows(df: pd.DataFrame):
 

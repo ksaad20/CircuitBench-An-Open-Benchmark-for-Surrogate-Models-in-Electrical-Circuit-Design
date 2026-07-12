@@ -1,5 +1,4 @@
 class BenchmarkRegistry:
-
     def __init__(self):
         self._benchmarks = {}
 

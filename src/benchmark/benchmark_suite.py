@@ -27,7 +27,6 @@ class BenchmarkSuiteResult:
 
 
 class BenchmarkSuite:
-
     def __init__(
         self,
         metrics: dict,
@@ -47,7 +46,6 @@ class BenchmarkSuite:
         results = []
 
         for model in models:
-
             results.append(
                 self.runner.evaluate(
                     model,
@@ -94,11 +92,9 @@ class BenchmarkSuite:
         }
 
         if "FitTime" in df.columns:
-
             summary["AverageFitTime"] = float(df["FitTime"].mean())
 
         if "PredictTime" in df.columns:
-
             summary["AveragePredictTime"] = float(df["PredictTime"].mean())
 
         return summary

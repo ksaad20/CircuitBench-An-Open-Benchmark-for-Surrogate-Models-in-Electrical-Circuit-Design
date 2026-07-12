@@ -4,7 +4,6 @@ Generic processing pipeline.
 
 
 class Pipeline:
-
     def __init__(self, name="Pipeline"):
 
         self.name = name
@@ -28,7 +27,6 @@ class Pipeline:
         output = data
 
         for step in self.steps:
-
             output = step(output)
 
         return output

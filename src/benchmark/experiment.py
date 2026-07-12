@@ -95,7 +95,6 @@ class Experiment:
     def add_tag(self, tag):
 
         if tag not in self.tags:
-
             self.tags.append(tag)
 
     # ---------------------------------------------------------
@@ -155,7 +154,6 @@ class Experiment:
         file = directory / f"{self.id}.json"
 
         with open(file, "w", encoding="utf-8") as f:
-
             json.dump(
                 self.to_dict(),
                 f,
@@ -170,7 +168,6 @@ class Experiment:
     def load(cls, file):
 
         with open(file, encoding="utf-8") as f:
-
             return json.load(f)
 
     # ---------------------------------------------------------

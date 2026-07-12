@@ -14,11 +14,9 @@ from __future__ import annotations
 from pathlib import Path
 
 import matplotlib.pyplot as plt
-import pandas as pd
 
 
 class FigureGenerator:
-
     @staticmethod
     def metric_barplot(
         leaderboard,
@@ -53,7 +51,6 @@ class FigureGenerator:
         plt.tight_layout()
 
         if output:
-
             Path(output).parent.mkdir(
                 parents=True,
                 exist_ok=True,
@@ -92,7 +89,6 @@ class FigureGenerator:
         plt.tight_layout()
 
         if output:
-
             plt.savefig(
                 output,
                 dpi=300,
@@ -126,7 +122,6 @@ class FigureGenerator:
         plt.tight_layout()
 
         if output:
-
             plt.savefig(
                 output,
                 dpi=300,
@@ -142,7 +137,6 @@ class FigureGenerator:
     ):
 
         if "MemoryMB" not in leaderboard.columns:
-
             return None
 
         fig, ax = plt.subplots(figsize=(8, 5))
@@ -164,7 +158,6 @@ class FigureGenerator:
         plt.tight_layout()
 
         if output:
-
             plt.savefig(
                 output,
                 dpi=300,

@@ -6,7 +6,6 @@ import pandas as pd
 
 
 class SchemaValidator:
-
     def __init__(self):
 
         self.required_columns = []
@@ -20,9 +19,7 @@ class SchemaValidator:
         missing = []
 
         for column in self.required_columns:
-
             if column not in dataframe.columns:
-
                 missing.append(column)
 
         return {

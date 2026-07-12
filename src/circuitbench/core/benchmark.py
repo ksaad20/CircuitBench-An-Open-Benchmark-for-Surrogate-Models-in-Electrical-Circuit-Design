@@ -3,7 +3,6 @@ from pathlib import Path
 
 
 class Benchmark(ABC):
-
     def __init__(self, name: str, dataset_path: str):
         self.name = name
         self.dataset_path = Path(dataset_path)

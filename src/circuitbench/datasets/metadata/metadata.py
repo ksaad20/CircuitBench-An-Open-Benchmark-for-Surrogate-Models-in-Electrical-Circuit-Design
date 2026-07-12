@@ -5,12 +5,11 @@ Stores metadata for CircuitBench datasets.
 """
 
 from dataclasses import dataclass, field
-from typing import List, Dict, Optional
+from typing import List, Dict
 
 
 @dataclass
 class DatasetMetadata:
-
     name: str
 
     description: str = ""

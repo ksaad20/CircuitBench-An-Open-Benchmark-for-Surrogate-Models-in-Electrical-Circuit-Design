@@ -20,7 +20,6 @@ from sklearn.metrics import roc_auc_score
 
 @dataclass
 class AUCConfidenceInterval:
-
     auc: float
 
     lower: float
@@ -33,7 +32,6 @@ class AUCConfidenceInterval:
 
 
 class ROCAUCStatistics:
-
     @staticmethod
     def bootstrap_auc(
         y_true,
@@ -59,7 +57,6 @@ class ROCAUCStatistics:
         n = len(y_true)
 
         while len(scores) < n_bootstrap:
-
             idx = rng.integers(
                 0,
                 n,

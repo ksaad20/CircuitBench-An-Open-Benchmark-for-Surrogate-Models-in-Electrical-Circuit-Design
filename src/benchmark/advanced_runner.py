@@ -24,7 +24,6 @@ from sklearn.model_selection import cross_validate
 
 @dataclass
 class AdvancedBenchmarkResult:
-
     model_name: str
 
     task: str
@@ -39,7 +38,6 @@ class AdvancedBenchmarkResult:
 
 
 class AdvancedBenchmarkRunner:
-
     def __init__(
         self,
         metrics,
@@ -57,7 +55,6 @@ class AdvancedBenchmarkRunner:
         unique = np.unique(y)
 
         if y.dtype.kind in "ifu":
-
             if len(unique) <= 20:
                 return "classification"
 
@@ -98,16 +95,13 @@ class AdvancedBenchmarkRunner:
         results = {}
 
         for name, metric in self.metrics.items():
-
             try:
-
                 results[name] = metric(
                     y_test,
                     predictions,
                 )
 
             except Exception:
-
                 results[name] = np.nan
 
         return AdvancedBenchmarkResult(
@@ -147,7 +141,6 @@ class AdvancedBenchmarkRunner:
         rows = []
 
         for r in results:
-
             row = {
                 "Model": r.model_name,
                 "Task": r.task,

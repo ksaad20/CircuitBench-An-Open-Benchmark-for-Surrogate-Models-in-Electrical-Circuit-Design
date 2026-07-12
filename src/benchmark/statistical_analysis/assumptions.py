@@ -13,7 +13,6 @@ from __future__ import annotations
 
 from typing import Dict
 
-import numpy as np
 
 from scipy.stats import (
     shapiro,
@@ -161,7 +160,6 @@ class Assumptions:
         }
 
         if len(groups) >= 2:
-
             report["levene"] = cls.levene_test(*groups)
 
             report["bartlett"] = cls.bartlett_test(*groups)

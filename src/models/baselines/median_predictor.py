@@ -102,6 +102,4 @@ class MedianPredictor(BaselineRegressor):
 
     def __repr__(self):
 
-        return (
-            f"MedianPredictor(" f"median={self.median_}, " f"fitted={self.is_fitted})"
-        )
+        return f"MedianPredictor(median={self.median_}, fitted={self.is_fitted})"

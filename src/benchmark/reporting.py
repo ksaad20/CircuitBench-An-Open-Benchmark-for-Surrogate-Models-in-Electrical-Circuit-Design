@@ -16,7 +16,7 @@ from __future__ import annotations
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict
+from typing import Dict
 
 import pandas as pd
 
@@ -76,7 +76,6 @@ class BenchmarkReport:
     ):
 
         if not isinstance(dataframe, pd.DataFrame):
-
             dataframe = pd.DataFrame(dataframe)
 
         self.tables[name] = dataframe
@@ -135,7 +134,6 @@ class BenchmarkReport:
             "w",
             encoding="utf-8",
         ) as f:
-
             json.dump(
                 output,
                 f,
@@ -154,13 +152,11 @@ class BenchmarkReport:
             "w",
             encoding="utf-8",
         ) as f:
-
             f.write(f"# {self.title}\n\n")
 
             f.write(f"Generated: {self.created}\n\n")
 
             for section in self.sections:
-
                 f.write(f"## {section['title']}\n\n")
 
                 f.write(section["content"])
@@ -168,11 +164,9 @@ class BenchmarkReport:
                 f.write("\n\n")
 
             if self.statistics:
-
                 f.write("# Statistical Results\n\n")
 
                 for name, value in self.statistics.items():
-
                     f.write(f"## {name}\n")
 
                     f.write("```json\n")
@@ -187,7 +181,6 @@ class BenchmarkReport:
                     f.write("\n```\n\n")
 
             for name, table in self.tables.items():
-
                 f.write(f"## {name}\n\n")
 
                 f.write(table.to_markdown(index=False))
@@ -209,7 +202,6 @@ class BenchmarkReport:
         )
 
         for name, table in self.tables.items():
-
             table.to_csv(
                 directory / f"{name}.csv",
                 index=False,
@@ -226,7 +218,6 @@ class BenchmarkReport:
         print("=" * 70)
 
         for k, v in self.summary().items():
-
             print(f"{k:15}: {v}")
 
         print("=" * 70)

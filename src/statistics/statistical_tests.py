@@ -24,7 +24,6 @@ from scipy.stats import (
 
 @dataclass
 class TestResult:
-
     statistic: float
 
     p_value: float
@@ -35,7 +34,6 @@ class TestResult:
 
 
 class StatisticalTests:
-
     @staticmethod
     def paired_t_test(
         scores_a,
@@ -101,7 +99,6 @@ class StatisticalTests:
         count = 0
 
         for _ in range(n_permutations):
-
             rng.shuffle(combined)
 
             a = combined[: len(scores_a)]
@@ -111,7 +108,6 @@ class StatisticalTests:
             diff = np.mean(a) - np.mean(b)
 
             if abs(diff) >= abs(observed):
-
                 count += 1
 
         p = (count + 1) / (n_permutations + 1)
@@ -140,25 +136,20 @@ class StatisticalTests:
             pred_a,
             pred_b,
         ):
-
             a_correct = pa == yt
 
             b_correct = pb == yt
 
             if a_correct and not b_correct:
-
                 b += 1
 
             elif b_correct and not a_correct:
-
                 c += 1
 
         if b + c == 0:
-
             statistic = 0.0
 
         else:
-
             statistic = ((abs(b - c) - 1) ** 2) / (b + c)
 
         from scipy.stats import chi2

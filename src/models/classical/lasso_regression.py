@@ -27,7 +27,6 @@ from src.models.registry import register_model
     framework="scikit-learn",
 )
 class LassoRegressionModel(BaseModel):
-
     def __init__(
         self,
         alpha: float = 1.0,
@@ -132,7 +131,6 @@ class LassoRegressionModel(BaseModel):
         coef = np.abs(self.model.coef_)
 
         if coef.sum() == 0:
-
             return coef
 
         return coef / coef.sum()
@@ -160,7 +158,6 @@ class LassoRegressionModel(BaseModel):
         print("=" * 70)
 
         for k, v in self.metadata.items():
-
             print(f"{k:15}: {v}")
 
         print("Selected Features:", len(self.selected_features()))
@@ -172,7 +169,5 @@ class LassoRegressionModel(BaseModel):
     def __repr__(self):
 
         return (
-            "LassoRegressionModel("
-            f"alpha={self.model.alpha}, "
-            f"fitted={self.is_fitted})"
+            f"LassoRegressionModel(alpha={self.model.alpha}, fitted={self.is_fitted})"
         )

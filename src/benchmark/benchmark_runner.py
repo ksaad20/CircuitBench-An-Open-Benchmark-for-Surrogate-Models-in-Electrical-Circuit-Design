@@ -19,7 +19,6 @@ import numpy as np
 
 @dataclass
 class BenchmarkResult:
-
     model_name: str
 
     fit_time: float
@@ -70,16 +69,13 @@ class BenchmarkRunner:
         results = {}
 
         for name, metric in self.metrics.items():
-
             try:
-
                 results[name] = metric(
                     y_test,
                     predictions,
                 )
 
             except Exception:
-
                 results[name] = np.nan
 
         return BenchmarkResult(
@@ -101,7 +97,6 @@ class BenchmarkRunner:
         output = []
 
         for model in models:
-
             output.append(
                 self.evaluate(
                     model,

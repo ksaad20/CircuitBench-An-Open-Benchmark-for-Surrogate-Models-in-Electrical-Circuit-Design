@@ -11,7 +11,6 @@ CircuitBench Development Team
 
 from __future__ import annotations
 
-from typing import Dict, Any
 
 import numpy as np
 from sklearn.linear_model import ElasticNet

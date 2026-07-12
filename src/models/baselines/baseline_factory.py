@@ -11,7 +11,7 @@ CircuitBench Development Team
 
 from __future__ import annotations
 
-from typing import Any, Dict, List
+from typing import Dict, List
 
 from .constant_predictor import ConstantPredictor
 from .mean_predictor import MeanPredictor
@@ -57,7 +57,6 @@ class BaselineFactory:
         key = name.lower().strip()
 
         if key not in cls._MODELS:
-
             raise ValueError(
                 f"Unknown baseline '{name}'. "
                 f"Available models: {', '.join(cls.available())}"
@@ -132,7 +131,6 @@ class BaselineFactory:
         print("=" * 70)
 
         for model in cls.available():
-
             print(f"• {model}")
 
         print("=" * 70)

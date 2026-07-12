@@ -80,7 +80,6 @@ class LinearRegressionModel(BaseModel):
     ):
 
         if not self.is_fitted:
-
             raise RuntimeError("Model has not been fitted.")
 
         return self.model.predict(X)
@@ -123,7 +122,6 @@ class LinearRegressionModel(BaseModel):
         total = coef.sum()
 
         if total == 0:
-
             return coef
 
         return coef / total
@@ -164,4 +162,4 @@ class LinearRegressionModel(BaseModel):
 
     def __repr__(self):
 
-        return "LinearRegressionModel(" f"fitted={self.is_fitted})"
+        return f"LinearRegressionModel(fitted={self.is_fitted})"

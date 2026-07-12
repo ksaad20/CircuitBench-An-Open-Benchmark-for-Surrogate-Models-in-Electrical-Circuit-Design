@@ -13,7 +13,6 @@ from __future__ import annotations
 
 import matplotlib.pyplot as plt
 
-import numpy as np
 
 from sklearn.metrics import (
     roc_curve,
@@ -50,7 +49,6 @@ class ClassificationPlots:
         )
 
         if ax is None:
-
             fig, ax = plt.subplots(figsize=(6, 6))
 
         ax.plot(
@@ -97,7 +95,6 @@ class ClassificationPlots:
         )
 
         if ax is None:
-
             fig, ax = plt.subplots(figsize=(6, 6))
 
         ax.plot(
@@ -136,7 +133,6 @@ class ClassificationPlots:
         )
 
         if ax is None:
-
             fig, ax = plt.subplots(figsize=(6, 6))
 
         disp = ConfusionMatrixDisplay(

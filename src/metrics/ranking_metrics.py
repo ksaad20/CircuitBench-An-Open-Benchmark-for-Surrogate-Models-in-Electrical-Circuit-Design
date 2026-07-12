@@ -90,9 +90,7 @@ class RankingMetrics:
             y_pred,
             start=1,
         ):
-
             if item in y_true:
-
                 return float(1.0 / rank)
 
         return 0.0
@@ -119,9 +117,7 @@ class RankingMetrics:
             y_pred,
             start=1,
         ):
-
             if item in y_true:
-
                 hits += 1
 
                 score += hits / rank
@@ -207,7 +203,6 @@ class RankingMetrics:
         )
 
         if len(relevance) == 0:
-
             return 0.0
 
         discounts = np.log2(
@@ -239,7 +234,6 @@ class RankingMetrics:
         )
 
         if ideal_score == 0:
-
             return 0.0
 
         return float(
@@ -279,7 +273,6 @@ class RankingMetrics:
         r = len(y_true)
 
         if r == 0:
-
             return 0.0
 
         return RankingMetrics.precision_at_k(
@@ -311,7 +304,6 @@ class RankingMetrics:
         )
 
         if precision + recall == 0:
-
             return 0.0
 
         return float(2.0 * precision * recall / (precision + recall))
@@ -334,13 +326,11 @@ class RankingMetrics:
             truth_lists,
             prediction_lists,
         ):
-
             relevant.update(truth)
 
             retrieved.update(prediction[:k])
 
         if len(relevant) == 0:
-
             return 0.0
 
         return float(len(relevant.intersection(retrieved)) / len(relevant))

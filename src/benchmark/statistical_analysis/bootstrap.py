@@ -40,7 +40,6 @@ class Bootstrap:
         )
 
         for i in range(n_bootstrap):
-
             index = rng.integers(
                 0,
                 n,

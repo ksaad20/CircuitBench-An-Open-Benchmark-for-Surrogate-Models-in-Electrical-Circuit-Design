@@ -7,7 +7,6 @@ from pathlib import Path
 
 
 class Logger:
-
     def __init__(
         self,
         name="CircuitBench",
@@ -21,7 +20,6 @@ class Logger:
         self.logger.setLevel(level)
 
         if not self.logger.handlers:
-
             formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
 
             file_handler = logging.FileHandler(Path(log_directory) / "circuitbench.log")

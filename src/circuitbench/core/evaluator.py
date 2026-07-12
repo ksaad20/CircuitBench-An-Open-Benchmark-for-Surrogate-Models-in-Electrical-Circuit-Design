@@ -6,7 +6,6 @@ from statistics import mean
 
 
 class Evaluator:
-
     def __init__(self):
 
         self.results = {}
@@ -34,7 +33,6 @@ class Evaluator:
         keys = set(first.keys()) | set(second.keys())
 
         for key in keys:
-
             comparison[key] = {"first": first.get(key), "second": second.get(key)}
 
         return comparison
@@ -47,7 +45,6 @@ class Evaluator:
             return output
 
         for key in metrics[0]:
-
             output[key] = mean(item[key] for item in metrics if key in item)
 
         return output

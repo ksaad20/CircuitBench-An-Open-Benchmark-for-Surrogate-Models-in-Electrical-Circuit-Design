@@ -29,7 +29,6 @@ class PermutationImportanceResult:
 
 
 class PermutationImportance:
-
     @staticmethod
     def compute(
         model,
@@ -64,14 +63,12 @@ class PermutationImportance:
         )
 
         for feature in range(X.shape[1]):
-
             column = X.iloc[
                 :,
                 feature,
             ].copy()
 
             for repeat in range(n_repeats):
-
                 shuffled = column.sample(
                     frac=1.0,
                     random_state=int(rng.integers(1_000_000)),

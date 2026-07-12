@@ -45,7 +45,6 @@ class ModelFactory:
         """
 
         if not registry.exists(model_name):
-
             raise InvalidModelError(f"Unknown model '{model_name}'")
 
         model_cls = registry.get(model_name)
@@ -68,7 +67,6 @@ class ModelFactory:
         models = []
 
         for name in model_names:
-
             models.append(
                 ModelFactory.create(
                     name,
@@ -149,7 +147,6 @@ class ModelFactory:
         models = []
 
         for model_name in registry.models_in_category(category):
-
             models.append(
                 ModelFactory.create(
                     model_name,

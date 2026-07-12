@@ -7,7 +7,6 @@ import uuid
 
 
 class Experiment:
-
     def __init__(self, name, description=""):
 
         self.id = str(uuid.uuid4())
@@ -37,7 +36,6 @@ class Experiment:
     def add_tag(self, tag):
 
         if tag not in self.tags:
-
             self.tags.append(tag)
 
     def start(self):

@@ -58,7 +58,6 @@ class ModelRegistry:
             model_name = name or cls.__name__
 
             if model_name in self._models:
-
                 raise ModelRegistrationError(f"'{model_name}' already exists.")
 
             self._models[model_name] = cls
@@ -79,7 +78,6 @@ class ModelRegistry:
     def unregister(self, name: str):
 
         if name not in self._models:
-
             raise InvalidModelError(name)
 
         category = self._metadata[name]["category"]
@@ -95,7 +93,6 @@ class ModelRegistry:
     def get(self, name: str):
 
         if name not in self._models:
-
             raise InvalidModelError(name)
 
         return self._models[name]
@@ -105,7 +102,6 @@ class ModelRegistry:
     def metadata(self, name: str):
 
         if name not in self._metadata:
-
             raise InvalidModelError(name)
 
         return self._metadata[name]
@@ -172,11 +168,9 @@ class ModelRegistry:
         print()
 
         for category in sorted(self._categories):
-
             print(f"[{category}]")
 
             for model in sorted(self._categories[category]):
-
                 print(f"  • {model}")
 
             print()
@@ -212,11 +206,7 @@ class ModelRegistry:
 
     def __repr__(self):
 
-        return (
-            f"ModelRegistry("
-            f"models={len(self)}, "
-            f"categories={len(self._categories)})"
-        )
+        return f"ModelRegistry(models={len(self)}, categories={len(self._categories)})"
 
 
 # ==========================================================

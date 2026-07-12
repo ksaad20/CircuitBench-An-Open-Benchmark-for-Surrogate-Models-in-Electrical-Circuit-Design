@@ -16,7 +16,6 @@ import numpy as np
 
 
 class StatisticalReport:
-
     @staticmethod
     def summary(
         leaderboard,
@@ -88,7 +87,6 @@ class StatisticalReport:
         rows = []
 
         for column in numeric.columns:
-
             rows.append(
                 {
                     "Metric": column,

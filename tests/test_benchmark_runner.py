@@ -84,7 +84,6 @@ def test_validation_requires_dataset(model):
     )
 
     with pytest.raises(RuntimeError):
-
         runner.validate()
 
 
@@ -100,7 +99,6 @@ def test_validation_requires_model(dataset):
     )
 
     with pytest.raises(RuntimeError):
-
         runner.validate()
 
 
@@ -113,7 +111,6 @@ def test_validation_requires_metric(dataset, model):
     runner.add_model(model)
 
     with pytest.raises(RuntimeError):
-
         runner.validate()
 
 
@@ -718,7 +715,6 @@ def test_attach_report():
 def test_attach_experiment():
 
     if Experiment is None:
-
         pytest.skip("Experiment class not implemented.")
 
     runner = BenchmarkRunner()
@@ -821,7 +817,6 @@ def test_multiple_callbacks():
 
 
 class BrokenModel:
-
     name = "Broken Model"
 
     def fit(self, X, y):
@@ -885,8 +880,6 @@ def test_end_to_end(dataset, model):
 # Framework Integration
 # ---------------------------------------------------------------------
 
-from src.benchmark.leaderboard import Leaderboard
-from src.benchmark.reporting import BenchmarkReport
 
 try:
     from src.benchmark.experiment import Experiment
@@ -919,7 +912,6 @@ def test_attach_report():
 def test_attach_experiment():
 
     if Experiment is None:
-
         pytest.skip("Experiment class not implemented.")
 
     runner = BenchmarkRunner()
@@ -1022,7 +1014,6 @@ def test_multiple_callbacks():
 
 
 class BrokenModel:
-
     name = "Broken Model"
 
     def fit(self, X, y):

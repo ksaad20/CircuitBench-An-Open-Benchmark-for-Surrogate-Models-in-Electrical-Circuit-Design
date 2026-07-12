@@ -21,7 +21,6 @@ from sklearn.inspection import (
 
 
 class PartialDependence:
-
     @staticmethod
     def compute(
         estimator,

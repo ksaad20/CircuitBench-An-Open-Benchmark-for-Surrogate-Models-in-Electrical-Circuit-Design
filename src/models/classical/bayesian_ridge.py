@@ -125,7 +125,6 @@ class BayesianRidgeRegressionModel(SklearnModel):
         print("=" * 70)
 
         for key, value in self.metadata.items():
-
             print(f"{key:20}: {value}")
 
         print("=" * 70)
@@ -136,7 +135,7 @@ class BayesianRidgeRegressionModel(SklearnModel):
 
         return (
             "BayesianRidgeRegressionModel("
-            f"iterations={self.metadata.get('iterations',0)}, "
+            f"iterations={self.metadata.get('iterations', 0)}, "
             f"fitted={self.is_fitted})"
         )
 

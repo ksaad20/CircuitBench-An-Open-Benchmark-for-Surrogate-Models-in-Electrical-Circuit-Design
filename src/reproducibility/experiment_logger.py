@@ -20,7 +20,6 @@ import shutil
 
 @dataclass
 class ExperimentRecord:
-
     experiment_name: str
 
     run_id: str
@@ -33,7 +32,6 @@ class ExperimentRecord:
 
 
 class ExperimentLogger:
-
     def __init__(
         self,
         root="experiments",
@@ -87,7 +85,6 @@ class ExperimentLogger:
             "w",
             encoding="utf-8",
         ) as f:
-
             json.dump(
                 asdict(record),
                 f,
@@ -105,7 +102,6 @@ class ExperimentLogger:
             "w",
             encoding="utf-8",
         ) as f:
-
             json.dump(
                 metrics,
                 f,
@@ -137,16 +133,13 @@ class ExperimentLogger:
         runs = []
 
         for folder in sorted(self.root.iterdir()):
-
             file = folder / "run.json"
 
             if file.exists():
-
                 with open(
                     file,
                     encoding="utf-8",
                 ) as f:
-
                     runs.append(json.load(f))
 
         return runs

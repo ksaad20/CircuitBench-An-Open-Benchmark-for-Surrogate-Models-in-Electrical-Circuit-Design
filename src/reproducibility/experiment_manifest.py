@@ -23,12 +23,10 @@ import numpy as np
 
 
 class ExperimentManifest:
-
     @staticmethod
     def git_commit():
 
         try:
-
             return (
                 subprocess.check_output(
                     ["git", "rev-parse", "HEAD"],
@@ -39,26 +37,22 @@ class ExperimentManifest:
             )
 
         except Exception:
-
             return "Unavailable"
 
     @staticmethod
     def installed_packages():
 
         try:
-
             import pkg_resources
 
             packages = {}
 
             for pkg in pkg_resources.working_set:
-
                 packages[pkg.project_name] = pkg.version
 
             return dict(sorted(packages.items()))
 
         except Exception:
-
             return {}
 
     @staticmethod
@@ -88,17 +82,14 @@ class ExperimentManifest:
         np.random.seed(seed)
 
         try:
-
             import torch
 
             torch.manual_seed(seed)
 
             if torch.cuda.is_available():
-
                 torch.cuda.manual_seed_all(seed)
 
         except Exception:
-
             pass
 
         return seed
@@ -127,7 +118,6 @@ class ExperimentManifest:
             "w",
             encoding="utf-8",
         ) as f:
-
             json.dump(
                 manifest,
                 f,

@@ -12,11 +12,9 @@ CircuitBench Development Team
 from __future__ import annotations
 
 from datetime import datetime
-import pandas as pd
 
 
 class PublicationReport:
-
     @staticmethod
     def best_model(
         leaderboard,
@@ -143,5 +141,4 @@ tests.
             "w",
             encoding="utf-8",
         ) as f:
-
             f.write(report)

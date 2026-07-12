@@ -21,7 +21,6 @@ from src.models.baselines.base_classifier import BaselineClassifier
     framework="numpy",
 )
 class ModePredictor(BaselineClassifier):
-
     def __init__(
         self,
         random_state=42,
@@ -61,7 +60,6 @@ class ModePredictor(BaselineClassifier):
     def predict(self, X):
 
         if not self.is_fitted:
-
             raise RuntimeError("Model has not been fitted.")
 
         return np.repeat(
@@ -85,4 +83,4 @@ class ModePredictor(BaselineClassifier):
 
     def __repr__(self):
 
-        return f"ModePredictor(" f"mode={self.mode_}, " f"fitted={self.is_fitted})"
+        return f"ModePredictor(mode={self.mode_}, fitted={self.is_fitted})"

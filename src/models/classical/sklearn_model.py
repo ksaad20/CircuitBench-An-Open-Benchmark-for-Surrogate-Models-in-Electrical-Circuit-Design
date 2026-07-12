@@ -130,14 +130,12 @@ class SklearnModel(BaseModel, ABC):
     def feature_importance(self):
 
         if hasattr(self.model, "feature_importances_"):
-
             importance = np.asarray(
                 self.model.feature_importances_,
                 dtype=float,
             )
 
         elif hasattr(self.model, "coef_"):
-
             importance = np.abs(
                 np.asarray(
                     self.model.coef_,
@@ -146,7 +144,6 @@ class SklearnModel(BaseModel, ABC):
             )
 
         else:
-
             raise AttributeError(
                 "Estimator exposes neither feature_importances_ nor coef_."
             )
@@ -154,7 +151,6 @@ class SklearnModel(BaseModel, ABC):
         total = importance.sum()
 
         if total == 0:
-
             return importance
 
         return importance / total
@@ -184,7 +180,6 @@ class SklearnModel(BaseModel, ABC):
         print("=" * 70)
 
         for key, value in self.metadata.items():
-
             print(f"{key:20}: {value}")
 
         print("=" * 70)
@@ -193,7 +188,7 @@ class SklearnModel(BaseModel, ABC):
 
     def __repr__(self):
 
-        return f"{self.__class__.__name__}" f"(fitted={self.is_fitted})"
+        return f"{self.__class__.__name__}(fitted={self.is_fitted})"
 
 
 __all__ = [

@@ -18,7 +18,6 @@ import numpy as np
 
 @dataclass
 class BootstrapResult:
-
     estimate: float
 
     lower: float
@@ -31,7 +30,6 @@ class BootstrapResult:
 
 
 class Bootstrap:
-
     @staticmethod
     def confidence_interval(
         metric_function,
@@ -61,7 +59,6 @@ class Bootstrap:
         n = len(y_true)
 
         for i in range(n_bootstrap):
-
             idx = rng.integers(
                 0,
                 n,

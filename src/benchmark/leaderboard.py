@@ -11,7 +11,7 @@ CircuitBench Development Team
 
 from __future__ import annotations
 
-from typing import Dict, List
+from typing import Dict
 
 import numpy as np
 import pandas as pd
@@ -133,7 +133,6 @@ class Leaderboard:
             "w",
             encoding="utf-8",
         ) as f:
-
             f.write("# CircuitBench Leaderboard\n\n")
 
             f.write(self.dataframe().to_markdown(index=False))

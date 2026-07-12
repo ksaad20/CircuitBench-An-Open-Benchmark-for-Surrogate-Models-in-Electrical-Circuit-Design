@@ -55,20 +55,16 @@ class SHAPWrapper:
         X = pd.DataFrame(X)
 
         try:
-
             explainer = shap.TreeExplainer(model)
 
         except Exception:
-
             try:
-
                 explainer = shap.LinearExplainer(
                     model,
                     X,
                 )
 
             except Exception:
-
                 explainer = shap.Explainer(
                     model.predict,
                     X,

@@ -85,7 +85,6 @@ class ExtraTreesRegressionModel(SklearnModel):
         total = importance.sum()
 
         if total == 0:
-
             return importance
 
         return importance / total
@@ -113,7 +112,6 @@ class ExtraTreesRegressionModel(SklearnModel):
         print("=" * 70)
 
         for key, value in self.metadata.items():
-
             print(f"{key:20}: {value}")
 
         print(f"Built Trees         : {self.number_of_trees()}")

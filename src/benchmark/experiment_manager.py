@@ -20,7 +20,6 @@ import pandas as pd
 
 @dataclass
 class Experiment:
-
     name: str
 
     created: str = field(default_factory=lambda: datetime.now().isoformat())
@@ -29,7 +28,6 @@ class Experiment:
 
 
 class ExperimentManager:
-
     def __init__(self):
 
         self.experiments = []
@@ -63,7 +61,6 @@ class ExperimentManager:
         rows = []
 
         for result in experiment.results:
-
             row = {
                 "Model": result.model_name,
                 "FitTime": result.fit_time,
@@ -74,7 +71,6 @@ class ExperimentManager:
                 result,
                 "memory_mb",
             ):
-
                 row["MemoryMB"] = result.memory_mb
 
             row.update(result.metrics)
@@ -84,7 +80,6 @@ class ExperimentManager:
         df = pd.DataFrame(rows)
 
         if metric in df.columns:
-
             df = df.sort_values(
                 metric,
                 ascending=ascending,
@@ -138,7 +133,6 @@ class ExperimentManager:
             filename,
             "w",
         ) as f:
-
             json.dump(
                 ExperimentManager.metadata(experiment),
                 f,

@@ -7,7 +7,6 @@ import pandas as pd
 
 
 class CSVLoader:
-
     def __init__(self, encoding="utf-8"):
 
         self.encoding = encoding
@@ -17,7 +16,6 @@ class CSVLoader:
         filename = Path(filename)
 
         if not filename.exists():
-
             raise FileNotFoundError(filename)
 
         return pd.read_csv(filename, encoding=self.encoding)

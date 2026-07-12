@@ -20,7 +20,6 @@ from src.models.registry import register_model
     framework="scikit-learn",
 )
 class DecisionTreeRegressionModel(SklearnModel):
-
     def __init__(
         self,
         criterion: str = "squared_error",
@@ -106,7 +105,6 @@ class DecisionTreeRegressionModel(SklearnModel):
         print("=" * 70)
 
         for k, v in self.metadata.items():
-
             print(f"{k:20}: {v}")
 
         print(f"Depth               : {self.tree_depth()}")

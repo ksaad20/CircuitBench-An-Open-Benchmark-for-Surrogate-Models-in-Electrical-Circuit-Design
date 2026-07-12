@@ -38,7 +38,6 @@ class CriticalDifference:
         )
 
         for i in range(n_datasets):
-
             ranks[i] = rankdata(
                 -scores[i],
                 method="average",
@@ -120,13 +119,10 @@ class CriticalDifference:
         n = len(average_ranks)
 
         for i in range(n):
-
             for j in range(i + 1, n):
-
                 diff = abs(average_ranks[i] - average_ranks[j])
 
                 if diff > cd:
-
                     significant.append(
                         (
                             i,

@@ -10,7 +10,6 @@ from ..base.dataset import Dataset
 
 
 class DatasetRegistry:
-
     def __init__(self):
 
         self._datasets: Dict[str, Dataset] = {}
@@ -56,4 +55,4 @@ class DatasetRegistry:
 
     def __repr__(self):
 
-        return f"DatasetRegistry(" f"{self.count()} datasets)"
+        return f"DatasetRegistry({self.count()} datasets)"

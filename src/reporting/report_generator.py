@@ -17,7 +17,6 @@ import pandas as pd
 
 
 class ReportGenerator:
-
     @staticmethod
     def markdown(
         leaderboard: pd.DataFrame,
@@ -124,7 +123,6 @@ background:#eeeeee;
             "w",
             encoding="utf-8",
         ) as f:
-
             f.write(
                 ReportGenerator.markdown(
                     leaderboard,
@@ -144,7 +142,6 @@ background:#eeeeee;
             "w",
             encoding="utf-8",
         ) as f:
-
             f.write(
                 ReportGenerator.html(
                     leaderboard,
@@ -163,7 +160,6 @@ background:#eeeeee;
             "w",
             encoding="utf-8",
         ) as f:
-
             f.write(
                 ReportGenerator.latex(
                     leaderboard,

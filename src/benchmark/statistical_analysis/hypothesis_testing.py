@@ -162,7 +162,6 @@ class HypothesisTesting:
         normal_y = shapiro(y).pvalue >= 0.05
 
         if normal_x and normal_y:
-
             return "paired_t_test"
 
         return "wilcoxon_signed_rank"

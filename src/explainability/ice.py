@@ -48,7 +48,6 @@ class ICEPlots:
         )
 
         for i, value in enumerate(values):
-
             X_temp = X.copy()
 
             X_temp.iloc[:, feature] = value
@@ -86,7 +85,6 @@ class ICEPlots:
         )
 
         for curve in curves[:n]:
-
             ax.plot(
                 values,
                 curve,

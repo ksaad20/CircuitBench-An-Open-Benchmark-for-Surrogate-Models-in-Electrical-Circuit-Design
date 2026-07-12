@@ -19,7 +19,6 @@ import numpy as np
 
 @dataclass
 class ComparisonResult:
-
     model_a_score: float
 
     model_b_score: float
@@ -36,7 +35,6 @@ class ComparisonResult:
 
 
 class ModelComparison:
-
     @staticmethod
     def paired_bootstrap(
         metric_function,
@@ -74,7 +72,6 @@ class ModelComparison:
         )
 
         for i in range(n_bootstrap):
-
             idx = rng.integers(
                 0,
                 n,

@@ -16,5 +16,4 @@ def test_repository_structure():
     ]
 
     for folder in folders:
-
         assert Path(folder).exists()

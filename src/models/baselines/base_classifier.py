@@ -30,7 +30,6 @@ class BaselineClassifier(BaselineModel):
     def predict(self, X):
 
         if not self.is_fitted:
-
             raise RuntimeError("Model has not been fitted.")
 
         return np.full(
