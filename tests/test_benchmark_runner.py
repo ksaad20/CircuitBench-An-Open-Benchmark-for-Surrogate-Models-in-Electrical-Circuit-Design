@@ -1,3 +1,12 @@
+from src.benchmark.leaderboard import Leaderboard
+from src.benchmark.reporting import BenchmarkReport
+
+try:
+    from src.benchmark.experiment import Experiment
+except ImportError:
+    Experiment = None
+
+
 """
 Unit tests for BenchmarkRunner.
 """
@@ -680,16 +689,6 @@ def test_empty_dataframe():
 # ---------------------------------------------------------------------
 # Framework Integration
 # ---------------------------------------------------------------------
-
-from src.benchmark.leaderboard import Leaderboard
-from src.benchmark.reporting import BenchmarkReport
-
-try:
-    from src.benchmark.experiment import Experiment
-except ImportError:
-    Experiment = None
-
-
 def test_attach_leaderboard():
 
     runner = BenchmarkRunner()
@@ -880,10 +879,7 @@ def test_end_to_end(dataset, model):
 # Framework Integration
 # ---------------------------------------------------------------------
 
-try:
-    from src.benchmark.experiment import Experiment
-except ImportError:
-    Experiment = None
+
 
 # ---------------------------------------------------------------------
 # Report Integration
