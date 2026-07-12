@@ -184,3 +184,127 @@ class ClassificationMetrics:
             ),
         }
 
+
+from sklearn.metrics import (
+    roc_auc_score,
+    average_precision_score,
+    log_loss,
+    brier_score_loss,
+    top_k_accuracy_score,
+    roc_curve,
+    precision_recall_curve,
+)
+
+
+    @staticmethod
+    def roc_auc(
+        y_true,
+        y_score,
+        multi_class="ovr",
+    ) -> float:
+        """
+        Receiver Operating Characteristic Area Under Curve.
+        """
+
+        return float(
+            roc_auc_score(
+                y_true,
+                y_score,
+                multi_class=multi_class,
+            )
+        )
+
+    @staticmethod
+    def pr_auc(
+        y_true,
+        y_score,
+    ) -> float:
+        """
+        Precision-Recall Area Under Curve.
+        """
+
+        return float(
+            average_precision_score(
+                y_true,
+                y_score,
+            )
+        )
+
+    @staticmethod
+    def logarithmic_loss(
+        y_true,
+        y_prob,
+    ) -> float:
+        """
+        Cross-entropy / Log Loss.
+        """
+
+        return float(
+            log_loss(
+                y_true,
+                y_prob,
+            )
+        )
+
+    @staticmethod
+    def brier_score(
+        y_true,
+        y_prob,
+    ) -> float:
+        """
+        Brier Score.
+        """
+
+        return float(
+            brier_score_loss(
+                y_true,
+                y_prob,
+            )
+        )
+
+    @staticmethod
+    def top_k_accuracy(
+        y_true,
+        y_score,
+        k=2,
+    ) -> float:
+        """
+        Top-K Accuracy.
+        """
+
+        return float(
+            top_k_accuracy_score(
+                y_true,
+                y_score,
+                k=k,
+            )
+        )
+
+    @staticmethod
+    def roc_curve_data(
+        y_true,
+        y_score,
+    ):
+        """
+        Return FPR, TPR and thresholds for plotting ROC curves.
+        """
+
+        return roc_curve(
+            y_true,
+            y_score,
+        )
+
+    @staticmethod
+    def precision_recall_curve_data(
+        y_true,
+        y_score,
+    ):
+        """
+        Return precision, recall and thresholds for plotting PR curves.
+        """
+
+        return precision_recall_curve(
+            y_true,
+            y_score,
+        )
+
