@@ -1,0 +1,35 @@
+version: "1.0.0"
+
+datasets:
+
+  analog:
+    path: datasets/analog
+    description: Analog circuit benchmark datasets
+
+  digital:
+    path: datasets/digital
+    description: Digital circuit benchmark datasets
+
+  passive:
+    path: datasets/passive
+    description: Passive component benchmark datasets
+
+  power:
+    path: datasets/power
+    description: Power electronics benchmark datasets
+
+  rf:
+    path: datasets/rf
+    description: RF benchmark datasets
+
+  mixed_signal:
+    path: datasets/mixed_signal
+    description: Mixed-signal benchmark datasets
+
+  synthetic:
+    path: datasets/synthetic
+    description: Artificially generated benchmark datasets
+
+  external:
+    path: datasets/external
+    description: External benchmark datasets
