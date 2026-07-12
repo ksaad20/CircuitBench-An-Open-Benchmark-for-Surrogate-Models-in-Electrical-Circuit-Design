@@ -7,7 +7,6 @@ import numpy as np
 import pandas as pd
 import pytest
 
-
 try:
     from src.benchmark.experiment import Experiment
 except ImportError:
@@ -17,8 +16,6 @@ except ImportError:
 """
 Unit tests for BenchmarkRunner.
 """
-
-
 
 
 # ---------------------------------------------------------------------

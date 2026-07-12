@@ -11,6 +11,7 @@ FILES = [
     "publications.yaml",
 ]
 
+
 def validate_metadata(root="datasets/metadata"):
 
     root = Path(root)

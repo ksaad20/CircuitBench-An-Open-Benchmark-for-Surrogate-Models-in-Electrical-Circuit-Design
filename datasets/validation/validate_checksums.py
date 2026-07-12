@@ -9,6 +9,7 @@ FILES = [
     "MD5SUMS",
 ]
 
+
 def validate_checksums(root="datasets/checksums"):
 
     root = Path(root)

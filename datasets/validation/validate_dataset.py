@@ -13,6 +13,7 @@ REQUIRED_DIRECTORIES = [
     "validation",
 ]
 
+
 def validate_dataset(root="datasets"):
     root = Path(root)
 
