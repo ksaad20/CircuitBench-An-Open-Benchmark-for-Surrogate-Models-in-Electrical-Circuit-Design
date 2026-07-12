@@ -396,8 +396,6 @@ from sklearn.metrics import (
     classification_report,
     multilabel_confusion_matrix,
 )
-
-
     @staticmethod
     def per_class_report(
         y_true,
