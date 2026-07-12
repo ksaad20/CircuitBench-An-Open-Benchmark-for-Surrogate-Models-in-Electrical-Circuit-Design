@@ -158,21 +158,21 @@ class ConfidenceIntervals:
 
         k = int(np.floor((n / 2) - z * np.sqrt(n) / 2))
 
-        l = int(np.ceil((n / 2) + z * np.sqrt(n) / 2))
+        lower = int(np.ceil((n / 2) + z * np.sqrt(n) / 2))
 
         k = max(
             0,
             k,
         )
 
-        l = min(
+        lower = min(
             n - 1,
-            l,
+            lower,
         )
 
         return (
             float(x[k]),
-            float(x[l]),
+            float(x[lower]),
         )
 
     # ------------------------------------------------------
