@@ -653,3 +653,163 @@ __all__ = [
 
         )
 
+
+    @staticmethod
+    def relative_absolute_error(
+        y_true,
+        y_pred,
+    ):
+        """
+        Relative Absolute Error (RAE).
+        """
+
+        y_true = np.asarray(y_true, dtype=float)
+        y_pred = np.asarray(y_pred, dtype=float)
+
+        numerator = np.sum(
+            np.abs(y_true - y_pred)
+        )
+
+        denominator = np.sum(
+            np.abs(
+                y_true - np.mean(y_true)
+            )
+        )
+
+        if denominator == 0:
+            return 0.0
+
+        return float(
+            numerator / denominator
+        )
+
+    @staticmethod
+    def root_relative_squared_error(
+        y_true,
+        y_pred,
+    ):
+        """
+        Root Relative Squared Error (RRSE).
+        """
+
+        y_true = np.asarray(y_true, dtype=float)
+        y_pred = np.asarray(y_pred, dtype=float)
+
+        numerator = np.sum(
+            (y_true - y_pred) ** 2
+        )
+
+        denominator = np.sum(
+            (y_true - np.mean(y_true)) ** 2
+        )
+
+        if denominator == 0:
+            return 0.0
+
+        return float(
+            np.sqrt(
+                numerator / denominator
+            )
+        )
+
+    @staticmethod
+    def mean_absolute_scaled_error(
+        y_true,
+        y_pred,
+    ):
+        """
+        Mean Absolute Scaled Error (MASE).
+        """
+
+        y_true = np.asarray(y_true, dtype=float)
+        y_pred = np.asarray(y_pred, dtype=float)
+
+        if len(y_true) < 2:
+            return np.nan
+
+        naive = np.mean(
+            np.abs(
+                np.diff(y_true)
+            )
+        )
+
+        if naive == 0:
+            return np.nan
+
+        return float(
+            np.mean(
+                np.abs(
+                    y_true - y_pred
+                )
+            ) / naive
+        )
+
+    @classmethod
+    def comprehensive_report(
+        cls,
+        y_true,
+        y_pred,
+        n_features=1,
+    ):
+        """
+        Comprehensive regression metrics report.
+        """
+
+        report = cls.all_metrics(
+            y_true,
+            y_pred,
+            n_features=n_features,
+        )
+
+        report.update(
+            {
+                "SMAPE": cls.smape(
+                    y_true,
+                    y_pred,
+                ),
+                "RMSLE": cls.rmsle(
+                    y_true,
+                    y_pred,
+                ),
+                "Pearson": cls.pearson(
+                    y_true,
+                    y_pred,
+                ),
+                "Spearman": cls.spearman(
+                    y_true,
+                    y_pred,
+                ),
+                "CCC": cls.concordance_correlation(
+                    y_true,
+                    y_pred,
+                ),
+                "NRMSE": cls.normalized_rmse(
+                    y_true,
+                    y_pred,
+                ),
+                "Bias": cls.bias(
+                    y_true,
+                    y_pred,
+                ),
+                "RAE": cls.relative_absolute_error(
+                    y_true,
+                    y_pred,
+                ),
+                "RRSE": cls.root_relative_squared_error(
+                    y_true,
+                    y_pred,
+                ),
+                "MASE": cls.mean_absolute_scaled_error(
+                    y_true,
+                    y_pred,
+                ),
+            }
+        )
+
+        return report
+
+
+__all__ = [
+    "RegressionMetrics",
+]
+
