@@ -311,10 +311,7 @@ class ClassificationMetrics:
         y_score=None,
         y_prob=None,
     ):
-        __all__ = [
-    "ClassificationMetrics",
-]
-
+        
         report: dict[str, Any] = {
 
             "Accuracy": cls.accuracy(
@@ -491,4 +488,8 @@ from sklearn.metrics import (
             y_pred,
             average="macro",
         )
+
+__all__ = [
+    "ClassificationMetrics",
+]
 
