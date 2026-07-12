@@ -14,8 +14,10 @@ Modules
 
 from .permutation_importance import PermutationImportance
 from .shap_wrapper import SHAPWrapper
+from .partial_dependence import PartialDependence
 
 __all__ = [
     "PermutationImportance",
     "SHAPWrapper",
+    "PartialDependence",
 ]
