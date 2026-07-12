@@ -143,7 +143,6 @@ __all__ = [
     "FeatureImportance",
     "ShapValues",
 ]
-EOFcat > src / models / utils.py << "EOF"
 """
 CircuitBench Model Utilities
 ============================
