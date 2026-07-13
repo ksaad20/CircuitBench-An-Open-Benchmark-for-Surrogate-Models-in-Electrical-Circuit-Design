@@ -39,10 +39,7 @@ def bullet_list(items: Iterable[Any], bullet: str = "-") -> str:
 
 def numbered_list(items: Iterable[Any]) -> str:
     """Format an iterable as a numbered list."""
-    return "\n".join(
-        f"{index}. {item}"
-        for index, item in enumerate(items, start=1)
-    )
+    return "\n".join(f"{index}. {item}" for index, item in enumerate(items, start=1))
 
 
 def key_value(key: str, value: Any) -> str:
