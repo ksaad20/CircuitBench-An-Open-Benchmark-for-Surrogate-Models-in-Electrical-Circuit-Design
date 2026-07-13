@@ -1,1 +1,3 @@
-"""Package marker."""
+"""
+CLI command package.
+"""
