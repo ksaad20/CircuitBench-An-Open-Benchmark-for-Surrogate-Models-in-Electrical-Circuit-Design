@@ -56,9 +56,9 @@ jobs:
         run: flake8 .
 
       - name: Run tests
-      env:
-        PYTHONPATH: src
-      run: pytest
+        env:
+         PYTHONPATH: src
+        run: pytest
 
       - name: Coverage
         run: |
