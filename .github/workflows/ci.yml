@@ -51,7 +51,6 @@ jobs:
 
       - name: Ruff lint
         run: ruff check .
-
       - name: Flake8 lint
         run: flake8 .
 
