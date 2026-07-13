@@ -63,9 +63,7 @@ class BenchmarkRunner:
         self.dataset = dataset
         self.model = model
 
-        self.output_directory = Path(
-            output_directory or "benchmark_results"
-        )
+        self.output_directory = Path(output_directory or "benchmark_results")
 
         self.output_directory.mkdir(
             parents=True,
