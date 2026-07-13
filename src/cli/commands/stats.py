@@ -64,10 +64,7 @@ def stats_command(path: Path) -> None:
     """
     py_files = count_files(path, ".py")
     json_files = count_files(path, ".json")
-    yaml_files = (
-        count_files(path, ".yaml")
-        + count_files(path, ".yml")
-    )
+    yaml_files = count_files(path, ".yaml") + count_files(path, ".yml")
     notebook_files = count_files(path, ".ipynb")
 
     click.echo("Circuit Bench Statistics")
