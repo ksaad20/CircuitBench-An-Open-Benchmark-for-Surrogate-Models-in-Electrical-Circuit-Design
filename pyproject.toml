@@ -116,7 +116,6 @@ include = [
 max-line-length = 88
 extend-ignore = ["E203", "W503"]
 
-[tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
 addopts = "-ra"
