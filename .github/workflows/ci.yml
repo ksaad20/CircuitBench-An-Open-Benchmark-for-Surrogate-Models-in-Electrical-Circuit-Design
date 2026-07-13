@@ -12,98 +12,69 @@ on:
       - master
 
 jobs:
-
   test:
-
     runs-on: ubuntu-latest
 
     strategy:
-
       matrix:
-
         python-version:
-
           - "3.10"
-
           - "3.11"
-
           - "3.12"
 
     steps:
-
       - name: Checkout repository
-
         uses: actions/checkout@v4
 
       - name: Setup Python
-
         uses: actions/setup-python@v5
-
         with:
-
           python-version: ${{ matrix.python-version }}
 
       - name: Upgrade pip
-
         run: |
-
           python -m pip install --upgrade pip
 
-      - name: Install package
-  run: |
-    python -m pip install --upgrade pip
-    pip install \
-      numpy \
-      pandas \
-      scipy \
-      scikit-learn \
-      matplotlib \
-      pytest \
-      pytest-cov \
-      black \
-      ruff \
-      flake8
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install \
+            numpy \
+            pandas \
+            scipy \
+            scikit-learn \
+            matplotlib \
+            pytest \
+            pytest-cov \
+            black \
+            ruff \
+            flake8
 
       - name: Black formatting check
-
         run: |
-
           black --check .
 
       - name: Ruff lint
-
         run: |
-
           ruff check .
 
       - name: Flake8 lint
-
         run: |
-
           flake8 .
 
       - name: Run tests
-
         run: |
-
           pytest
 
-      - name: Coverage
-
+      - name: Generate coverage report
         run: |
-
           pytest \
             --cov=src \
             --cov-report=term \
             --cov-report=xml
 
       - name: Upload coverage
-
         uses: actions/upload-artifact@v4
-
         with:
-
           name: coverage-report
-
           path: coverage.xml
-
