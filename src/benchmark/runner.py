@@ -28,56 +28,44 @@ class BenchmarkResult:
     memory: float = 0.0
     metadata: Dict[str, Any] = field(default_factory=dict)
 
-
 class BenchmarkRunner:
-    """
-    Main benchmarking engine.
-
-    Responsible for
-
-    - model registration
-    - dataset registration
-    - metric evaluation
-    - report generation
-    - callbacks
-    """
 
     def __init__(
         self,
-        metrics: Optional[List[Callable]] = None,
-        dataset: Any = None,
-        model: Any = None,
-        random_state: Optional[int] = None,
-        output_directory: Optional[str] = None,
-        callbacks: Optional[List[Callable]] = None,
+        metrics: list | None = None,
+        *,
+        random_state: int | None = None,
+        output_directory: str | Path | None = None,
+        **kwargs: Any,
     ):
+        """
+        Initialize a benchmark runner.
 
-        self.metrics = metrics or []
-        self.datasets: List[Any] = []
-        self.models: List[Any] = []
-        self.results: List[BenchmarkResult] = []
+        Parameters
+        ----------
+        metrics
+            List of metric objects.
+        random_state
+            Random seed used for reproducibility.
+        output_directory
+            Directory for exported benchmark results.
+        """
+
+        self.metrics = metrics if metrics is not None else []
 
         self.random_state = random_state
-        self.dataset = dataset
-        self.model = model
 
-        self.output_directory = Path(output_directory or "benchmark_results")
+        self.output_directory = (
+            Path(output_directory)
+            if output_directory is not None
+            else Path("benchmark_results")
+        )
 
         self.output_directory.mkdir(
             parents=True,
             exist_ok=True,
         )
 
-        self.callbacks = callbacks or []
-
-        self.history: List[Dict[str, Any]] = []
-
-        self.start_time = None
-
-        logger.info("BenchmarkRunner initialized.")
-
-        if dataset is not None:
-            self.datasets.append(dataset)
-
-        if model is not None:
-            self.models.append(model)
+        self.datasets = []
+        self.models = []
+        self.results = []
