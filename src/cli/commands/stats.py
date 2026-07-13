@@ -15,11 +15,7 @@ def count_files(directory: Path, suffix: str) -> int:
     """
     Count files with a given suffix recursively.
     """
-    return sum(
-        1
-        for file in directory.rglob(f"*{suffix}")
-        if file.is_file()
-    )
+    return sum(1 for file in directory.rglob(f"*{suffix}") if file.is_file())
 
 
 def directory_size(directory: Path) -> int:
@@ -77,10 +73,7 @@ def stats_command(path: Path) -> None:
     click.echo(f"JSON files     : {json_files}")
     click.echo(f"YAML files     : {yaml_files}")
     click.echo(f"Notebooks      : {notebook_files}")
-    click.echo(
-        f"Repository size: "
-        f"{human_size(directory_size(path))}"
-    )
+    click.echo(f"Repository size: " f"{human_size(directory_size(path))}")
     click.echo()
     click.echo(f"Python     : {platform.python_version()}")
     click.echo(f"Platform   : {platform.platform()}")
