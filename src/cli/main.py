@@ -5,7 +5,7 @@ Circuit-Bench command-line interface.
 from __future__ import annotations
 
 import argparse
-
+from src.cli.commands import create
 
 def build_parser() -> argparse.ArgumentParser:
     """Create the CLI argument parser."""
