@@ -45,3 +45,5 @@ __all__ = [
     "validate",
     "version",
 ]
+
+"""CLI commands package."""
