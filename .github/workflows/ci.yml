@@ -45,7 +45,11 @@ jobs:
             black \
             ruff \
             flake8
+            pip install \
+            typer \
+            rich \
 
+            
       - name: Black formatting check
         run: black --check .
 
