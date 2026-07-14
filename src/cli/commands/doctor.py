@@ -8,9 +8,8 @@ import typer
 
 app = typer.Typer(help="Check Circuit-Bench installation and environment diagnostics.")
 
-
 @app.callback(invoke_without_command=True)
-def doctor() -> None:
+def doctor(verbose: bool = typer.Option(False, "--verbose", "-v")) -> None:
     """Run environment and system diagnostics."""
 
     typer.echo("Circuit-Bench Doctor")
@@ -20,6 +19,10 @@ def doctor() -> None:
     typer.echo(f"Platform     : {platform.system()} {platform.release()}")
     typer.echo(f"Architecture : {platform.machine()}")
     typer.echo(f"Executable   : {sys.executable}")
+
+    if verbose:
+        typer.echo(f"Working dir  : {Path.cwd()}")
+        typer.echo(f"Python path  : {sys.path[0]}")
 
     project_root = Path.cwd()
 
