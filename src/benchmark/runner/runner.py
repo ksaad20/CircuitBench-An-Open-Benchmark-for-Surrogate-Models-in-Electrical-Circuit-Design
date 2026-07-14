@@ -16,6 +16,7 @@ from typing import Any, Callable
 @dataclass
 class BenchmarkResult:
     """Stores the result of a benchmark execution."""
+
     name: str
     success: bool
     execution_time: float
