@@ -6,9 +6,7 @@ from pathlib import Path
 
 import typer
 
-app = typer.Typer(
-    help="Check Circuit-Bench installation and environment diagnostics."
-)
+app = typer.Typer(help="Check Circuit-Bench installation and environment diagnostics.")
 
 
 @app.callback(invoke_without_command=True)
