@@ -14,7 +14,7 @@ app = typer.Typer(
 
 app.add_typer(create_app, name="create")
 app.add_typer(version_app, name="version")
-
+app.add_typer(doctor_app, name="doctor")
 
 @app.callback(invoke_without_command=True)
 def callback() -> None:
