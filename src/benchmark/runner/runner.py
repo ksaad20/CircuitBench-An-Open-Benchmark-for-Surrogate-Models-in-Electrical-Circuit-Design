@@ -37,6 +37,4 @@ class BenchmarkRunner:
         *args: Any,
         **kwargs: Any,
     ) -> BenchmarkResult:
-        """Execute a benchmark function."""
-        start = perf_counter()
-        # ... rest of your implementation
+        
