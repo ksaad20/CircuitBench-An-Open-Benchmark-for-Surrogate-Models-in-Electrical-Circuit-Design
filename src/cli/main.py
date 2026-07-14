@@ -1,27 +1,26 @@
-"""
-Circuit-Bench command-line interface.
-"""
+"""Circuit-Bench command-line entry point."""
 
 from __future__ import annotations
 
-import argparse
-from src.cli.commands import create
+import typer
 
-def build_parser() -> argparse.ArgumentParser:
-    """Create the CLI argument parser."""
-    parser = argparse.ArgumentParser(
-        prog="circuit-bench",
-        description="Circuit-Bench command-line interface.",
-    )
-    return parser
+from src.cli.commands.create import app as create_app
+from src.cli.commands.version import app as version_app
+
+app = typer.Typer(
+    name="circuitbench",
+    help="Circuit-Bench command line interface.",
+    no_args_is_help=True,
+)
+
+app.add_typer(create_app, name="create")
+app.add_typer(version_app, name="version")
 
 
-def main() -> int:
-    """CLI entry point."""
-    parser = build_parser()
-    parser.parse_args()
-    return 0
+def main() -> None:
+    """Run the CLI application."""
+    app()
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    main()
