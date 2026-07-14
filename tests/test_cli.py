@@ -14,7 +14,12 @@ def test_help_message():
         text=True,
     )
 
-    assert result.returncode == 0
+    def test_cli_runs():
+    result = subprocess.run(
+        [sys.executable, "-m", "src.cli", "--help"],
+        capture_output=True,
+        text=True,
+    )
 
-
     assert result.returncode == 0
+    assert "Circuit-Bench command line interface" in result.stdout
