@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import typer
 
+from src.cli.commands.doctor import app as doctor_app
 from src.cli.commands.create import app as create_app
 from src.cli.commands.version import app as version_app
 
