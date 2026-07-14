@@ -13,18 +13,11 @@ def print_table(headers: list[str], rows: Iterable[Iterable[object]]) -> None:
         for i, cell in enumerate(row):
             widths[i] = max(widths[i], len(cell))
 
-    header = " | ".join(
-        h.ljust(widths[i]) for i, h in enumerate(headers)
-    )
+    header = " | ".join(h.ljust(widths[i]) for i, h in enumerate(headers))
     divider = "-+-".join("-" * w for w in widths)
 
     print(header)
     print(divider)
 
     for row in rows:
-        print(
-            " | ".join(
-                row[i].ljust(widths[i])
-                for i in range(len(headers))
-            )
-        )
+        print(" | ".join(row[i].ljust(widths[i]) for i in range(len(headers))))
