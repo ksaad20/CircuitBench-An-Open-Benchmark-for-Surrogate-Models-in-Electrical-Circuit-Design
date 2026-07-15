@@ -4,7 +4,7 @@
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![Black](https://img.shields.io/badge/code%20style-black-000000)
 ![Ruff](https://img.shields.io/badge/linter-ruff-red)
-![Tests](https://github.com/ksaad20/Circuit-Bench/actions/workflows/tests.yml/badge.svg)
+[![Tests](https://github.com/ksaad20/Circuit-Bench/actions/workflows/tests.yml/badge.svg)](https://github.com/ksaad20/Circuit-Bench/actions/workflows/tests.yml)
 
 Circuit Bench is an open benchmark designed to become the standard evaluation platform for artificial intelligence methods in electrical circuit design.
 
