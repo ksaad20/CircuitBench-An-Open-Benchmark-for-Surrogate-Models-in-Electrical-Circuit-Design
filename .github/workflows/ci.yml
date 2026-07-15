@@ -45,10 +45,32 @@ jobs:
          pytest-cov \
          black \
          ruff \
-         flake8 \
-         Run tests \
-         Coverage \
-         Upload coverage \
+         flake8 
+
+         - name: Black formatting check
+           run: black --check .
+
+         - name: Ruff lint
+           run: ruff check .
+
+         - name: Flake8 lint
+           run: flake8 .
+
+         - name: Run tests
+           run: pytest
+
+         - name: Coverage
+           run: |
+         pytest \
+         --cov=src \
+         --cov-report=term \
+         --cov-report=xml
+
+         - name: Upload coverage
+         uses: actions/upload-artifact@v4
+         with:
+         name: coverage-report
+         path: coverage.xml
       
 
    
