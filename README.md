@@ -38,7 +38,7 @@ CircuitBench emphasizes complete reproducibility through open datasets, executab
 
 The long-term goal of CircuitBench is to establish a community benchmark analogous to ImageNet for computer vision or GLUE for natural language processing, enabling rigorous and reproducible comparison of artificial intelligence methods for electrical engineering design.
 
-Potential modules
+Benchmark Suites
 
 1. CircuitBench-Core
 
