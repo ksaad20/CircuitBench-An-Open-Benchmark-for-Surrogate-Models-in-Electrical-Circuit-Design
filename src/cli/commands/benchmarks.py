@@ -72,7 +72,7 @@ def register(cli) -> None:
 
 if __name__ == "__main__":
     app()
-=======
+
 from __future__ import annotations
 
 import typer
