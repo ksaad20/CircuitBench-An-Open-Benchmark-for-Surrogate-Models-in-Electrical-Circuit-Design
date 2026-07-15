@@ -3,6 +3,10 @@ Circuit Bench is an open-source benchmark designed to provide a standardized pla
 
 The benchmark contains a diverse collection of analog, digital, power electronic, RF, and passive circuit topologies simulated using open-source SPICE engines. Each circuit is evaluated under extensive parameter sweeps to generate high-quality datasets describing electrical behavior, including voltage, current, frequency response, transient response, efficiency, power dissipation, stability, and harmonic distortion.
 
+Why Circuit Bench?
+
+Current AI models for electrical circuit design are evaluated on different datasets, simulators, circuits, and metrics, making fair comparison difficult. Circuit Bench establishes a unified, reproducible, and extensible benchmark for objective evaluation across machine learning methods and engineering tasks.
+
 CircuitBench enables researchers to compare machine learning models for a wide range of electrical engineering tasks, including:
 
 1. Circuit performance prediction
