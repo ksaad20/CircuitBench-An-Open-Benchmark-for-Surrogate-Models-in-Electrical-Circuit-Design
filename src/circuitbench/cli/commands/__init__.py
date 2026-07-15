@@ -6,4 +6,7 @@ Commands are imported lazily by the CLI entry point.
 
 from __future__ import annotations
 
-__all__: list[str] = []
+# Import the app object from your implementation file (e.g., base.py)
+from .base import app 
+
+__all__: list[str] = ["app"]
