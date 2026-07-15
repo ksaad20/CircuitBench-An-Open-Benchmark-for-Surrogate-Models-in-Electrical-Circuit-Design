@@ -1,12 +1,14 @@
-"""List command."""
-
 from __future__ import annotations
 
+import typer
 
-def list_command(args) -> None:
-    """List available Circuit Bench resources."""
-    print("Listing available resources.")
+app = typer.Typer(help="Listing commands.")
 
 
-# Backward compatibility
-execute = list_command
+@app.command("benchmarks")
+def benchmarks() -> None:
+    typer.echo("No benchmarks found.")
+
+
+if __name__ == "__main__":
+    app()
