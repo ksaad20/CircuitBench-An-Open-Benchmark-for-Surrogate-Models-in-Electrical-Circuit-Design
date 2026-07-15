@@ -2,6 +2,8 @@ from __future__ import annotations
 
 # Change from a relative import (e.g., from .commands import app)
 # TO this absolute import:
+# Change the import to alias the imported 'app'
+
 from circuitbench.cli.commands import app
 import typer
 
@@ -25,6 +27,12 @@ from circuitbench.cli.commands import app as run_app
 from circuitbench.cli.commands import app as shell_app
 from circuitbench.cli.commands import app as stats_app
 from circuitbench.cli.commands import app as validate_app
+from circuitbench.cli.commands import app as command_app
+
+
+# You can now integrate 'command_app' into your 'app' as needed:
+# app.add_typer(command_app)
+
 
 app = typer.Typer(
     name="circuitbench",
