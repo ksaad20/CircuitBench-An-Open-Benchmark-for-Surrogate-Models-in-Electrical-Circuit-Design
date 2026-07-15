@@ -1,15 +1,14 @@
-"""Evaluate benchmark results."""
-
 from __future__ import annotations
 
+import typer
 
-def evaluate(args) -> None:
-    """Evaluate benchmark results."""
-    if hasattr(args, "results"):
-        print(f"Evaluating: {args.results}")
-    else:
-        print("Evaluating benchmark results.")
+app = typer.Typer(help="Evaluation commands.")
 
 
-# Backward compatibility
-execute = evaluate
+@app.command("run")
+def run() -> None:
+    typer.echo("Evaluation completed.")
+
+
+if __name__ == "__main__":
+    app()
