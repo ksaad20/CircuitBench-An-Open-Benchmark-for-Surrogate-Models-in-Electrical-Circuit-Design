@@ -45,7 +45,7 @@ jobs:
          pytest-cov \
          black \
          ruff \
-         flake8 
+         flake8 |
 
          - name: Black formatting check
            run: black --check .
