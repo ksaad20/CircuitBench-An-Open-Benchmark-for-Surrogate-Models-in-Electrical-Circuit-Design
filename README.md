@@ -96,3 +96,11 @@ ii. LIME
 iii. Feature importance
 iv. Uncertainty estimation
 
+## Quick Start
+
+Clone the repository
+
+```bash
+git clone https://github.com/ksaad20/Circuit-Bench.git
+cd Circuit-Bench
+
