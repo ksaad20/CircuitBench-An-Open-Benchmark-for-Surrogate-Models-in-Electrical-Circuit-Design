@@ -1,9 +1,14 @@
-"""Run benchmark command."""
+from __future__ import annotations
+
+import typer
+
+app = typer.Typer(help="Reporting commands.")
 
 
-def run(args):
-    """Execute the run command."""
-    print("Running Circuit Bench...")
+@app.command("generate")
+def generate() -> None:
+    typer.echo("Report generated.")
 
 
-execute = run
+if __name__ == "__main__":
+    app()
