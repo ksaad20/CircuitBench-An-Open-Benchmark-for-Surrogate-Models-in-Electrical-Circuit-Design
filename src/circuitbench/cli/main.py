@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 # Change from a relative import (e.g., from .commands import app)
 # TO this absolute import:
 from circuitbench.cli.commands import app
