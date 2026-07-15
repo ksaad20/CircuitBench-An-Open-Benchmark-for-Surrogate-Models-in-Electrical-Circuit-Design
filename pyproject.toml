@@ -5,7 +5,6 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
-
 [project]
 name = "circuitbench"
 version = "1.0.0"
@@ -13,27 +12,12 @@ description = "A comprehensive benchmarking framework for machine learning and c
 readme = "README.md"
 license = {text = "Apache-2.0"}
 requires-python = ">=3.10"
-
-authors = [
-    {name = "Asif Kazi"}
-]
-
+authors = [{name = "Asif Kazi"}]
 keywords = [
-    "machine-learning",
-    "benchmark",
-    "artificial-intelligence",
-    "deep-learning",
-    "classification",
-    "regression",
-    "evaluation",
-    "benchmarking",
-    "statistics",
-    "explainable-ai",
-    "calibration",
-    "research-software",
-    "scientific-computing"
+    "machine-learning", "benchmark", "artificial-intelligence", "deep-learning",
+    "classification", "regression", "evaluation", "benchmarking", "statistics",
+    "explainable-ai", "calibration", "research-software", "scientific-computing"
 ]
-
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
@@ -48,7 +32,6 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Information Analysis",
     "Topic :: Software Development :: Libraries :: Python Modules"
 ]
-
 dependencies = [
     "numpy>=1.24",
     "pandas>=2.0",
@@ -60,56 +43,31 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-
-explainability = [
-    "shap>=0.45"
-]
-
+explainability = ["shap>=0.45"]
 development = [
-    "pytest>=8.0",
-    "pytest-cov",
-    "black",
-    "ruff",
-    "flake8",
-    "mypy",
-    "pre-commit"
+    "pytest>=8.0", "pytest-cov", "black", "ruff", "flake8", "mypy", "pre-commit"
 ]
-
-docs = [
-    "sphinx",
-    "furo",
-    "myst-parser",
-    "sphinx-autodoc-typehints"
-]
+docs = ["sphinx", "furo", "myst-parser", "sphinx-autodoc-typehints"]
 
 [project.urls]
 Homepage = "https://github.com/ksaad20/Circuit-Bench"
 Repository = "https://github.com/ksaad20/Circuit-Bench"
 Issues = "https://github.com/ksaad20/Circuit-Bench/issues"
 
-[tool.black]
-line-length = 88
-target-version = [
-    "py310",
-    "py311",
-    "py312"
-]
-
-[tool.ruff]
-line-length = 88
-target-version = "py310"
-
-[project]
-name = "circuitbench"
-version = "1.0.0"
-# ... other fields ...
+[project.scripts]
+circuitbench = "circuitbench.cli.main:main"
 
 [tool.setuptools]
 packages = ["circuitbench"]
 package-dir = {"" = "src"}
 
-[project.scripts]
-circuitbench = "circuitbench.cli.main:main"
+[tool.black]
+line-length = 88
+target-version = ["py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
 
 [tool.flake8]
 max-line-length = 88
@@ -120,11 +78,3 @@ testpaths = ["tests"]
 python_files = ["test_*.py"]
 pythonpath = ["src"]
 addopts = "-ra"
-
-[tool.poetry.dependencies]
-python = "^3.10"
-typer = "^0.12"
-rich = "^13.7"
-
-[project.scripts]
-circuitbench = "cli.main:main"
