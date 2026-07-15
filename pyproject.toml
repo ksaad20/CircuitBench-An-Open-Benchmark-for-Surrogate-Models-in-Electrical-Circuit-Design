@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "circuitbench"
 version = "1.0.0"
-description = "A comprehensive benchmarking framework for machine learning and computational intelligence."
+description = "A reference for benchmarking and evaluation for artificial intelligence driven electrical circuit design."
 readme = "README.md"
 license = {text = "Apache-2.0"}
 requires-python = ">=3.10"
