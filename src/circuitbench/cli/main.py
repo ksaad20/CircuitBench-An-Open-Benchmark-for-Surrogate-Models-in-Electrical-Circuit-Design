@@ -1,38 +1,29 @@
 from __future__ import annotations
 
-# Change from a relative import (e.g., from .commands import app)
-# TO this absolute import:
-# Change the import to alias the imported 'app'
-
-from circuitbench.cli.commands import app
 import typer
 
-# Corrected imports with 'src.' removed to fix the ModuleNotFoundError
-from circuitbench.cli.commands import app as create_app
-from circuitbench.cli.commands import app as doctor_app
-from circuitbench.cli.commands import app as version_app
-from circuitbench.cli.commands import app as benchmarks_app
-from circuitbench.cli.commands import app as cache_app
-from circuitbench.cli.commands import app as clean_app
-from circuitbench.cli.commands import app as config_app
-from circuitbench.cli.commands import app as datasets_app
-from circuitbench.cli.commands import app as evaluate_app
-from circuitbench.cli.commands import app as export_app
-from circuitbench.cli.commands import app as info_app
-from circuitbench.cli.commands import app as leaderboard_app
-from circuitbench.cli.commands import app as list_app
-from circuitbench.cli.commands import app as plugins_app
-from circuitbench.cli.commands import app as report_app
-from circuitbench.cli.commands import app as run_app
-from circuitbench.cli.commands import app as shell_app
-from circuitbench.cli.commands import app as stats_app
-from circuitbench.cli.commands import app as validate_app
 from circuitbench.cli.commands import app as command_app
-
-
-# You can now integrate 'command_app' into your 'app' as needed:
-# app.add_typer(command_app)
-
+from circuitbench.cli.commands import (
+    benchmarks_app,
+    cache_app,
+    clean_app,
+    config_app,
+    create_app,
+    datasets_app,
+    doctor_app,
+    evaluate_app,
+    export_app,
+    info_app,
+    leaderboard_app,
+    list_app,
+    plugins_app,
+    report_app,
+    run_app,
+    shall_app,
+    stats_app,
+    validate_app,
+    version_app,
+)
 
 app = typer.Typer(
     name="circuitbench",
@@ -56,7 +47,7 @@ app.add_typer(list_app, name="list")
 app.add_typer(plugins_app, name="plugins")
 app.add_typer(report_app, name="report")
 app.add_typer(run_app, name="run")
-app.add_typer(shell_app, name="shell")
+app.add_typer(shall_app, name="shell")
 app.add_typer(stats_app, name="stats")
 app.add_typer(validate_app, name="validate")
 
