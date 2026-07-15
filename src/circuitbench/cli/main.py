@@ -4,7 +4,6 @@ import typer
 
 from circuitbench.cli.commands import (
     benchmarks_app,
-    base_app,
     cache_app,
     clean_app,
     config_app,
