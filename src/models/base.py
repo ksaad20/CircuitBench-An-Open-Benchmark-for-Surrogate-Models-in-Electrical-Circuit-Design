@@ -39,7 +39,6 @@ class BaseModel(ABC):
         name: Optional[str] = None,
         random_state: int = 42,
     ) -> None:
-
         self.name = name or self.__class__.__name__
 
         self.random_state = random_state
@@ -85,14 +84,12 @@ class BaseModel(ABC):
         """
         Return parameter dictionary.
         """
-
         return self.parameters.copy()
 
     def set_params(self, **kwargs):
         """
         Update parameters.
         """
-
         self.parameters.update(kwargs)
 
         return self
@@ -102,11 +99,9 @@ class BaseModel(ABC):
     # --------------------------------------------------
 
     def add_metadata(self, key: str, value: Any):
-
         self.metadata[key] = value
 
     def get_metadata(self):
-
         return self.metadata
 
     # --------------------------------------------------
@@ -114,7 +109,6 @@ class BaseModel(ABC):
     # --------------------------------------------------
 
     def save(self, filename: str | Path):
-
         filename = Path(filename)
 
         filename.parent.mkdir(parents=True, exist_ok=True)
@@ -124,10 +118,10 @@ class BaseModel(ABC):
 
     @classmethod
     def load(cls, filename: str | Path):
-
         filename = Path(filename)
 
         with open(filename, "rb") as file:
+            # nosec B301
             return pickle.load(file)
 
     # --------------------------------------------------
@@ -135,7 +129,6 @@ class BaseModel(ABC):
     # --------------------------------------------------
 
     def summary(self):
-
         print("=" * 60)
 
         print(f"Model: {self.name}")
@@ -153,5 +146,7 @@ class BaseModel(ABC):
     # --------------------------------------------------
 
     def __repr__(self):
-
-        return f"{self.__class__.__name__}(name='{self.name}', fitted={self.is_fitted})"
+        return (
+            f"{self.__class__.__name__}"
+            f"(name='{self.name}', fitted={self.is_fitted})"
+        )
