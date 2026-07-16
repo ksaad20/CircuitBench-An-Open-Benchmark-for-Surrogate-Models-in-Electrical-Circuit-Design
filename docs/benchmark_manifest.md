@@ -48,6 +48,18 @@ Circuit-Bench v1.0 currently includes benchmark circuits from the following cate
 
 Circuit categories are selected based on their importance in electrical engineering education, industrial design workflows, and AI-assisted circuit analysis. Each benchmark category contains representative circuits intended to evaluate machine learning algorithms under reproducible conditions.
 
+## Benchmark Design Principles
+
+Circuit-Bench follows the following design principles.
+
+1. Reproducibility
+2. Open accessibility
+3. Simulator independence where possible
+4. Standardized evaluation
+5. Extensibility
+6. Version-controlled benchmark releases
+7. FAIR research data principles where applicable
+
 ## Inclusion Criteria
 
 A circuit is included in Circuit-Bench only if it satisfies all of the following:
