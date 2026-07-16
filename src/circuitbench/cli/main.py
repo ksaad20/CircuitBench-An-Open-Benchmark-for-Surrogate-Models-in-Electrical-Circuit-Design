@@ -18,7 +18,7 @@ from circuitbench.cli.commands import (
     plugins_app,
     report_app,
     run_app,
-    shall_app,
+    shell_app,
     stats_app,
     validate_app,
     version_app,
@@ -46,7 +46,7 @@ app.add_typer(list_app, name="list")
 app.add_typer(plugins_app, name="plugins")
 app.add_typer(report_app, name="report")
 app.add_typer(run_app, name="run")
-app.add_typer(shall_app, name="shell")
+app.add_typer(shell_app, name="shell")
 app.add_typer(stats_app, name="stats")
 app.add_typer(validate_app, name="validate")
 
