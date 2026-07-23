@@ -1,1 +1,31 @@
+# -----------------------------------------------------------------------------
+# GitHub Issue Template Configuration
+# Circuit Bench
+#
+# This configuration customizes the GitHub "New Issue" page.
+# -----------------------------------------------------------------------------
 
+# Prevent users from opening completely blank issues.
+blank_issues_enabled: false
+
+# Helpful links shown when creating a new issue.
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/ksaad20/Circuit-Bench/discussions
+    about: Ask questions, share ideas, and discuss Circuit Bench with the community.
+
+  - name: 📖 Documentation
+    url: https://github.com/ksaad20/Circuit-Bench/tree/main/docs
+    about: Read the documentation, tutorials, and developer guides.
+
+  - name: 🤝 Contributing Guide
+    url: https://github.com/ksaad20/Circuit-Bench/blob/main/CONTRIBUTING.md
+    about: Learn how to contribute code, documentation, benchmarks, and tests.
+
+  - name: 🔒 Report a Security Vulnerability
+    url: https://github.com/ksaad20/Circuit-Bench/security/advisories/new
+    about: Please report security vulnerabilities privately through GitHub Security Advisories.
+
+  - name: 📜 Code of Conduct
+    url: https://github.com/ksaad20/Circuit-Bench/blob/main/CODE_OF_CONDUCT.md
+    about: Review the community standards before participating.
