@@ -1,4 +1,3 @@
-
 name: CircuitBench CI
 
 on:
@@ -36,10 +35,10 @@ jobs:
           if [ -f pyproject.toml ] || [ -f setup.py ]; then pip install -e .; fi
 
       - name: Black formatting check
-        run: black --check src tests
+        run: black --check .
 
       - name: Ruff lint
-        run: ruff check src tests
+        run: ruff check .
 
       - name: Run tests
-        run: pytest tests/ -v
+        run: pytest -v
