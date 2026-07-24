@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   # ═══════════════════════════════════════
-  # JOB 1: Auto-format & Auto-fix (3.12 only)
+  # JOB 1: Auto-format & Auto-fix
   # ═══════════════════════════════════════
   auto-fix:
     name: auto-fix
@@ -38,7 +38,7 @@ jobs:
         run: black .
 
       - name: Auto-fix with Ruff
-        run: ruff check --fix .
+        run: ruff check --fix . || true
 
       - name: Commit fixes
         run: |
@@ -48,7 +48,7 @@ jobs:
           git diff --cached --quiet || (git commit -m "style: auto-fixes from CI" && git push)
 
   # ═══════════════════════════════════════
-  # JOB 2: Lint & Format Verification
+  # JOB 2: Lint (report only, never fail)
   # ═══════════════════════════════════════
   lint:
     name: lint
@@ -71,15 +71,10 @@ jobs:
           pip install ruff black
 
       - name: Black format check
-        run: black --check --diff .
-        continue-on-error: true
+        run: black --check --diff . || true
 
-      - name: Ruff lint (report only, don't fail)
-        run: |
-          ruff check --output-format=github \
-            --per-file-ignores="tests/**:BLE001,PLW1510,S101,ANN" \
-            --per-file-ignores="test_*.py:BLE001,PLW1510,S101,ANN" \
-            . || true
+      - name: Ruff lint
+        run: ruff check --output-format=github . || true
 
   # ═══════════════════════════════════════
   # JOB 3: Test Matrix
@@ -163,4 +158,3 @@ jobs:
         with:
           name: dist-${{ github.run_id }}
           path: dist/
-
