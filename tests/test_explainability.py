@@ -10,18 +10,15 @@ from sklearn.ensemble import RandomForestRegressor
 from src.explainability.permutation_importance import (
     PermutationImportance,
 )
-
 from src.explainability.partial_dependence import (
     PartialDependence,
 )
-
 from src.explainability.ice import (
     ICEPlots,
 )
 
 
 def create_model():
-
     X, y = make_regression(
         n_samples=200,
         n_features=6,
@@ -47,7 +44,6 @@ def create_model():
 
 
 def test_permutation_importance():
-
     model, X, y = create_model()
 
     result = PermutationImportance.compute(
@@ -58,7 +54,6 @@ def test_permutation_importance():
     )
 
     assert len(result.feature_names) == X.shape[1]
-
     assert result.importances_mean.shape[0] == X.shape[1]
 
     df = PermutationImportance.to_dataframe(result)
@@ -67,8 +62,7 @@ def test_permutation_importance():
 
 
 def test_partial_dependence():
-
-    model, X, y = create_model()
+    model, X, _ = create_model()
 
     result = PartialDependence.compute(
         model,
@@ -80,8 +74,7 @@ def test_partial_dependence():
 
 
 def test_partial_dependence_plot():
-
-    model, X, y = create_model()
+    model, X, _ = create_model()
 
     fig, ax = PartialDependence.plot(
         model,
@@ -90,15 +83,13 @@ def test_partial_dependence_plot():
     )
 
     assert fig is not None
-
     assert ax is not None
 
 
 def test_two_way_partial_dependence():
+    model, X, _ = create_model()
 
-    model, X, y = create_model()
-
-    fig, ax = PartialDependence.two_way(
+    fig, _ = PartialDependence.two_way(
         model,
         X,
         (0, 1),
@@ -108,8 +99,7 @@ def test_two_way_partial_dependence():
 
 
 def test_ice():
-
-    model, X, y = create_model()
+    model, X, _ = create_model()
 
     values, curves = ICEPlots.compute(
         model,
@@ -118,13 +108,11 @@ def test_ice():
     )
 
     assert len(values) > 0
-
     assert curves.shape[0] == len(X)
 
 
 def test_ice_plot():
-
-    model, X, y = create_model()
+    model, X, _ = create_model()
 
     fig, ax = ICEPlots.plot(
         model,
@@ -133,12 +121,10 @@ def test_ice_plot():
     )
 
     assert fig is not None
-
     assert ax is not None
 
 
 def test_importance_dataframe():
-
     model, X, y = create_model()
 
     result = PermutationImportance.compute(
@@ -151,5 +137,4 @@ def test_importance_dataframe():
     df = PermutationImportance.to_dataframe(result)
 
     assert "feature" in df.columns
-
     assert "importance" in df.columns
