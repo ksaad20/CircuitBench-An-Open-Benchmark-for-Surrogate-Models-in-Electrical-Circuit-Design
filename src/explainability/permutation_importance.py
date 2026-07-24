@@ -39,32 +39,16 @@ class PermutationImportance:
         """
         Compute permutation feature importance.
         """
-
         X = pd.DataFrame(X).copy()
-
         scorer = get_scorer(scoring)
-
         rng = np.random.default_rng(random_state)
 
-        baseline = scorer(
-            model,
-            X,
-            y,
-        )
+        baseline = scorer(model, X, y)
 
-        raw = np.zeros(
-            (
-                X.shape[1],
-                n_repeats,
-            ),
-            dtype=float,
-        )
+        raw = np.zeros((X.shape[1], n_repeats), dtype=float)
 
         for feature in range(X.shape[1]):
-            column = X.iloc[
-                :,
-                feature,
-            ].copy()
+            column = X.iloc[:, feature].copy()
 
             for repeat in range(n_repeats):
                 shuffled = column.sample(
@@ -72,48 +56,25 @@ class PermutationImportance:
                     random_state=int(rng.integers(1_000_000)),
                 ).to_numpy()
 
-                X.iloc[
-                    :,
-                    feature,
-                ] = shuffled
+                X.iloc[:, feature] = shuffled
 
-                score = scorer(
-                    model,
-                    X,
-                    y,
-                )
+                score = scorer(model, X, y)
+                raw[feature, repeat] = baseline - score
 
-                raw[
-                    feature,
-                    repeat,
-                ] = baseline - score
-
-            X.iloc[
-                :,
-                feature,
-            ] = column
+            X.iloc[:, feature] = column
 
         return PermutationImportanceResult(
             feature_names=list(X.columns),
-            importances_mean=np.mean(
-                raw,
-                axis=1,
-            ),
-            importances_std=np.std(
-                raw,
-                axis=1,
-            ),
+            importances_mean=np.mean(raw, axis=1),
+            importances_std=np.std(raw, axis=1),
             raw_importances=raw,
         )
 
     @staticmethod
-    def to_dataframe(
-        result,
-    ):
+    def to_dataframe(result):
         """
         Convert importance result to DataFrame.
         """
-
         return (
             pd.DataFrame(
                 {
@@ -122,11 +83,6 @@ class PermutationImportance:
                     "std": result.importances_std,
                 }
             )
-            .sort_values(
-                "importance",
-                ascending=False,
-            )
-            .reset_index(
-                drop=True,
-            )
+            .sort_values("importance", ascending=False)
+            .reset_index(drop=True)
         )
